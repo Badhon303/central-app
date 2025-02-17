@@ -60,11 +60,13 @@ export default function Navbar() {
     >
       <nav
         id="nav"
-        className={`group w-full border-b border-transparent transition-all duration-300 ${
-          isScrolled
-            ? "bg-white dark:bg-gray-900 shadow-md"
-            : "bg-transparent border-b-[.5px] border-gray-100 dark:border-gray-900"
-        }`}
+        className={`group w-full bg-white/3 backdrop-blur-[3.1px]
+          ${
+            isScrolled
+              ? "border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+              : ""
+          }
+        `}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
@@ -110,7 +112,7 @@ export default function Navbar() {
                 isToggled ? "scale-100 opacity-100" : "scale-90 opacity-0"
               }`}
             >
-              <div className="w-full text-gray-600 dark:text-gray-200 lg:w-auto lg:pr-4 lg:pt-0">
+              <div className="w-full text-gray-500 dark:text-gray-200 lg:w-auto lg:pr-4 lg:pt-0">
                 <div
                   id="links-group"
                   className="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm"

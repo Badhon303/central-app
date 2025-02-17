@@ -1,0 +1,136 @@
+flowchart TB;
+    
+    subgraph HomeSections["🏠 Home Page"]
+        direction TB
+        NavbarHome["🟦 Navbar"]
+        HeroHeaderHome["🟦 Hero Header Section"]
+        FeatureHome["🟦 Feature Section"]
+        FeaturesListHome["🟦 Features List Section"]
+        BenefitsHome["🟦 Benefits Section"]
+        TestimonialHome["🟦 Testimonial Section"]
+        CTAHome["🟦 CTA Section"]
+        NewsletterHome["🟦 Newsletter Section"]
+        FooterHome["🟦 Footer"]
+        NavbarHome --> HeroHeaderHome
+        HeroHeaderHome --> FeatureHome
+        FeatureHome --> FeaturesListHome
+        FeaturesListHome --> BenefitsHome
+        BenefitsHome --> TestimonialHome
+        TestimonialHome --> CTAHome
+        CTAHome --> NewsletterHome
+        NewsletterHome --> FooterHome
+    end
+
+    HomeSections --> AboutUs
+    HomeSections --> Product
+    HomeSections --> GlobalPartners
+    HomeSections --> Customers
+    HomeSections --> NewsEvents
+
+    %% About Us Page
+    subgraph AboutUs["📜 About Us"]
+        direction TB
+        NavbarAbout["🟦 Navbar"]
+        HeaderAbout["🟦 Header Section"]
+        AboutSection["🟦 About Section"]
+        FeaturesListAbout["🟦 Features List Section"]
+        Feature1About["🟦 Feature Section"]
+        Feature2About["🟦 Feature Section"]
+        Feature3About["🟦 Feature Section"]
+        LocationAbout["🟦 Location Section"]
+        Feature4About["🟦 Feature Section"]
+        FooterAbout["🟦 Footer"]
+        NavbarAbout --> HeaderAbout
+        HeaderAbout --> AboutSection
+        AboutSection --> FeaturesListAbout
+        FeaturesListAbout --> Feature1About
+        Feature1About --> Feature2About
+        Feature2About --> Feature3About
+        Feature3About --> LocationAbout
+        LocationAbout --> Feature4About
+        Feature4About --> FooterAbout
+    end
+
+    %% Product Page
+    subgraph Product["🛍️ Product"]
+        direction TB
+        NavbarProduct["🟦 Navbar"]
+        HeaderProduct["🟦 Header Section"]
+        FeaturesListProduct["🟦 Features List Section"]
+        Feature1Product["🟦 Feature Section"]
+        Feature2Product["🟦 Feature Section"]
+        Feature3Product["🟦 Feature Section"]
+        Feature4Product["🟦 Feature Section"]
+        Feature5Product["🟦 Feature Section"]
+        FeaturesList2Product["🟦 Features List Section"]
+        FooterProduct["🟦 Footer"]
+        NavbarProduct --> HeaderProduct
+        HeaderProduct --> FeaturesListProduct
+        FeaturesListProduct --> Feature1Product
+        Feature1Product --> Feature2Product
+        Feature2Product --> Feature3Product
+        Feature3Product --> Feature4Product
+        Feature4Product --> Feature5Product
+        Feature5Product --> FeaturesList2Product
+        FeaturesList2Product --> FooterProduct
+    end
+
+    %% Global Partners Page
+    subgraph GlobalPartners["🌍 Global Partners Page"]
+        direction TB
+        NavbarGlobalPartners["🟦 Navbar"]
+        HeaderGlobalPartners["🟦 Header Section"]
+        Feature1GlobalPartners["🟦 Feature Section"]
+        FeaturesListGlobalPartners["🟦 Features List Section"]
+        Feature2GlobalPartners["🟦 Feature Section"]
+        Feature3GlobalPartners["🟦 Feature Section"]
+        TeamGlobalPartners["🟦 Team Section"]
+        CTAGlobalPartners["🟦 CTA Section"]
+        FooterGlobalPartners["🟦 Footer"]
+        NavbarGlobalPartners --> HeaderGlobalPartners
+        HeaderGlobalPartners --> Feature1GlobalPartners
+        Feature1GlobalPartners --> FeaturesListGlobalPartners
+        FeaturesListGlobalPartners --> Feature2GlobalPartners
+        Feature2GlobalPartners --> Feature3GlobalPartners
+        Feature3GlobalPartners --> TeamGlobalPartners
+        TeamGlobalPartners --> CTAGlobalPartners
+        CTAGlobalPartners --> FooterGlobalPartners
+    end
+
+    %% Customers Page
+    subgraph Customers["👥 Customers Page"]
+        direction TB
+        NavbarCustomers["🟦 Navbar"]
+        HeaderCustomers["🟦 Header Section"]
+        CustomerLogosCustomers["🟦 Customer Logos List Section"]
+        TestimonialCustomers["🟦 Testimonial Section"]
+        CaseStudyListCustomers["🟦 Case Study List Section"]
+        CaseStudyBodyCustomers["🟦 Case Study Body Section"]
+        FooterCustomers["🟦 Footer"]
+        NavbarCustomers --> HeaderCustomers
+        HeaderCustomers --> CustomerLogosCustomers
+        CustomerLogosCustomers --> TestimonialCustomers
+        TestimonialCustomers --> CaseStudyListCustomers
+        CaseStudyListCustomers --> CaseStudyBodyCustomers
+        CaseStudyBodyCustomers --> FooterCustomers
+    end
+
+    %% News & Events Page
+    subgraph NewsEvents["📰 News and Events Page"]
+        direction TB
+        NavbarNewsEvents["🟦 Navbar"]
+        HeaderNewsEvents["🟦 Header Section"]
+        FeaturesListNewsEvents["🟦 Features List Section"]
+        FeaturedEventsHeader["🟦 Featured Events List Header"]
+        EventsListNewsEvents["🟦 Events List Section"]
+        FeaturedUpdatesHeader["🟦 Featured Updates List Header"]
+        UpdatesListNewsEvents["🟦 Updates List Section"]
+        FooterNewsEvents["🟦 Footer"]
+        NavbarNewsEvents --> HeaderNewsEvents
+        HeaderNewsEvents --> FeaturesListNewsEvents
+        FeaturesListNewsEvents --> FeaturedEventsHeader
+        FeaturedEventsHeader --> EventsListNewsEvents
+        EventsListNewsEvents --> FeaturedUpdatesHeader
+        FeaturedUpdatesHeader --> UpdatesListNewsEvents
+        UpdatesListNewsEvents --> FooterNewsEvents
+    end
