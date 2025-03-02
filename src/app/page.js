@@ -8,6 +8,7 @@ import ImagesSlider from "@/components/ImagesSlider"
 import FloatingDockWeb from "@/components/FloatingDockWeb"
 import TracingBeamWeb from "@/components/TracingBeamWeb"
 import WorldMapWeb from "@/components/WorldMapWeb"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <CallToAction />
       <Blog />
       <WorldMapWeb />
+      <Footer />
     </div>
   )
 }

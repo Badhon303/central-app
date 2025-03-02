@@ -1,8 +1,9 @@
+// store.js
 import { create } from "zustand"
 
-const useStore = create((set) => ({
-  currentImageIndex: 0,
-  setCurrentImageIndex: (index) => set({ currentImageIndex: index }),
+const useCentralStore = create((set) => ({
+  currentTheme: "dark",
+  setCurrentTheme: (theme) => set({ currentTheme: theme }),
 }))
 
-export default useStore
+export default useCentralStore
