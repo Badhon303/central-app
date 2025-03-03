@@ -153,7 +153,7 @@ export default function ProductSection() {
             {Object.keys(apiProducts).map((letter) => (
               <motion.div
                 key={letter}
-                className={`cursor-pointer font-bold px-4 py-2 rounded-full ${
+                className={`cursor-pointer font-bold px-3 py-2 rounded-full ${
                   selectedLetter === letter 
                     ? "text-blue-600 text-4xl" 
                     : " dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-lg transition-all duration-200" 
@@ -201,9 +201,9 @@ export default function ProductSection() {
                   ))}
                 </div>
                 
-                <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400 italic text-center">
+                {/* <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400 italic text-center">
                   centralscientificcompany
-                </div>
+                </div> */}
               </motion.div>
             )
           ))}
