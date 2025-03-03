@@ -6,10 +6,10 @@ import Link from "next/link"
 import { useTheme } from "next-themes"
 
 const links = [
-  { to: "/About", label: "About" },
-  { to: "/Product", label: "Product" },
-  { to: "/Global Partners", label: "Global Partners" },
-  { to: "/Customers", label: "Customers" },
+  { to: "/about", label: "About" },
+  { to: "/product", label: "Product" },
+  { to: "/globalPartners", label: "Global Partners" },
+  { to: "/customers", label: "Customers" },
   { to: "/NewsAndEvents", label: "News And Events" },
   { to: "/UpcomingRegionalOffices", label: "Upcoming Regional Offices" },
   { to: "/Careers", label: "Careers" },

@@ -22,7 +22,6 @@ export default function Home() {
       <CallToAction />
       <Blog />
       <WorldMapWeb />
-      <Footer />
     </div>
   )
 }

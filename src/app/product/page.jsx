@@ -1,4 +1,5 @@
 import { BackgroundBoxesDemo } from "@/components/BackgroundBox"
+import ProductSection from "@/components/ProductSection"
 import { Button } from "@/components/ui/button"
 
 export default function Product() {

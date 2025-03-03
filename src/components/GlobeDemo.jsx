@@ -86,7 +86,7 @@ export function GlobeDemo() {
                 </div>
                 {/* Name */}
                 <div className="text-center">
-                  <p className="text-sm text-gray-600 dark:text-gray-400 truncate max-w-full mt-2">{partner}</p>
+                  <p className="text-[12px] text-gray-600 dark:text-gray-400 truncate max-w-full mt-2">{partner}</p>
                 </div>
               </div>
             ))
