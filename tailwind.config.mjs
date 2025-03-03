@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette")
@@ -63,6 +64,8 @@ export default {
     },
   },
   plugins: [addVariablesForColors, require("tailwindcss-animate")],
+  addVariablesForColors,
+
 }
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g., var(--gray-200).

@@ -2,11 +2,13 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Boxes } from "./ui/background-boxes.jsx";
+import { Boxes } from "./ui/background-boxes";
 
 export function BackgroundBoxesDemo({title}) {
   return (
     (<div
       className="h-80 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+      className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
       <div
         className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       <Boxes />
