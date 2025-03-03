@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Boxes } from "./ui/background-boxes.jsx";
+import { Boxes } from "./ui/background-boxes";
 
 export function BackgroundBoxesDemo({title}) {
   return (
@@ -17,5 +17,5 @@ export function BackgroundBoxesDemo({title}) {
         Framer motion is the best animation library ngl
       </p> */}
     </div>)
-  );
+  )
 }
