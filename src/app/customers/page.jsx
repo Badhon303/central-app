@@ -5,7 +5,7 @@ export default function Customers() {
   return (
     <div className="">
       {/* <Lamp /> */}
-      <BackgroundBoxesDemo title={"Our Customers"}/>
+      <BackgroundBoxesDemo title={"Customers"}/>
       <CustomerSection/>
     </div>
   )
