@@ -63,22 +63,6 @@ export default function ProductSection() {
     setSelectedLetter(letter);
   };
 
-  // Function to chunk array into groups
-  const chunkArray = (array, size) => {
-    const chunked = [];
-    for (let i = 0; i < array.length; i += size) {
-      chunked.push(array.slice(i, i + size));
-    }
-    return chunked;
-  };
-
-  // Calculate number of columns based on product count
-  const getColumnCount = (products) => {
-    if (products.length <= 6) return 1;
-    if (products.length <= 12) return 2;
-    return 3;
-  };
-
   return (
     <div className="relative py-16 md:py-24">
       {/* Background gradient */}

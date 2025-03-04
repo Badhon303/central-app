@@ -16,7 +16,7 @@ export function CustomerSection() {
       </div>
 
       <motion.div className="relative container mx-auto px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
             Our{" "}
             <span className="text-primary dark:text-white">
@@ -25,7 +25,7 @@ export function CustomerSection() {
           </h2>
 
           <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400 my-2 max-w-[600px] mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 my-4 max-w-[600px] mx-auto">
             Trusted by leading organizations for our expertise and reliability,
             we strive to build lasting relationships with our valued customers.
             Our comprehensive solutions are designed to address their unique
@@ -35,7 +35,7 @@ export function CustomerSection() {
         </div>
 
         {/* customer logos slider */}
-        <InfiniteSlider durationOnHover={75} gap={24} className={"py-4"}>
+        <InfiniteSlider durationOnHover={75} gap={24} className={"py-10"}>
           <img
             src="/logos/customers/ACI.jpg"
             alt="Dean blunt - Black Metal 2"
