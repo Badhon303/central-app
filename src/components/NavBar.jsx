@@ -11,8 +11,8 @@ const links = [
   { to: "/globalPartners", label: "Global Partners" },
   { to: "/customers", label: "Customers" },
   { to: "/newsAndEvents", label: "News And Events" },
-  { to: "/UpcomingRegionalOffices", label: "Upcoming Regional Offices" },
-  { to: "/Careers", label: "Careers" },
+  { to: "/regionalOffices", label: "Upcoming Regional Offices" },
+  { to: "/careers", label: "Careers" },
   { to: "/Contact", label: "Contact" },
   { to: "/Enquiry", label: "Enquiry" },
 ]

@@ -4,7 +4,7 @@ import NewsAndEventsSection from "@/components/NewsAndEventsSection"
 import { Button } from "@/components/ui/button"
 import { BackgroundBoxesDemo } from "@/components/BackgroundBox"
 
-export default function About() {
+export default function NewsAndEvents() {
   return (
     <div className="">
       {/* <Lamp /> */}
