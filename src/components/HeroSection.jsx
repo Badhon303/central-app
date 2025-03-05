@@ -20,7 +20,7 @@ export default function HeroSection() {
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
       </div>
       <Container>
-        <div className="relative pt-36 ml-auto">
+        <div className="relative ml-auto">
           <div className="lg:w-2/3 text-center mx-auto">
             <h1 className="text-gray-900 text-balance dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
               Shaping a world with{" "}
