@@ -13,8 +13,8 @@ const links = [
   { to: "/newsAndEvents", label: "News And Events" },
   { to: "/regionalOffices", label: "Upcoming Regional Offices" },
   { to: "/careers", label: "Careers" },
-  { to: "/Contact", label: "Contact" },
-  { to: "/Enquiry", label: "Enquiry" },
+  // { to: "/contact", label: "Contact" },
+  { to: "/enquiry", label: "Enquiry" },
 ]
 
 export default function Navbar() {
@@ -63,7 +63,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 w-full z-40 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
