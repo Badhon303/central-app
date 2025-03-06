@@ -35,7 +35,7 @@ export function CustomerSection() {
         </div>
 
         {/* customer logos slider */}
-        <InfiniteSlider durationOnHover={75} gap={24} className={"py-10"}>
+        <InfiniteSlider durationOnHover={75} gap={100} className={"py-10"}>
           <img
             src="/logos/customers/ACI.jpg"
             alt="Dean blunt - Black Metal 2"
