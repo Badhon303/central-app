@@ -1,5 +1,4 @@
 import Image from "next/image"
-
 import Container from "@/components/Container"
 import pi from "@/app/images/pie.svg"
 
@@ -30,15 +29,19 @@ export default function Stats() {
         </div>
         <div className="md:7/12 lg:w-1/2">
           <h2 className="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
-            Nuxt development is carried out by passionate developers
+            Committed to Excellence in Pharmaceutical Supply Chain
           </h2>
           <p className="my-8 text-gray-600 dark:text-gray-300">
-            Nobis minus voluptatibus pariatur dignissimos libero quaerat iure
-            expedita at? Asperiores nemo possimus nesciunt dicta veniam
-            aspernatur quam mollitia. <br /> <br /> Vitae error, quaerat officia
-            delectus voluptatibus explicabo quo pariatur impedit, at
-            reprehenderit aliquam a ipsum quas voluptatem. Quo pariatur
-            asperiores eum amet.
+            At Central Scientific CO, we leverage cutting-edge technologies and
+            robust logistics to ensure the safe and efficient delivery of
+            pharmaceutical products worldwide. Our commitment to quality and
+            reliability drives us to exceed industry standards, providing
+            unparalleled service to our partners.
+            <br />
+            <br />
+            From raw material sourcing to final distribution, we maintain strict
+            quality control measures, ensuring product integrity and regulatory
+            compliance every step of the way.
           </p>
           <div className="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
             <div className="mt-8 flex gap-4 md:items-center">
@@ -58,10 +61,12 @@ export default function Stats() {
               </div>
               <div className="w-5/6">
                 <h3 className="font-semibold text-lg text-gray-700 dark:text-indigo-300">
-                  Chat Anytime
+                  24/7 Support
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Asperiores nemo possimus nesciunt quam mollitia.
+                  Our dedicated support team is available around the clock to
+                  assist with any inquiries, ensuring seamless operations and
+                  customer satisfaction.
                 </p>
               </div>
             </div>
@@ -82,10 +87,12 @@ export default function Stats() {
               </div>
               <div className="w-5/6">
                 <h3 className="font-semibold text-lg text-gray-700 dark:text-teal-300">
-                  Real Time Location
+                  Real-Time Tracking
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Asperiores nemo possimus nesciunt quam mollitia.
+                  Monitor your shipments every step of the way with our advanced
+                  tracking system, ensuring complete transparency and peace of
+                  mind.
                 </p>
               </div>
             </div>

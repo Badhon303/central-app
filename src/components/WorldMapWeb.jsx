@@ -29,39 +29,38 @@ export default function WorldMapWeb() {
         </p>
       </div>
       <WorldMap
-        dots={[
-          {
-            start: {
-              lat: 64.2008,
-              lng: -149.4937,
-            }, // Alaska (Fairbanks)
-            end: {
-              lat: 34.0522,
-              lng: -118.2437,
-            }, // Los Angeles
-          },
-          {
-            start: { lat: 64.2008, lng: -149.4937 }, // Alaska (Fairbanks)
-            end: { lat: -15.7975, lng: -47.8919 }, // Brazil (Brasília)
-          },
-          {
-            start: { lat: -15.7975, lng: -47.8919 }, // Brazil (Brasília)
-            end: { lat: 38.7223, lng: -9.1393 }, // Lisbon
-          },
-          {
-            start: { lat: 51.5074, lng: -0.1278 }, // London
-            end: { lat: 28.6139, lng: 77.209 }, // New Delhi
-          },
-          {
-            start: { lat: 28.6139, lng: 77.209 }, // New Delhi
-            end: { lat: 43.1332, lng: 131.9113 }, // Vladivostok
-          },
-          {
-            start: { lat: 28.6139, lng: 77.209 }, // New Delhi
-            end: { lat: -1.2921, lng: 36.8219 }, // Nairobi
-          },
-        ]}
-      />
+  dots={[
+    {
+      start: { lat: 1.3521, lng: 103.8198 }, // Singapore
+      end: { lat: 1.3521, lng: 103.8198 },
+    },
+    {
+      start: { lat: 48.1351, lng: 11.582 }, // Munich
+      end: { lat: 48.1351, lng: 11.582 },
+    },
+    {
+      start: { lat: 42.3601, lng: -71.0589 }, // Boston
+      end: { lat: 42.3601, lng: -71.0589 },
+    },
+    {
+      start: { lat: 19.076, lng: 72.8777 }, // Mumbai
+      end: { lat: 19.076, lng: 72.8777 },
+    },
+    {
+      start: { lat: 35.8617, lng: 104.1954 }, // China
+      end: { lat: 35.8617, lng: 104.1954 },
+    },
+    {
+      start: { lat: 36.2048, lng: 138.2529 }, // Japan
+      end: { lat: 36.2048, lng: 138.2529 },
+    },
+    {
+      start: { lat: 46.8182, lng: 8.2275 }, // Switzerland
+      end: { lat: 46.8182, lng: 8.2275 },
+    },
+  ]}
+/>
+
     </div>
   )
 }
