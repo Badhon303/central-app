@@ -1,40 +1,46 @@
-"use client"
-import WorldMap from "@/components/ui/world-map"
-import { motion } from "motion/react"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip"
+"use client";
+
+import WorldMap from "@/components/ui/world-map";
+import { motion } from "motion/react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 
 const countryConnections = [
   {
-    start: { lat: 1.3521, lng: 103.8198, name: "Singapore" }, // Singapore
-    end: { lat: 48.1351, lng: 11.582, name: "Munich" }, // Munich
+    start: { lat: 1.3521, lng: 103.8198, name: "Singapore", flag: "https://flagcdn.com/sg.svg" },
+    end: { lat: 48.1351, lng: 11.582, name: "Munich", flag: "https://flagcdn.com/de.svg" },
   },
   {
-    start: { lat: 48.1351, lng: 11.582, name: "Munich" }, // Munich
-    end: { lat: 42.3601, lng: -71.0589, name: "Boston" }, // Boston
+    start: { lat: 48.1351, lng: 11.582, name: "Munich", flag: "https://flagcdn.com/de.svg" },
+    end: { lat: 42.3601, lng: -71.0589, name: "Boston", flag: "https://flagcdn.com/us.svg" },
   },
   {
-    start: { lat: 42.3601, lng: -71.0589, name: "Boston" }, // Boston
-    end: { lat: 19.076, lng: 72.8777, name: "Mumbai" }, // Mumbai
+    start: { lat: 42.3601, lng: -71.0589, name: "Boston", flag: "https://flagcdn.com/us.svg" },
+    end: { lat: 19.076, lng: 72.8777, name: "Mumbai", flag: "https://flagcdn.com/in.svg" },
   },
   {
-    start: { lat: 19.076, lng: 72.8777, name: "Mumbai" }, // Mumbai
-    end: { lat: 35.8617, lng: 104.1954, name: "China" }, // China
+    start: { lat: 19.076, lng: 72.8777, name: "Mumbai", flag: "https://flagcdn.com/in.svg" },
+    end: { lat: 35.8617, lng: 104.1954, name: "China", flag: "https://flagcdn.com/cn.svg" },
   },
   {
-    start: { lat: 35.8617, lng: 104.1954, name: "China" }, // China
-    end: { lat: 36.2048, lng: 138.2529, name: "Japan" }, // Japan
+    start: { lat: 35.8617, lng: 104.1954, name: "China", flag: "https://flagcdn.com/cn.svg" },
+    end: { lat: 36.2048, lng: 138.2529, name: "Japan", flag: "https://flagcdn.com/jp.svg" },
   },
   {
-    start: { lat: 36.2048, lng: 138.2529, name: "Japan" }, // Japan
-    end: { lat: 46.8182, lng: 8.2275, name: "Switzerland" }, // Switzerland
+    start: { lat: 36.2048, lng: 138.2529, name: "Japan", flag: "https://flagcdn.com/jp.svg" },
+    end: { lat: 46.8182, lng: 8.2275, name: "Switzerland", flag: "https://flagcdn.com/ch.svg" },
   },
   {
-    start: { lat: 46.8182, lng: 8.2275, name: "Switzerland" }, // Switzerland
-    end: { lat: 1.3521, lng: 103.8198, name: "Singapore" }, // Singapore
+    start: { lat: 46.8182, lng: 8.2275, name: "Switzerland", flag: "https://flagcdn.com/ch.svg" },
+    end: { lat: 1.3521, lng: 103.8198, name: "Singapore", flag: "https://flagcdn.com/sg.svg" },
   },
-]
+];
 
 export default function WorldMapWeb() {
+  // Sort connections by longitude
+  const sortedConnections = [...countryConnections].sort(
+    (a, b) => a.start.lng - b.start.lng
+  );
+
   return (
     <div className="py-20 dark:bg-gray-950 bg-white w-full">
       <div className="max-w-7xl mx-auto text-center">
@@ -43,7 +49,7 @@ export default function WorldMapWeb() {
           <span className="text-neutral-400">
             {"Connectivity".split("").map((word, index) => (
               <motion.span
-                key={index}
+                key={`connectivity-letter-${index}`}
                 className="inline-block"
                 initial={{ x: -10, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -62,31 +68,32 @@ export default function WorldMapWeb() {
       </div>
       <WorldMap
         dots={countryConnections.map((connection, index) => ({
+          key: `connection-dot-${index}`,
           start: { lat: connection.start.lat, lng: connection.start.lng },
           end: { lat: connection.end.lat, lng: connection.end.lng },
           tooltipContent: `${connection.start.name} to ${connection.end.name}`,
         }))}
       />
-      <div className="max-w-7xl mx-auto mt-8">
-        <ul className="text-neutral-500 text-sm md:text-lg">
-          {countryConnections.map((connection, index) => (
-            <TooltipProvider>
-            <Tooltip key={index}>
-              <TooltipTrigger>
-                <li>
-                  {connection.start.name} to {connection.end.name}
-                </li>
-              </TooltipTrigger>
-              <TooltipContent>
-                <span>
-                  {connection.start.name} to {connection.end.name}
-                </span>
-              </TooltipContent>
-            </Tooltip>
-            </TooltipProvider>
+      <div className="max-w-screen mx-auto mt-8">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+          {sortedConnections.map((connection, index) => (
+            <div
+              key={`connection-flag-${index}`}
+              className="flex flex-col items-center"
+            >
+              {/* Responsive Flag Sizes */}
+              <img
+                src={connection.start.flag}
+                alt={connection.start.name}
+                className="w-8 h-5 sm:w-16 sm:h-12"
+              />
+              <span className="text-[8px] sm:text-sm text-neutral-500 mt-2">
+                {connection.start.name}
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
-  )
+  );
 }

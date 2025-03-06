@@ -16,7 +16,7 @@ export default function Home() {
       <Features />
       <Stats />
       <Testimonials />
-      <CallToAction />
+      {/* <CallToAction /> */}
       <Blog />
       <WorldMapWeb />
     </div>

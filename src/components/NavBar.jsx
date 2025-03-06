@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
 import { useTheme } from "next-themes";
 
 const links = [
@@ -18,7 +17,6 @@ const links = [
 
 export default function Navbar() {
   const [isToggled, setIsToggled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -36,13 +34,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Hide navbar when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
 
       // Make navbar opaque after scrolling past a certain point
       if (currentScrollY > 50) {
@@ -62,18 +53,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-40 transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed top-0 left-0 w-full z-40 transition-transform duration-300 `}
     >
       <nav
         id="nav"
-        className={`group w-full bg-white/3 backdrop-blur-[3.1px]
+        className={`group w-full transition-all duration-300
           ${
             isScrolled
-              ? "border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
-              : ""
+              ? currentTheme === "dark"
+                ? "bg-gray-950 border-gray-800"
+                : "bg-white border-gray-200"
+              : "bg-transparent"
           }
+          ${isScrolled ? "border shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}
         `}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -86,8 +78,8 @@ export default function Navbar() {
               >
                 <div aria-hidden="true" className="flex space-x-1">
                   <img
-                    src="/logos/Central-Scientific-Logo.svg"
-                    className="w-36 bg-white/30 rounded-lg"
+                    src="/logos/csco.jpg"
+                    className="w-28 bg-white/30 rounded-lg"
                   />
                 </div>
               </Link>
@@ -119,7 +111,7 @@ export default function Navbar() {
                 isToggled ? "scale-100 opacity-100" : "scale-90 opacity-0"
               }`}
             >
-              <div className="w-full text-gray-500 dark:text-gray-200 lg:w-auto lg:pr-4 lg:pt-0">
+              <div className="w-full lg:w-auto lg:pr-4 lg:pt-0">
                 <div
                   id="links-group"
                   className="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm"
@@ -128,7 +120,30 @@ export default function Navbar() {
                     <Link
                       key={link.to}
                       href={link.to}
-                      className="hover:text-primary block transition hover:scale-110 dark:hover:text-gray-200 md:px-4"
+                      className={`block transition hover:scale-110 md:px-4
+                        ${
+                          isScrolled
+                            ? currentTheme === "dark"
+                              ? "text-white hover:text-primary"
+                              : "text-gray-800 hover:text-primary"
+                            : "text-gray-200 hover:text-primary"
+                        }
+                        ${
+                          !isScrolled && currentTheme === "dark"
+                            ? "dark:text-gray-200"
+                            : ""
+                        }
+                        ${
+                          isToggled && currentTheme === "light"
+                            ? "text-gray-800 hover:text-primary"
+                            : ""
+                        }
+                        ${
+                          isToggled && currentTheme === "dark"
+                            ? "text-gray-200 hover:text-primary"
+                            : ""
+                        }
+                      `}
                       onClick={toggleNavLinks}
                     >
                       <span>{link.label}</span>
@@ -138,7 +153,7 @@ export default function Navbar() {
               </div>
               <button
                 type="button"
-                className={`font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ${
+                className={`font-medium text-gray-200 rounded-full hover:text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ${
                   currentTheme === "dark" ? "hidden" : "block"
                 }`}
                 onClick={() => handleThemeChange("dark")}

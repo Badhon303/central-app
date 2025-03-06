@@ -84,7 +84,7 @@ export default function FAQSection() {
         <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto z-50">
         <Accordion
           type="single"
           collapsible

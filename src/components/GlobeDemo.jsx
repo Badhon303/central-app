@@ -59,12 +59,12 @@ export function GlobeDemo() {
         </div>
 
         {/* Partner logos grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 items-center">
           {partnerCountries.flatMap((country) =>
             country.partners.map((partner, idx) => (
-              <div key={`${country.name}-${idx}`} className="flex flex-col items-center cursor-pointer">
-                <div className="w-40 h-40 bg-white dark:bg-gray-800 rounded-lg shadow-md relative">
-                  {/* Country Flag */}
+              <div key={`${country.name}-${idx}`} className="flex flex-col items-center cursor-pointer w-48 h-48 sm:w-72 sm:h-72  mx-auto">
+                {/* Card */}
+                <div className="size-40 sm:w-48 sm:h-48 bg-white dark:bg-gray-800 rounded-lg shadow-md relative flex flex-col justify-center items-center p-4">
                   <ReactCountryFlag
                     countryCode={country.code}
                     svg
@@ -83,11 +83,12 @@ export function GlobeDemo() {
                     alt={`Logo`}
                     className="w-full h-full object-contain p-4"
                   />
+
                 </div>
-                {/* Name */}
-                <div className="text-center">
-                  <p className="text-[12px] text-gray-600 dark:text-gray-400 truncate max-w-full mt-2">{partner}</p>
-                </div>
+                                  {/* Name */}
+                                  <div className="text-center mt-2">
+                    <p className="text-sm text-gray-700 dark:text-gray-400 truncate max-w-full">{partner}</p>
+                  </div>
               </div>
             ))
           )}
