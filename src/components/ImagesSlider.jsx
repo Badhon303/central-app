@@ -14,7 +14,7 @@ export default function ImagesSlider() {
   return (
     <div>
       <Slider className="h-screen" images={images}>
-        <div className="flex flex-col sm:justify-between md:justify-center h-full mt-80 md:mt-0">
+        <div className="flex flex-col sm:justify-between md:justify-center h-full mt-80 md:mt-40">
           <motion.div
             initial={{
               opacity: 0,
@@ -30,10 +30,14 @@ export default function ImagesSlider() {
             className="z-50 flex flex-col"
           >
             <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-              The hero section slideshow <br /> nobody asked for
+            WELCOME TO CENTRAL
+            </motion.p>
+            <motion.p className="font-bold px-6 text-lg md:text-2xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+            By choosing Central, you are partnering with a young, dynamic, transparent and
+reliable company, run by professionals with extensive experience in the field.
             </motion.p>
           </motion.div>
-          <div className="absolute bottom-0 left-0 w-full z-50">
+          <div className="bottom-0 left-0 w-full z-50 flex flex-col">
             <CardHoverEffect />
             <AnimatedCard />
           </div>
