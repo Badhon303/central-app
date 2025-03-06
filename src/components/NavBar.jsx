@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
-import { useTheme } from "next-themes"
+import { useTheme } from "next-themes";
 
 const links = [
   { to: "/about", label: "About" },
@@ -13,53 +13,52 @@ const links = [
   { to: "/newsAndEvents", label: "News And Events" },
   { to: "/regionalOffices", label: "Upcoming Regional Offices" },
   { to: "/careers", label: "Careers" },
-  // { to: "/contact", label: "Contact" },
   { to: "/enquiry", label: "Enquiry" },
-]
+];
 
 export default function Navbar() {
-  const [isToggled, setIsToggled] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isToggled, setIsToggled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const { theme, systemTheme, setTheme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
+  const { theme, systemTheme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   const toggleNavLinks = () => {
-    setIsToggled(!isToggled)
-  }
+    setIsToggled(!isToggled);
+  };
 
   const handleThemeChange = (val) => {
-    setTheme(val)
-  }
+    setTheme(val);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       // Hide navbar when scrolling down, show when scrolling up
       if (currentScrollY > lastScrollY) {
-        setIsVisible(false)
+        setIsVisible(false);
       } else {
-        setIsVisible(true)
+        setIsVisible(true);
       }
 
       // Make navbar opaque after scrolling past a certain point
       if (currentScrollY > 50) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
 
-      setLastScrollY(currentScrollY)
-    }
+      setLastScrollY(currentScrollY);
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [lastScrollY])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
     <header
@@ -81,17 +80,16 @@ export default function Navbar() {
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-fit">
               <Link
-                href="/#home"
+                href="/"
                 aria-label="logo"
                 className="flex items-center space-x-2"
               >
                 <div aria-hidden="true" className="flex space-x-1">
-                  <div className="size-4 rounded-full bg-gray-900 dark:bg-white"></div>
-                  <div className="h-6 w-2 bg-primary"></div>
+                  <img
+                    src="/logos/Central-Scientific-Logo.svg"
+                    className="w-36 bg-white/30 rounded-lg"
+                  />
                 </div>
-                <span className="text-2xl font-bold text-gray-900 dark:text-white">
-                  Central
-                </span>
               </Link>
               <button
                 aria-label="hamburger"
@@ -100,12 +98,12 @@ export default function Navbar() {
                 onClick={toggleNavLinks}
               >
                 <div
-                  className={`m-auto h-0.5 w-5 rounded bg-gray-950 transition duration-300 dark:bg-white origin-top ${
+                  className={`m-auto h-0.5 w-5 rounded transition duration-300 bg-white origin-top ${
                     isToggled ? "rotate-45 translate-y-1.5" : ""
                   }`}
                 ></div>
                 <div
-                  className={`m-auto mt-2 h-0.5 w-5 rounded bg-gray-950 transition duration-300 dark:bg-white origin-bottom ${
+                  className={`m-auto mt-2 h-0.5 w-5 rounded transition duration-300 bg-white origin-bottom ${
                     isToggled ? "-rotate-45 -translate-y-1" : ""
                   }`}
                 ></div>
@@ -199,5 +197,5 @@ export default function Navbar() {
         </div>
       </nav>
     </header>
-  )
+  );
 }

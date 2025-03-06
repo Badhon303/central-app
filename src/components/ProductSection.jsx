@@ -184,10 +184,6 @@ export default function ProductSection() {
                     </motion.div>
                   ))}
                 </div>
-                
-                {/* <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400 italic text-center">
-                  centralscientificcompany
-                </div> */}
               </motion.div>
             )
           ))}
