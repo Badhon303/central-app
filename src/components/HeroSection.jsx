@@ -136,6 +136,7 @@ export default function HeroSection() {
                   reimagination.
                 </span>
               </h1>
+              <div className="mx-auto md:mx-0 mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
               <p className="mt-8 text-gray-700 dark:text-gray-300">
                 Our journey begun as a trading company in supplying to the
                 Scientific Research Institutes and Private organisations in
@@ -143,7 +144,6 @@ export default function HeroSection() {
                 achieving to be recognised as a leading supplier of Scientific
                 Equipment's' throughout our journey which spans over 30 years.
               </p>
-              <div className="mx-auto md:mx-0 mt-4 h-1 w-24 bg-primary rounded-full"></div>
 
               <div className="mt-16 flex flex-wrap justify-center lg:justify-start gap-y-4 gap-x-6">
                 <a

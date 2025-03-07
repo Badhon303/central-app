@@ -21,7 +21,7 @@ export default function AboutSection() {
               About{" "}
               <span className="text-primary dark:text-white">The Company</span>
             </h2>
-            <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-32  bg-primary rounded-full"></div>
           </div>
 
           {/* Who We Are - Directly under the title */}

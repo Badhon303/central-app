@@ -3,7 +3,7 @@ import Container from "@/components/Container"
 export default function Features() {
   return (
     <Container>
-      <div className="md:w-2/3 lg:w-1/2">
+      <div className="md:w-2/3 lg:w-3/4 mx-auto">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -17,10 +17,10 @@ export default function Features() {
           />
         </svg>
 
-        <h2 className="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl">
+        <h2 className="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2">
           A technology-first approach to scientific innovation
         </h2>
-        <p className="text-gray-600 dark:text-gray-300">
+        <p className="text-gray-600 dark:text-gray-300 text-center">
           At Central Scientific CO, we combine cutting-edge technology with
           groundbreaking research to deliver solutions that drive progress in
           science and industry. Our features are designed to empower

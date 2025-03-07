@@ -50,7 +50,7 @@ export function GlobeDemo() {
       <motion.div className="relative container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Our <span className="text-primary dark:text-white">Global Partners</span></h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
         </div>
 
         {/* Globe component */}

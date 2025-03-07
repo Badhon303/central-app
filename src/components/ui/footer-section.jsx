@@ -21,17 +21,16 @@ import {
   Twitter,
 } from "lucide-react";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
 
 function Footerdemo() {
-  const [isDarkMode, setIsDarkMode] = React.useState(true);
+  const { theme, systemTheme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkMode]);
+  const handleThemeChange = (val) => {
+    setTheme(val);
+  };
+
 
   return (
     <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
@@ -45,23 +44,26 @@ function Footerdemo() {
               Contact us anytime if you have any question or interest
             </p>
             <form className="relative">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 backdrop-blur-sm"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105"
-              >
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Subscribe</span>
-              </Button>
+              <div className="flex items-center max-w-sm">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-grow pr-12 backdrop-blur-sm"
+                />
+                <Button
+                  type="submit"
+                  size="icon"
+                  className="ml-2 h-8 w-8 rounded-full bg-primary text-primary-foreground hover:bg-secondary transition-transform hover:scale-105"
+                >
+                  <Send className="h-4 w-4" />
+                  <span className="sr-only">Subscribe</span>
+                </Button>
+              </div>
             </form>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>
-          <div className="lg:mx-auto">
+
+          <div className="">
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
               <a
@@ -208,8 +210,11 @@ function Footerdemo() {
               <Sun className="h-4 w-4" />
               <Switch
                 id="dark-mode"
-                checked={isDarkMode}
-                onCheckedChange={setIsDarkMode}
+                className="border-2"
+                checked={currentTheme === "dark"}
+                onCheckedChange={() =>
+                  handleThemeChange(currentTheme === "dark" ? "light" : "dark")
+                }
               />
               <Moon className="h-4 w-4" />
               <Label htmlFor="dark-mode" className="sr-only">
