@@ -18,7 +18,7 @@ export default function WhatsNew() {
         className="flex flex-col md:flex-row-reverse items-center justify-between mb-8"
       >
         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0">
-          What's <span className="text-primary">New</span>
+          What's New
         </h3>
         <div className="h-1 w-24 bg-primary rounded-full md:hidden"></div>
       </motion.div>

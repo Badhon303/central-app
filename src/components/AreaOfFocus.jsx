@@ -34,7 +34,7 @@ const AreaOfFocusItem = ({ item, index }) => (
         {item.title}
       </h4>
       <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
-      <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+      {/* <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
         <a
           href="#"
           className="inline-flex items-center text-sm font-medium"
@@ -56,7 +56,7 @@ const AreaOfFocusItem = ({ item, index }) => (
             ></path>
           </svg>
         </a>
-      </div>
+      </div> */}
     </div>
   </motion.div>
 );
@@ -99,7 +99,7 @@ export default function AreaOfFocus() {
         className="flex flex-col md:flex-row items-center justify-between mb-8"
       >
         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0">
-          Our Area <span className="text-primary">of Focus</span>
+          Our Area of Focus
         </h3>
         <div className="h-1 w-24 bg-primary rounded-full md:hidden"></div>
       </motion.div>

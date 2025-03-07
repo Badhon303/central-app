@@ -126,7 +126,6 @@ export default function ProductSection() {
         <div className="mt-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">A Closer Look</h2>
-            <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
               Our comprehensive range of pharmaceutical APIs
             </p>
@@ -139,7 +138,7 @@ export default function ProductSection() {
                 key={letter}
                 className={`cursor-pointer font-bold px-3 py-2 rounded-full ${
                   selectedLetter === letter 
-                    ? "text-blue-600 text-4xl" 
+                    ? "text-secondary text-4xl" 
                     : " dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-lg transition-all duration-200" 
                 }`}
                 onClick={() => handleLetterClick(letter)}
@@ -162,7 +161,7 @@ export default function ProductSection() {
                 className="w-full"
               >
                 <div className="flex items-center mb-8 px-2">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-3xl font-bold">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white text-3xl font-bold">
                     {letter}
                   </div>
                   <div className="ml-4 flex-1 border-b-2 border-gray-200 dark:border-gray-700 pb-2">
@@ -179,7 +178,7 @@ export default function ProductSection() {
                       transition={{ duration: 0.3, delay: idx * 0.02 }}
                       className="flex items-start"
                     >
-                      <div className="w-3 h-3 rounded-full bg-blue-500 mt-2 mr-3 flex-shrink-0"></div>
+                      <div className="w-3 h-3 rounded-full bg-secondary mt-2 mr-3 flex-shrink-0"></div>
                       <span className="text-gray-700 dark:text-gray-300 text-lg">{product}</span>
                     </motion.div>
                   ))}

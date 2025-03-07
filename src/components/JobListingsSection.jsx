@@ -87,7 +87,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("all")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "all"
-                ? "bg-primary text-white"
+                ? "bg-secondary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -97,7 +97,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("marketing")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "marketing"
-                ? "bg-primary text-white"
+                ? "bg-secondary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -107,7 +107,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("finance")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "finance"
-                ? "bg-primary text-white"
+                ? "bg-secondary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -117,7 +117,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("product")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "product"
-                ? "bg-primary text-white"
+                ? "bg-secondary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -157,7 +157,7 @@ export default function JobListingsSection() {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center mb-2">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-3">
                       <Briefcase size={20} />
                     </div>
                     <h4 className="text-xl font-bold text-gray-800 dark:text-white">
@@ -184,7 +184,7 @@ export default function JobListingsSection() {
                   <div className="flex gap-2">
                     <Badge
                       variant="outline"
-                      className="bg-green-50 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-400 dark:border-green-800"
+                      className="bg-secondary/10 text-secondary border-secondary dark:bg-secondary-900/30 dark:text-secondary dark:border-secondary"
                     >
                       {job.type}
                     </Badge>
