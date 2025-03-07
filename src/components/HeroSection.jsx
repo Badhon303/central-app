@@ -173,6 +173,7 @@ export default function HeroSection() {
                   width={500}
                   height={500}
                   className="w-full h-auto"
+                  unoptimized={true}
                 />
               </div>
             </div>
