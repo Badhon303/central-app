@@ -1,7 +1,7 @@
 import Marquee from "react-fast-marquee";
 import Container from "@/components/Container";
 import Image from "next/image";
-import microsoft from "@/app/images/clients/microsoft.svg";
+import gif from "../app/images/clients/Square.gif";
 import airbnb from "@/app/images/clients/airbnb.svg";
 import google from "@/app/images/clients/google.svg";
 import ge from "@/app/images/clients/ge.svg";
@@ -168,7 +168,7 @@ export default function HeroSection() {
             <div className="w-4/5 lg:w-2/5">
               <div className="rounded-2xl overflow-hidden shadow-xl bg-white dark:bg-gray-800">
                 <img
-                  src="/logos/gif/square.gif"
+                  src={"/logos/gif/Square.gif"}
                   alt="Hero Animation"
                   width={500}
                   height={500}
