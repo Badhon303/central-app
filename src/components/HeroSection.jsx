@@ -143,6 +143,8 @@ export default function HeroSection() {
                 achieving to be recognised as a leading supplier of Scientific
                 Equipment's' throughout our journey which spans over 30 years.
               </p>
+              <div className="mx-auto md:mx-0 mt-4 h-1 w-24 bg-primary rounded-full"></div>
+
               <div className="mt-16 flex flex-wrap justify-center lg:justify-start gap-y-4 gap-x-6">
                 <a
                   href="#"

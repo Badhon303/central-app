@@ -99,9 +99,9 @@ export default function FAQSection() {
               <AccordionTrigger className="hover:no-underline text-left group">
                 <div className="flex items-center space-x-4">
                   <HelpCircle
-                    className={`h-6 w-6 text-primary/70 transition-all duration-300`}
+                    className={`h-6 w-6 text-secondary/70 transition-all duration-300`}
                   />
-                  <span className="text-lg font-medium text-gray-800 dark:text-white group-hover:text-primary transition-colors">
+                  <span className="text-lg font-medium text-gray-800 dark:text-white group-hover:text-secondary transition-colors">
                     {faq.question}
                   </span>
                 </div>
@@ -124,7 +124,7 @@ export default function FAQSection() {
       <div className="text-center mt-12">
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant="outline" size="lg" className="group">
+            <Button variant="outline" size="lg" className="group border-secondary">
               Have a Unique Question?
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>

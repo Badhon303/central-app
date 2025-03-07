@@ -90,12 +90,28 @@ export default function Navbar() {
                 onClick={toggleNavLinks}
               >
                 <div
-                  className={`m-auto h-0.5 w-5 rounded transition duration-300 bg-white origin-top ${
+                  className={`m-auto h-0.5 w-5 rounded transition duration-300 ${
+                    currentTheme === "dark"
+                      ? "bg-white"
+                      : isToggled
+                      ? "bg-gray-800"
+                      : isScrolled
+                      ? "bg-gray-800"
+                      : "bg-white"
+                  } origin-top ${
                     isToggled ? "rotate-45 translate-y-1.5" : ""
                   }`}
                 ></div>
                 <div
-                  className={`m-auto mt-2 h-0.5 w-5 rounded transition duration-300 bg-white origin-bottom ${
+                  className={`m-auto mt-2 h-0.5 w-5 rounded transition duration-300 ${
+                    currentTheme === "dark"
+                      ? "bg-white"
+                      : isToggled
+                      ? "bg-gray-800"
+                      : isScrolled
+                      ? "bg-gray-800"
+                      : "bg-white"
+                  } origin-bottom ${
                     isToggled ? "-rotate-45 -translate-y-1" : ""
                   }`}
                 ></div>
@@ -155,6 +171,15 @@ export default function Navbar() {
                 type="button"
                 className={`font-medium text-gray-200 rounded-full hover:text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ${
                   currentTheme === "dark" ? "hidden" : "block"
+                }
+                ${
+                  currentTheme === "dark"
+                    ? "text-white hover:text-gray-800"
+                    : isToggled
+                    ? "text-gray-800 hover:text-gray-800"
+                    : isScrolled
+                    ? "text-gray-800 hover:text-gray-800"
+                    : "text-gray-200 hover:text-gray-800"
                 }`}
                 onClick={() => handleThemeChange("dark")}
               >
