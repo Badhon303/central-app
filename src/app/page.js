@@ -11,12 +11,9 @@ export default function Home() {
   return (
     <div className="space-y-40 mb-40">
       <ImagesSlider />
-      {/* <FloatingDockWeb /> */}
       <HeroSection />
       <Features />
-      <Stats />
       <Testimonials />
-      {/* <CallToAction /> */}
       <Blog />
       <WorldMapWeb />
     </div>

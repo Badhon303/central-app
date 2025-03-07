@@ -24,7 +24,7 @@ export default function CareersSection() {
             Join Our{" "}
             <span className="text-primary dark:text-white">Team</span>
           </h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
           <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Be part of a team that's transforming the pharmaceutical industry
             with innovation, integrity, and excellence.

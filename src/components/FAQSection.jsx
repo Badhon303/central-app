@@ -77,14 +77,21 @@ export default function FAQSection() {
 
   return (
     <div className="mb-16">
+            <div
+        aria-hidden="true"
+        className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20 dark:opacity-10"
+      >
+        <div className="blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-blue-700"></div>
+        <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+      </div>
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
           Frequently <span className="text-primary">Asked Questions</span>
         </h2>
-        <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+        <div className="mx-auto mt-4 h-1  w-32 md:w-48 bg-primary rounded-full"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto z-50">
+      <div className="max-w-4xl mx-auto">
         <Accordion
           type="single"
           collapsible
@@ -99,9 +106,9 @@ export default function FAQSection() {
               <AccordionTrigger className="hover:no-underline text-left group">
                 <div className="flex items-center space-x-4">
                   <HelpCircle
-                    className={`h-6 w-6 text-secondary/70 transition-all duration-300`}
+                    className={`h-6 w-6 text-primary/70 transition-all duration-300`}
                   />
-                  <span className="text-lg font-medium text-gray-800 dark:text-white group-hover:text-secondary transition-colors">
+                  <span className="text-lg font-medium text-gray-800 dark:text-white group-hover:scale-105 duration-200 transition-all">
                     {faq.question}
                   </span>
                 </div>
@@ -124,14 +131,14 @@ export default function FAQSection() {
       <div className="text-center mt-12">
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant="outline" size="lg" className="group border-secondary">
+            <Button variant="outline" size="lg" className="group border-primary hover:border-primary/70 border-2 rounded-lg">
               Have a Unique Question?
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5 text-primary group-hover:translate-x-1 transition-transform" />
             </Button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent className="bg-white">
             <DialogHeader>
-              <DialogTitle>Ask Your Specific Question</DialogTitle>
+              <DialogTitle className="text-center">Ask Your Specific Question</DialogTitle>
             </DialogHeader>
             <form onSubmit={handleUniqueQuestionSubmit} className="space-y-4">
               <Input

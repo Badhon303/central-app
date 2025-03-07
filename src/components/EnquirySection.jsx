@@ -7,7 +7,7 @@ import ContactSection from "./ContactSection";
 
 export default function EnquirySection() {
   return (
-    <div className="relative py-16 md:py-24">
+    <div className="py-16 md:py-24">
       <div
         aria-hidden="true"
         className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20 dark:opacity-10"
@@ -17,7 +17,7 @@ export default function EnquirySection() {
       </div>
 
       <Container>
-        <FAQSection />
+        <FAQSection/>
         <ContactSection />
       </Container>
     </div>

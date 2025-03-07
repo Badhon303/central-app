@@ -34,14 +34,11 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Make navbar opaque after scrolling past a certain point
       if (currentScrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
-
       setLastScrollY(currentScrollY);
     };
 
@@ -53,20 +50,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-40 transition-transform duration-300 `}
+      className={`fixed top-0 left-0 w-full z-30 transition-transform duration-300`}
     >
       <nav
         id="nav"
-        className={`group w-full transition-all duration-300
-          ${
-            isScrolled
-              ? currentTheme === "dark"
-                ? "bg-gray-950 border-gray-800"
-                : "bg-white border-gray-200"
-              : "bg-transparent"
-          }
-          ${isScrolled ? "border shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}
-        `}
+        className={`group w-full transition-all duration-300 ${
+          isScrolled
+            ? currentTheme === "dark"
+              ? "bg-gray-950 border-gray-800"
+              : "bg-white border-gray-200"
+            : "bg-transparent"
+        } ${isScrolled ? "border shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
@@ -86,15 +80,13 @@ export default function Navbar() {
               <button
                 aria-label="hamburger"
                 id="hamburger"
-                className="relative -mr-6 p-6 active:scale-95 duration-300 lg:hidden"
+                className="relative -mr-6 p-6 lg:hidden"
                 onClick={toggleNavLinks}
               >
                 <div
                   className={`m-auto h-0.5 w-5 rounded transition duration-300 ${
                     currentTheme === "dark"
                       ? "bg-white"
-                      : isToggled
-                      ? "bg-gray-800"
                       : isScrolled
                       ? "bg-gray-800"
                       : "bg-white"
@@ -106,8 +98,6 @@ export default function Navbar() {
                   className={`m-auto mt-2 h-0.5 w-5 rounded transition duration-300 ${
                     currentTheme === "dark"
                       ? "bg-white"
-                      : isToggled
-                      ? "bg-gray-800"
                       : isScrolled
                       ? "bg-gray-800"
                       : "bg-white"
@@ -118,13 +108,13 @@ export default function Navbar() {
               </button>
             </div>
             <div
-              className={`fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-gray-950/70 lg:hidden ${
-                isToggled ? "scale-y-100" : ""
+              className={`fixed inset-0 h-screen w-screen origin-bottom bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-gray-950/70 lg:hidden ${
+                isToggled ? "scale-y-100 z-10" : "scale-y-0 hidden"
               }`}
             ></div>
             <div
-              className={`absolute top-full left-0 z-20 w-full flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:relative lg:flex lg:w-fit lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent ${
-                isToggled ? "scale-100 opacity-100" : "scale-90 opacity-0"
+              className={`absolute top-full left-0 w-full flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:relative lg:flex lg:w-fit lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:dark:bg-transparent ${
+                isToggled ? "opacity-100 z-20" : "hidden"
               }`}
             >
               <div className="w-full lg:w-auto lg:pr-4 lg:pt-0">
@@ -136,30 +126,24 @@ export default function Navbar() {
                     <Link
                       key={link.to}
                       href={link.to}
-                      className={`block transition hover:scale-110 md:px-4
-                        ${
-                          isScrolled
-                            ? currentTheme === "dark"
-                              ? "text-white hover:text-primary"
-                              : "text-gray-800 hover:text-primary"
-                            : "text-gray-200 hover:text-primary"
-                        }
-                        ${
-                          !isScrolled && currentTheme === "dark"
-                            ? "dark:text-gray-200"
-                            : ""
-                        }
-                        ${
-                          isToggled && currentTheme === "light"
+                      className={`block transition md:px-4
+                        lg:${
+                          currentTheme === "dark"
+                            ? "text-white hover:text-primary"
+                            : isScrolled
                             ? "text-gray-800 hover:text-primary"
-                            : ""
+                            : "text-white hover:text-primary"
                         }
                         ${
-                          isToggled && currentTheme === "dark"
-                            ? "text-gray-200 hover:text-primary"
-                            : ""
+                          currentTheme === "dark"
+                            ? "lg:dark:text-white"
+                            : "lg:dark:text-gray-200"
                         }
-                      `}
+                        ${
+                          currentTheme === "dark"
+                            ? "text-white dark:text-white"
+                            : "text-gray-800"
+                        } lg:text-inherit`}
                       onClick={toggleNavLinks}
                     >
                       <span>{link.label}</span>
@@ -169,17 +153,14 @@ export default function Navbar() {
               </div>
               <button
                 type="button"
-                className={`font-medium text-gray-200 rounded-full hover:text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ${
+                className={`font-medium rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ${
                   currentTheme === "dark" ? "hidden" : "block"
-                }
-                ${
+                } ${
                   currentTheme === "dark"
-                    ? "text-white hover:text-gray-800"
-                    : isToggled
-                    ? "text-gray-800 hover:text-gray-800"
+                    ? "text-white lg:text-white"
                     : isScrolled
-                    ? "text-gray-800 hover:text-gray-800"
-                    : "text-gray-200 hover:text-gray-800"
+                    ? "text-gray-800"
+                    : "text-gray-800 lg:text-white"
                 }`}
                 onClick={() => handleThemeChange("dark")}
               >
@@ -202,7 +183,7 @@ export default function Navbar() {
               </button>
               <button
                 type="button"
-                className={`block font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ${
+                className={`block font-medium rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ${
                   currentTheme === "dark" ? "block" : "hidden"
                 }`}
                 onClick={() => handleThemeChange("light")}

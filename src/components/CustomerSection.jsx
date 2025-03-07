@@ -24,7 +24,7 @@ export function CustomerSection() {
             </span>
           </h2>
 
-          <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 my-4 max-w-[600px] mx-auto">
             Trusted by leading organizations for our expertise and reliability,
             we strive to build lasting relationships with our valued customers.

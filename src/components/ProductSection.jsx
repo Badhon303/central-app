@@ -77,7 +77,7 @@ export default function ProductSection() {
       <motion.div className="relative container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Our <span className="text-primary dark:text-white">Product Portfolio</span></h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
           <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
             We take great pride in representing the world's foremost manufacturers in the
             pharmaceutical industry. Our partnership with these industry leaders
@@ -138,7 +138,7 @@ export default function ProductSection() {
                 key={letter}
                 className={`cursor-pointer font-bold px-3 py-2 rounded-full ${
                   selectedLetter === letter 
-                    ? "text-secondary text-4xl" 
+                    ? "text-primary text-4xl" 
                     : " dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-lg transition-all duration-200" 
                 }`}
                 onClick={() => handleLetterClick(letter)}
@@ -178,7 +178,7 @@ export default function ProductSection() {
                       transition={{ duration: 0.3, delay: idx * 0.02 }}
                       className="flex items-start"
                     >
-                      <div className="w-3 h-3 rounded-full bg-secondary mt-2 mr-3 flex-shrink-0"></div>
+                      <div className="w-3 h-3 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
                       <span className="text-gray-700 dark:text-gray-300 text-lg">{product}</span>
                     </motion.div>
                   ))}

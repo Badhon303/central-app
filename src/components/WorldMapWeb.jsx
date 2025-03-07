@@ -75,7 +75,7 @@ export default function WorldMapWeb() {
         }))}
       />
       <div className="max-w-screen mx-auto mt-8">
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-24">
           {sortedConnections.map((connection, index) => (
             <div
               key={`connection-flag-${index}`}
