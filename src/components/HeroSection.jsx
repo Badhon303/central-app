@@ -167,13 +167,12 @@ export default function HeroSection() {
             
             <div className="w-4/5 lg:w-2/5">
               <div className="rounded-2xl overflow-hidden shadow-xl bg-white dark:bg-gray-800">
-                <Image
+                <img
                   src="/logos/gif/square.gif"
                   alt="Hero Animation"
                   width={500}
                   height={500}
                   className="w-full h-auto"
-                  unoptimized={true}
                 />
               </div>
             </div>
