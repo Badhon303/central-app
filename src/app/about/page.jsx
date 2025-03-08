@@ -1,11 +1,12 @@
-import Container from "@/components/Container"
-import Lamp from "@/components/Lamp"
-import { Button } from "@/components/ui/button"
+import AboutSection from "@/components/AboutSection"
+import { BackgroundBoxesDemo } from "@/components/BackgroundBox"
 
 export default function About() {
   return (
     <div className="">
-      <Lamp />
+      {/* <Lamp /> */}
+      <BackgroundBoxesDemo title={"About"}/>
+      <AboutSection/>
     </div>
   )
 }

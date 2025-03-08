@@ -1,91 +1,133 @@
 "use client";
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
+import * as React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
+} from "@/components/ui/tooltip";
+import {
+  Facebook,
+  Globe,
+  Instagram,
+  Linkedin,
+  Moon,
+  Send,
+  Sun,
+  Twitter,
+} from "lucide-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
 
 function Footerdemo() {
-  const [isDarkMode, setIsDarkMode] = React.useState(true)
-  const [isChatOpen, setIsChatOpen] = React.useState(false)
+  const { theme, systemTheme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
-  }, [isDarkMode])
+  const handleThemeChange = (val) => {
+    setTheme(val);
+  };
+
 
   return (
-    (<footer
-      className="relative border-t bg-background text-foreground transition-colors duration-300">
+    <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Stay Connected</h2>
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+          <div className="relative lg:col-span-2">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight">
+              Stay Connected
+            </h2>
             <p className="mb-6 text-muted-foreground">
-              Join our newsletter for the latest updates and exclusive offers.
+              Contact us anytime if you have any question or interest
             </p>
             <form className="relative">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 backdrop-blur-sm" />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105">
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Subscribe</span>
-              </Button>
+              <div className="flex items-center max-w-sm">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-grow pr-12 backdrop-blur-sm"
+                />
+                <Button
+                  type="submit"
+                  size="icon"
+                  className="ml-2 h-8 w-8 rounded-full bg-primary text-primary-foreground hover:bg-secondary transition-transform hover:scale-105"
+                >
+                  <Send className="h-4 w-4" />
+                  <span className="sr-only">Subscribe</span>
+                </Button>
+              </div>
             </form>
-            <div
-              className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
+            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>
-          <div>
+
+          <div className="">
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a
+                href="/"
+                className="block transition-colors hover:text-primary"
+              >
                 Home
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a
+                href="/about"
+                className="block transition-colors hover:text-primary"
+              >
                 About Us
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
-                Services
+              <a
+                href="/customers"
+                className="block transition-colors hover:text-primary"
+              >
+                Customers
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a
+                href="/product"
+                className="block transition-colors hover:text-primary"
+              >
                 Products
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
-                Contact
+              <a
+                href="newsAndEvents"
+                className="block transition-colors hover:text-primary"
+              >
+                News and Events
               </a>
             </nav>
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-            <address className="space-y-2 text-sm not-italic">
-              <p>123 Innovation Street</p>
-              <p>Tech City, TC 12345</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: hello@example.com</p>
-            </address>
+            <div className="flex flex-col gap-2">
+              <address className="space-y-2 text-sm not-italic">
+                <h4 className="font-semibold">Registered Address</h4>
+                <p>33/3 Shahid Nazrul Islam Road</p>
+                <p>Dhaka - 1203, Bangladesh</p>
+              </address>
+              <address className="space-y-2 text-sm not-italic">
+                <h4 className="font-semibold">Corporate Office</h4>
+                <p>539/A Baridhara DOHS</p>
+                <p>Dhaka - 1206, Bangladesh</p>
+              </address>
+              <div className="flex items-center gap-2 cursor-pointer">
+                <Globe className="h-4 w-4" />
+                <p>www.central-bd.com</p>
+              </div>
+            </div>
           </div>
           <div className="relative">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
-            <div className="mb-6 flex space-x-4">
+            <div className="mb-6 flex space-x-1">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                    >
                       <Facebook className="h-4 w-4" />
                       <span className="sr-only">Facebook</span>
                     </Button>
@@ -98,7 +140,11 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                    >
                       <Twitter className="h-4 w-4" />
                       <span className="sr-only">Twitter</span>
                     </Button>
@@ -111,7 +157,11 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                    >
                       <Instagram className="h-4 w-4" />
                       <span className="sr-only">Instagram</span>
                     </Button>
@@ -124,7 +174,11 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                    >
                       <Linkedin className="h-4 w-4" />
                       <span className="sr-only">LinkedIn</span>
                     </Button>
@@ -134,10 +188,34 @@ function Footerdemo() {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                    >
+                      <IconBrandWhatsapp className="h-4 w-4" />
+                      <span className="sr-only">WhatsApp</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Connect us on WhatsApp</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
             <div className="flex items-center space-x-2">
               <Sun className="h-4 w-4" />
-              <Switch id="dark-mode" checked={isDarkMode} onCheckedChange={setIsDarkMode} />
+              <Switch
+                id="dark-mode"
+                className="border-2"
+                checked={currentTheme === "dark"}
+                onCheckedChange={() =>
+                  handleThemeChange(currentTheme === "dark" ? "light" : "dark")
+                }
+              />
               <Moon className="h-4 w-4" />
               <Label htmlFor="dark-mode" className="sr-only">
                 Toggle dark mode
@@ -145,10 +223,9 @@ function Footerdemo() {
             </div>
           </div>
         </div>
-        <div
-          className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 Your Company. All rights reserved.
+            © 2025 CSCO. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
             <a href="#" className="transition-colors hover:text-primary">
@@ -163,8 +240,8 @@ function Footerdemo() {
           </nav>
         </div>
       </div>
-    </footer>)
+    </footer>
   );
 }
 
-export { Footerdemo }
+export { Footerdemo };
