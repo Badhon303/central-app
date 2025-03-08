@@ -25,7 +25,7 @@ export function GlobeDemo() {
     "GLOBE QUIMICA": "/logos/globe-cumica.png",
     "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/zhunhai.png",
     "ALPHA GROUP": "/logos/alpha-group.jpeg",
-    "KOEL": "/logos/koel.png",
+    "KOEL": "/logos/KOEL.png",
     "RC ENTERPRISE": "/logos/RC-enterprises.jpg",
     "BOROSIL SCIENTIFIC LIMITED": "/logos/borosil.jpeg",
     "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/svam.jpeg",
