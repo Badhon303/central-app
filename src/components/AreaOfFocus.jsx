@@ -101,7 +101,6 @@ export default function AreaOfFocus() {
         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0">
           Our Area of Focus
         </h3>
-        <div className="h-1 w-24 bg-primary rounded-full md:hidden"></div>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

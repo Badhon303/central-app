@@ -15,6 +15,7 @@ import {
   Globe,
   Instagram,
   Linkedin,
+  Mail,
   Moon,
   Send,
   Sun,
@@ -31,40 +32,49 @@ function Footerdemo() {
     setTheme(val);
   };
 
-
   return (
     <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-          <div className="relative lg:col-span-2">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">
-              Stay Connected
-            </h2>
-            <p className="mb-6 text-muted-foreground">
-              Contact us anytime if you have any question or interest
-            </p>
-            <form className="relative">
-              <div className="flex items-center max-w-sm">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-grow pr-12 backdrop-blur-sm"
-                />
-                <Button
-                  type="submit"
-                  size="icon"
-                  className="ml-2 h-8 w-8 rounded-full bg-primary text-primary-foreground hover:bg-secondary transition-transform hover:scale-105"
-                >
-                  <Send className="h-4 w-4" />
-                  <span className="sr-only">Subscribe</span>
-                </Button>
-              </div>
-            </form>
-            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
-          </div>
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="relative">
+  {/* Logo */}
+  <div className="mb-6">
+    <img
+      src="/logos/csco.jpg"
+      alt="Central Scientific Company Logo"
+      className="w-28"
+    />
+  </div>
 
-          <div className="">
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+  {/* Punchy Description */}
+  <p className="mb-6 text-muted-foreground mr-20 sm:mr-0 sm:max-w-96">
+    Connecting world-class pharmaceuticals to the world, efficiently and
+    innovatively since 1990.
+  </p>
+
+  <a
+    href="https://www.central-bd.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
+  >
+    <Globe className="h-4 w-4" />
+    <p>www.central-bd.com</p>
+  </a>
+
+  <a
+    href="mailto:info@central-bd.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
+  >
+    <Mail className="h-4 w-4" />
+    <p>info@central-bd.com</p>
+  </a>
+</div>
+
+          <div className="md:ml-8">
+            <h3 className="mb-4 text-lg font-semibold ">Quick Links</h3>
             <nav className="space-y-2 text-sm">
               <a
                 href="/"
@@ -79,16 +89,28 @@ function Footerdemo() {
                 About Us
               </a>
               <a
+                href="/product"
+                className="block transition-colors hover:text-primary"
+              >
+                Products
+              </a>
+              <a
                 href="/customers"
                 className="block transition-colors hover:text-primary"
               >
                 Customers
               </a>
               <a
-                href="/product"
+                href="/globalPartners"
                 className="block transition-colors hover:text-primary"
               >
-                Products
+                Global Partners
+              </a>
+              <a
+                href="/careers"
+                className="block transition-colors hover:text-primary"
+              >
+                Careers
               </a>
               <a
                 href="newsAndEvents"
@@ -96,10 +118,16 @@ function Footerdemo() {
               >
                 News and Events
               </a>
+              <a
+                href="enquiry"
+                className="block transition-colors hover:text-primary"
+              >
+                Any Question?
+              </a>
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
+            <h3 className="mb-4 text-lg font-semibold">Find Us At</h3>
             <div className="flex flex-col gap-2">
               <address className="space-y-2 text-sm not-italic">
                 <h4 className="font-semibold">Registered Address</h4>
@@ -111,10 +139,6 @@ function Footerdemo() {
                 <p>539/A Baridhara DOHS</p>
                 <p>Dhaka - 1206, Bangladesh</p>
               </address>
-              <div className="flex items-center gap-2 cursor-pointer">
-                <Globe className="h-4 w-4" />
-                <p>www.central-bd.com</p>
-              </div>
             </div>
           </div>
           <div className="relative">
@@ -223,7 +247,7 @@ function Footerdemo() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
             © 2025 CSCO. All rights reserved.
           </p>

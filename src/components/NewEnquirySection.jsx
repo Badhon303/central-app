@@ -1,11 +1,7 @@
-// src/components/EnquirySection.jsx
-"use client";
-import React from "react";
-import Container from "@/components/Container";
-import FAQSection from "./FAQSection";
-import ContactSection from "./ContactSection";
+import React from 'react'
+import FAQSection from './FAQSection';
 
-export default function EnquirySection() {
+const NewEnquirySection = () => {
   return (
     <div className="relative py-16 md:py-24" id="about">
       <div
@@ -15,10 +11,11 @@ export default function EnquirySection() {
         <div className="blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-blue-700"></div>
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
       </div>
-      <Container className="relative z-10">
+      <div className='relative z-10'>
         <FAQSection />
-        <ContactSection />
-      </Container>
+      </div>
     </div>
   );
 }
+
+export default NewEnquirySection

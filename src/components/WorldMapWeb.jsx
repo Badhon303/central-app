@@ -29,10 +29,10 @@ const countryConnections = [
     start: { lat: 36.2048, lng: 138.2529, name: "Japan", flag: "https://flagcdn.com/jp.svg" },
     end: { lat: 46.8182, lng: 8.2275, name: "Switzerland", flag: "https://flagcdn.com/ch.svg" },
   },
-  {
-    start: { lat: 46.8182, lng: 8.2275, name: "Switzerland", flag: "https://flagcdn.com/ch.svg" },
-    end: { lat: 1.3521, lng: 103.8198, name: "Singapore", flag: "https://flagcdn.com/sg.svg" },
-  },
+  // {
+  //   start: { lat: 46.8182, lng: 8.2275, name: "Switzerland", flag: "https://flagcdn.com/ch.svg" },
+  //   end: { lat: 1.3521, lng: 103.8198, name: "Singapore", flag: "https://flagcdn.com/sg.svg" },
+  // },
 ];
 
 export default function WorldMapWeb() {
@@ -85,7 +85,7 @@ export default function WorldMapWeb() {
               <img
                 src={connection.start.flag}
                 alt={connection.start.name}
-                className="w-8 h-5 sm:w-16 sm:h-12"
+                className="w-8 h-5 sm:w-16 sm:h-12 border border-black/90 dark:border-gray-300 object-cover"
               />
               <span className="text-[8px] sm:text-sm text-neutral-500 mt-2">
                 {connection.start.name}

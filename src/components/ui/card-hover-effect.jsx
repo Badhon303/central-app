@@ -9,7 +9,7 @@ export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null)
 
   return (
-    <div className={cn("hidden lg:grid lg:grid-cols-5 py-10", className)}>
+    <div className={cn("hidden lg:grid lg:grid-cols-5 py-0", className)}>
       {items.map((item, idx) => (
         <Link
           href={item?.link}
@@ -72,7 +72,7 @@ export const CardDescription = ({ className, children }) => {
   return (
     <p
       className={cn(
-        "mt-6 text-black/70  dark:text-white/80 tracking-wide leading-relaxed text-sm",
+        "mt-4 text-black/70  dark:text-white/80 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

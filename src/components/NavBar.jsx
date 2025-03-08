@@ -57,10 +57,10 @@ export default function Navbar() {
         className={`group w-full transition-all duration-300 ${
           isScrolled
             ? currentTheme === "dark"
-              ? "bg-gray-950 border-gray-800"
-              : "bg-white border-gray-200"
+              ? "bg-gray-950 border-b border-gray-800"
+              : "bg-white border-b border-gray-200"
             : "bg-transparent"
-        } ${isScrolled ? "border shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}`}
+        } ${isScrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
@@ -92,6 +92,8 @@ export default function Navbar() {
                       : "bg-white"
                   } origin-top ${
                     isToggled ? "rotate-45 translate-y-1.5" : ""
+                  } ${
+                    isToggled && currentTheme !== "dark" ? "!bg-gray-800" : ""
                   }`}
                 ></div>
                 <div
@@ -103,6 +105,8 @@ export default function Navbar() {
                       : "bg-white"
                   } origin-bottom ${
                     isToggled ? "-rotate-45 -translate-y-1" : ""
+                  } ${
+                    isToggled && currentTheme !== "dark" ? "!bg-gray-800" : ""
                   }`}
                 ></div>
               </button>
@@ -113,7 +117,7 @@ export default function Navbar() {
               }`}
             ></div>
             <div
-              className={`absolute top-full left-0 w-full flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:relative lg:flex lg:w-fit lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:dark:bg-transparent ${
+              className={`absolute top-full left-0 w-full flex-col flex-wrap justify-end gap-6 rounded-3xl border-b border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 dark:border-b dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:relative lg:flex lg:w-fit lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:dark:bg-transparent ${
                 isToggled ? "opacity-100 z-20" : "hidden"
               }`}
             >
@@ -129,7 +133,7 @@ export default function Navbar() {
                       className={`block transition md:px-4
                         lg:${
                           currentTheme === "dark"
-                            ? "text-white hover:text-primary"
+                            ? "text-white dark:hover:text-primary"
                             : isScrolled
                             ? "text-gray-800 hover:text-primary"
                             : "text-white hover:text-primary"
@@ -160,7 +164,7 @@ export default function Navbar() {
                     ? "text-white lg:text-white"
                     : isScrolled
                     ? "text-gray-800"
-                    : "text-gray-800 lg:text-white"
+                    : "text-gray-800 lg:text-white lg:hover:text-gray-800"
                 }`}
                 onClick={() => handleThemeChange("dark")}
               >

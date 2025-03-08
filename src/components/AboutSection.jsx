@@ -44,7 +44,8 @@ export default function AboutSection() {
           {/* Enhanced Mission and Vision with more eye-catching design */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="relative overflow-hidden rounded-2xl shadow-xl group">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-purple-700/80 opacity-90 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
+              {/* Gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#375eca]/90 to-[#3b82f6]/90 opacity-95 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
 
               {/* Content */}
               <div className="relative p-10 z-10 h-full flex flex-col">
@@ -89,9 +90,10 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Vision section - more eye-catching */}
+            {/* Vision Card */}
             <div className="relative overflow-hidden rounded-2xl shadow-xl group">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-purple-700/80 opacity-90 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
+              {/* Gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#375eca]/90 to-[#3b82f6]/90 opacity-95 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
 
               {/* Content */}
               <div className="relative p-10 z-10 h-full flex flex-col">

@@ -95,7 +95,7 @@ export default function BenefitsSection() {
             className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700"
           >
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
                 {benefit.icon}
               </div>
               <h4 className="text-xl font-bold text-gray-800 dark:text-white">

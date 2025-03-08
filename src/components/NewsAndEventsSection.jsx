@@ -33,7 +33,7 @@ export default function NewsAndEventsSection() {
               News, Upcoming {" "}
               <span className="text-primary dark:text-white">Projects and Events</span>
             </h2>
-            <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-32 md:w-60 bg-primary rounded-full"></div>
           </motion.div>
 
           <AreaOfFocus />
