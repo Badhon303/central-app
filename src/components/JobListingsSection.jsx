@@ -74,7 +74,7 @@ export default function JobListingsSection() {
       : jobListings.filter((job) => job.department.toLowerCase() === activeTab);
 
   return (
-    <div>
+    <div className="relative">
       <div className="flex justify-between items-center mb-8">
         <h3 className="text-3xl font-bold">
           <span className="text-gray-700 dark:text-white">
@@ -87,7 +87,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("all")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "all"
-                ? "bg-secondary text-white"
+                ? "bg-primary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -97,7 +97,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("marketing")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "marketing"
-                ? "bg-secondary text-white"
+                ? "bg-primary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -107,7 +107,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("finance")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "finance"
-                ? "bg-secondary text-white"
+                ? "bg-primary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -117,7 +117,7 @@ export default function JobListingsSection() {
             onClick={() => setActiveTab("product")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "product"
-                ? "bg-secondary text-white"
+                ? "bg-primary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
@@ -157,7 +157,7 @@ export default function JobListingsSection() {
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex items-center mb-2">
-                    <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
                       <Briefcase size={20} />
                     </div>
                     <h4 className="text-xl font-bold text-gray-800 dark:text-white">
@@ -166,10 +166,10 @@ export default function JobListingsSection() {
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3 mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    <div className="flex items-center">
+                    {/* <div className="flex items-center">
                       <Building size={16} className="mr-1" />
                       <span>{job.company}</span>
-                    </div>
+                    </div> */}
                     <div className="flex items-center">
                       <MapPin size={16} className="mr-1" />
                       <span>{job.location}</span>
@@ -184,16 +184,16 @@ export default function JobListingsSection() {
                   <div className="flex gap-2">
                     <Badge
                       variant="outline"
-                      className="bg-secondary/10 text-secondary border-secondary dark:bg-secondary-900/30 dark:text-secondary dark:border-secondary"
+                      className="bg-primary/10 text-primary border-primary dark:bg-primary-900/30 dark:text-primary dark:border-primary"
                     >
                       {job.type}
                     </Badge>
-                    <Badge
+                    {/* <Badge
                       variant="outline"
                       className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-800"
                     >
                       {job.level}
-                    </Badge>
+                    </Badge> */}
                   </div>
                 </div>
               </div>

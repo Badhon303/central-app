@@ -36,7 +36,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   }
 
   return (
-    <div className="lg:hidden max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
+    <div className="lg:hidden max-w-md md:max-w-4xl text-sm mx-auto antialiased font-sans px-8 md:px-6 lg:px-8">
       {mounted && (
         <div>
           {/* <div>
@@ -112,7 +112,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
               <p className="text-sm text-gray-300 dark:text-neutral-300">
                 {testimonials[active].designation}
               </p>
-              <motion.p className="text-lg text-gray-300 mt-8 dark:text-neutral-300">
+              <motion.p className="text-lg text-gray-300 mt-4 dark:text-neutral-300 max-w-[400px]">
                 {testimonials[active].quote.split(" ").map((word, index) => (
                   <motion.span
                     key={index}
@@ -138,7 +138,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                 ))}
               </motion.p>
             </motion.div>
-            <div className="flex gap-4 pt-12 md:pt-0">
+            <div className="flex gap-4 pt-6 md:pt-4">
               <button
                 onClick={handlePrev}
                 className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"

@@ -20,7 +20,6 @@ export default function WhatsNew() {
         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0">
           What's New
         </h3>
-        <div className="h-1 w-24 bg-primary rounded-full md:hidden"></div>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -60,14 +59,14 @@ export default function WhatsNew() {
             style={{ borderColor: newsItem.color }}
           >
             <div className="p-6">
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <span
                   className="inline-block px-3 py-1 rounded-full text-xs font-medium text-white"
                   style={{ backgroundColor: newsItem.color }}
                 >
                   {newsItem.tag}
                 </span>
-              </div>
+              </div> */}
               <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2 hover:text-primary transition-colors duration-300">
                 {newsItem.title}
               </h4>
@@ -77,7 +76,7 @@ export default function WhatsNew() {
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {newsItem.description}
               </p>
-              <a
+              {/* <a
                 href="#"
                 className="inline-flex items-center transition-colors duration-300"
                 style={{ color: newsItem.color }}
@@ -97,7 +96,7 @@ export default function WhatsNew() {
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
-              </a>
+              </a> */}
             </div>
           </motion.div>
         ))}

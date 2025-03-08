@@ -17,7 +17,7 @@ export default function ImagesSlider() {
   return (
     <div>
       <Slider className="h-screen" images={images}>
-        <div className="flex flex-col sm:justify-between md:justify-center h-full mt-80 md:mt-40">
+        <div className="flex flex-col h-full relative top-1/3">
           <motion.div
             initial={{
               opacity: 0,
@@ -30,18 +30,18 @@ export default function ImagesSlider() {
             transition={{
               duration: 0.6,
             }}
-            className="z-50 flex flex-col"
+            className="z-50 flex flex-col items-center justify-center top-1/2"
           >
-            <motion.p className="font-bold text-xl md:text-5xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+            <motion.p className="font-bold text-3xl lg:text-5xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
               WELCOME TO CENTRAL SCIENTIFIC CO. 
             </motion.p>
-            <motion.p className="font-bold px-6 text-lg md:text-2xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+            <motion.p className="font-bold px-6 text-base md:text-2xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
               By choosing CSCO, you are partnering with a mature, dynamic,
               transparent and reliable company, run by professionals with
               extensive experience in the field.
             </motion.p>
           </motion.div>
-          <div className="bottom-0 left-0 w-full z-50 flex flex-col">
+          <div className="bottom-4 left-0 w-full z-50 flex flex-col">
             <CardHoverEffect />
             <AnimatedCard />
           </div>

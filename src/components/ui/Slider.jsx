@@ -119,11 +119,11 @@ export const Slider = ({
       }}
     >
       {areImagesLoaded && children}
-      {areImagesLoaded && overlay && (
+      {/* {areImagesLoaded && overlay && (
         <div
           className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
         />
-      )}
+      )} */}
       {areImagesLoaded && (
         <AnimatePresence>
           <motion.img

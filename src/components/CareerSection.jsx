@@ -18,7 +18,7 @@ export default function CareersSection() {
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
       </div>
 
-      <Container>
+      <Container className="relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
             Join Our{" "}

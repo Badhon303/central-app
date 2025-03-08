@@ -47,15 +47,27 @@ export function GlobeDemo() {
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
       </div>
 
-      <motion.div className="relative container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Our <span className="text-primary dark:text-white">Global Partners</span></h2>
+      <motion.div className="relative container mx-auto max-w-5xl px-6 md:px-12">
+        <div className="text-center mb-8 flex flex-col">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">About Our <span className="text-primary dark:text-white">Global Partners</span></h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
+          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8">
+          At Central Scientific CO, we combine cutting-edge technology with
+          groundbreaking research to deliver solutions that drive progress in
+          science and industry. Our features are designed to empower
+          researchers, streamline processes, and accelerate discovery. We have partnered with leading companies across the globe to provide the best solutions to our customers. Some of our honored partners are as follows
+        </p>
         </div>
 
         {/* Globe component */}
         <div className="relative w-full h-96 bg-transparent rounded-lg overflow-hidden mb-16">
           <Globe />
+        </div>
+
+        <div className="mb-20 space-y-4 px-6 md:px-0">
+          <h2 className="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+          Our Honored Partners Accross the Globe
+          </h2>
         </div>
 
         {/* Partner logos grid */}
