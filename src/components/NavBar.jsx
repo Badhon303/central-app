@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 
 const links = [
   { to: "/about", label: "About" },
@@ -19,6 +20,7 @@ export default function Navbar() {
   const [isToggled, setIsToggled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   const { theme, systemTheme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
@@ -29,6 +31,10 @@ export default function Navbar() {
 
   const handleThemeChange = (val) => {
     setTheme(val);
+  };
+
+  const isActive = (path) => {
+    return pathname === path;
   };
 
   useEffect(() => {
@@ -131,6 +137,11 @@ export default function Navbar() {
                       key={link.to}
                       href={link.to}
                       className={`block transition md:px-4
+                        ${
+                          isActive(link.to)
+                            ? "font-bold scale-110 duration-75"
+                            : "font-normal"
+                        }
                         lg:${
                           currentTheme === "dark"
                             ? "text-white dark:hover:text-primary"
