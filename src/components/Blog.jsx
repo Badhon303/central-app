@@ -35,9 +35,9 @@ export default function CallToAction() {
               tailoring treatments to individual genetic profiles, leading to more
               effective and targeted therapies.
             </p>
-            <a className="inline-block" href="#">
+            {/* <a className="inline-block" href="#">
               <span className="text-info dark:text-blue-300">Read more</span>
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
@@ -60,9 +60,9 @@ export default function CallToAction() {
               including novel production techniques and technologies that enhance
               efficiency and product quality.
             </p>
-            <a className="inline-block" href="#">
+            {/* <a className="inline-block" href="#">
               <span className="text-info dark:text-blue-300">Read more</span>
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
@@ -85,9 +85,9 @@ export default function CallToAction() {
               in pharmaceutical innovation, fostering partnerships between
               academia, industry, and regulatory bodies.
             </p>
-            <a className="inline-block" href="#">
+            {/* <a className="inline-block" href="#">
               <span className="text-info dark:text-blue-300">Read more</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
