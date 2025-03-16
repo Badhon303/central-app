@@ -1,6 +1,8 @@
+'use client'
 import React from "react";
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
+import CountUp, { useCountUp } from 'react-countup';
 
 export default function AboutSection() {
   return (
@@ -169,7 +171,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    10+
+                    <CountUp start={0} end={10} duration={2} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Years of experience
@@ -177,7 +179,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    200+
+                    <CountUp start={0} end={200} duration={2} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Projects completed
@@ -185,7 +187,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    50+
+                    <CountUp start={0} end={50} duration={2} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Team members
@@ -193,7 +195,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    100%
+                    <CountUp start={0} end={100} duration={2} delay={1} />%
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Client satisfaction

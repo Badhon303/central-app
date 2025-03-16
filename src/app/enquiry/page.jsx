@@ -5,7 +5,7 @@ export default function Enquiry() {
   return (
     <div className="">
       {/* <Lamp /> */}
-      <BackgroundBoxesDemo title={"Enquiry"}/>
+      <BackgroundBoxesDemo title={"Contact Us"}/>
       <EnquirySection/>
     </div>
   )

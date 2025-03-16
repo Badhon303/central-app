@@ -4,16 +4,26 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Check, ChevronDown, Moon, Sun } from "lucide-react";
 
 const links = [
-  { to: "/about", label: "About" },
-  { to: "/product", label: "Product" },
-  { to: "/globalPartners", label: "Global Partners" },
-  { to: "/customers", label: "Customers" },
+  { to: "/about", label: "Who We Are" },
   { to: "/newsAndEvents", label: "News And Events" },
-  { to: "/regionalOffices", label: "Upcoming Regional Offices" },
   { to: "/careers", label: "Careers" },
-  { to: "/enquiry", label: "Enquiry" },
+  { to: "/enquiry", label: "Contact Us" },
+];
+
+const whatWeDoLinks = [
+  { to: "/products", label: "Our Products" },
+  { to: "/expertise", label: "Our Expertise" },
+  { to: "/customers", label: "Our Customers" },
+  { to: "/commitment", label: "Our Commitment" },
 ];
 
 export default function Navbar() {
@@ -37,6 +47,13 @@ export default function Navbar() {
     return pathname === path;
   };
 
+  const isWhatWeDoActive = () => {
+    return (
+      whatWeDoLinks.some((link) => pathname === link.to) ||
+      pathname === "/what-we-do"
+    );
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -53,6 +70,17 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+
+  // link text styling
+  const getLinkStyle = () => {
+    if (currentTheme === "dark") {
+      return "text-white dark:text-white dark:hover:text-primary";
+    } else {
+      return isScrolled
+        ? "text-gray-800 hover:text-primary"
+        : "text-white hover:text-primary";
+    }
+  };
 
   return (
     <header
@@ -132,6 +160,7 @@ export default function Navbar() {
                   id="links-group"
                   className="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm"
                 >
+                  {/* others links */}
                   {links.map((link) => (
                     <Link
                       key={link.to}
@@ -142,13 +171,7 @@ export default function Navbar() {
                             ? "font-bold scale-110 duration-75"
                             : "font-normal"
                         }
-                        lg:${
-                          currentTheme === "dark"
-                            ? "text-white dark:hover:text-primary"
-                            : isScrolled
-                            ? "text-gray-800 hover:text-primary"
-                            : "text-white hover:text-primary"
-                        }
+                        lg:${getLinkStyle()}
                         ${
                           currentTheme === "dark"
                             ? "lg:dark:text-white"
@@ -164,6 +187,115 @@ export default function Navbar() {
                       <span>{link.label}</span>
                     </Link>
                   ))}
+
+                  {/* What We Do dropdown menu - Desktop version */}
+                  <div className="hidden lg:block">
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <button
+                          className={`flex items-center transition md:px-4
+          ${
+            isWhatWeDoActive()
+              ? "font-bold scale-110 duration-75"
+              : "font-normal"
+          }
+          ${
+            currentTheme === "dark"
+              ? "text-white dark:text-white"
+              : isScrolled
+              ? "text-gray-800"
+              : "text-white"
+          }
+          hover:text-primary`}
+                        >
+                          <span>What We Do</span>
+                          <ChevronDown className="ml-1 size-4" />
+                        </button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent
+                        className="min-w-[180px] bg-white dark:bg-gray-800 rounded-md shadow-lg p-1 z-50"
+                        align="start"
+                      >
+                        {whatWeDoLinks.map((item) => (
+                          <DropdownMenuItem
+                            key={item.to}
+                            className={`px-2 py-2 text-sm rounded-sm cursor-pointer ${
+                              isActive(item.to)
+                                ? "bg-primary/10 font-medium"
+                                : "hover:bg-gray-100 dark:hover:bg-gray-700"
+                            } ${
+                              currentTheme === "dark"
+                                ? "text-white"
+                                : "text-gray-700"
+                            }`}
+                            asChild
+                          >
+                            <Link href={item.to}>
+                              <span>{item.label}</span>
+                              {isActive(item.to) && (
+                                <Check className="ml-2 size-4" />
+                              )}{" "}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+
+                  {/* What We Do dropdown for mobile */}
+                  <div className="lg:hidden">
+                    <button
+                      className={`block transition mb-2
+                        ${
+                          isWhatWeDoActive()
+                            ? "font-bold scale-110 duration-75"
+                            : "font-normal"
+                        }
+                        ${
+                          currentTheme === "dark"
+                            ? "text-white dark:text-white"
+                            : "text-gray-800"
+                        }`}
+                      onClick={() => {
+                        const submenu = document.getElementById(
+                          "mobile-what-we-do-submenu"
+                        );
+                        if (submenu) {
+                          submenu.classList.toggle("hidden");
+                        }
+                      }}
+                    >
+                      <div className="flex items-center">
+                        <span>What We Do</span>
+                        <ChevronDown className="ml-1 size-4" />
+                      </div>
+                    </button>
+                    <div
+                      id="mobile-what-we-do-submenu"
+                      className="hidden pl-4 mb-4"
+                    >
+                      {whatWeDoLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          href={item.to}
+                          className={`block py-2
+                            ${
+                              isActive(item.to)
+                                ? "font-medium text-primary"
+                                : "font-normal"
+                            }
+                            ${
+                              currentTheme === "dark"
+                                ? "text-white/80 dark:text-white/80"
+                                : "text-gray-600"
+                            }`}
+                          onClick={toggleNavLinks}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
               <button
@@ -180,20 +312,7 @@ export default function Navbar() {
                 onClick={() => handleThemeChange("dark")}
               >
                 <span className="group inline-flex shrink-0 justify-center items-center size-9">
-                  <svg
-                    className="shrink-0 size-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                  </svg>
+                  <Moon className="size-4" />
                 </span>
               </button>
               <button
@@ -204,28 +323,7 @@ export default function Navbar() {
                 onClick={() => handleThemeChange("light")}
               >
                 <span className="group inline-flex shrink-0 justify-center items-center size-9">
-                  <svg
-                    className="shrink-0 size-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <path d="M12 2v2"></path>
-                    <path d="M12 20v2"></path>
-                    <path d="m4.93 4.93 1.41 1.41"></path>
-                    <path d="m17.66 17.66 1.41 1.41"></path>
-                    <path d="M2 12h2"></path>
-                    <path d="M20 12h2"></path>
-                    <path d="m6.34 17.66-1.41 1.41"></path>
-                    <path d="m19.07 4.93-1.41 1.41"></path>
-                  </svg>
+                  <Sun className="size-4" />
                 </span>
               </button>
             </div>
