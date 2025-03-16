@@ -3,7 +3,7 @@ import FAQSection from './FAQSection';
 
 const NewEnquirySection = () => {
   return (
-    <div className="relative py-16 md:py-24" id="about">
+    <div className="relative py-16 md:py-24" id="enquiry">
       <div
         aria-hidden="true"
         className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20 pointer-events-none"

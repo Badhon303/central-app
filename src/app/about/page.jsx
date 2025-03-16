@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="">
       {/* <Lamp /> */}
-      <BackgroundBoxesDemo title={"About"}/>
+      <BackgroundBoxesDemo title={"Who We Are"}/>
       <AboutSection/>
     </div>
   )

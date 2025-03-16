@@ -13,6 +13,10 @@ export default {
   darkMode: ["class"],
   theme: {
   	extend: {
+		fontFamily: {
+			sans: ["var(--font-geist-sans)"],
+			mono: ["var(--font-geist-mono)"],
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -86,8 +90,6 @@ export default {
   	}
   },
   plugins: [addVariablesForColors, require("tailwindcss-animate")],
-  addVariablesForColors,
-
 }
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g., var(--gray-200).
