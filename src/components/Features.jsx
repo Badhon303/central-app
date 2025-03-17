@@ -28,43 +28,19 @@ export default function Features() {
         </p>
       </div>
       <div className="mt-16 grid divide-x divide-y divide-gray-100 dark:divide-gray-700 overflow-hidden rounded-3xl border border-gray-100 text-gray-600 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4">
+        {/* Pharmaceuticals */}
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
           <div className="relative space-y-8 py-12 p-8">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/4341/4341139.png"
+              src="https://cdn-icons-png.flaticon.com/512/3629/3629890.png"
               className="w-12"
               width="512"
               height="512"
-              alt="API"
+              alt="pharmaceutical solutions"
             />
-
-            <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary ">
-                API Integration Services
-              </h5>
-              <p className="text-gray-600 dark:text-gray-300">
-                Seamlessly integrate our solutions with existing systems using
-                our robust API services, ensuring efficient data exchange and
-                workflow automation.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Feature 5: Pharmaceutical Solutions */}
-        <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
-          <div className="relative space-y-8 py-12 p-8">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2925/2925233.png"
-              className="w-12"
-              width="512"
-              height="512"
-              alt="pharmaceutical solutions illustration"
-            />
-
             <div className="space-y-2">
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
-                Pharmaceutical Solutions
+                Pharmaceuticals
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
                 Specialized solutions for drug discovery, formulation, and
@@ -74,70 +50,71 @@ export default function Features() {
           </div>
         </div>
 
-        {/* Feature 7: QC Consumables */}
+        {/* Food */}
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
           <div className="relative space-y-8 py-12 p-8">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/5402/5402930.png"
+              src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png"
               className="w-12"
               width="512"
               height="512"
-              alt="qc consumables illustration"
+              alt="food solutions illustration"
             />
-
             <div className="space-y-2">
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
-                QC Consumables
+                Food
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
-                High-quality consumables for quality control processes, ensuring
-                accurate and reliable testing results.
+                Advanced solutions for food safety, quality control, and
+                nutritional analysis, ensuring compliance with global standards
+                and enhancing consumer trust.
               </p>
             </div>
           </div>
         </div>
 
-        {/* More Features */}
-        {/* <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl dark:hover:bg-gray-900 hover:shadow-gray-600/10">
-          <div className="relative space-y-8 py-12 p-8 transition duration-300 group-hover:bg-white dark:group-hover:bg-gray-900">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/4341/4341025.png"
-              className="w-12"
-              width="512"
-              height="512"
-              alt="more features illustration"
-            />
-
-            <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
-                More Features
-              </h5>
-              <p className="text-gray-600 dark:text-gray-300">
-                Explore additional tools and resources, including AI-driven
-                research assistants, lab automation solutions, and more, to
-                enhance your scientific endeavors.
-              </p>
-            </div>
-          </div>
-        </div> */}
+        {/* Laboratory & Research */}
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
           <div className="relative space-y-8 py-12 p-8">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/4341/4341025.png"
+              src="https://cdn-icons-png.flaticon.com/512/2867/2867288.png"
               className="w-12"
               width="512"
               height="512"
-              alt="more features illustration"
+              alt="laboratory and research illustration"
             />
 
             <div className="space-y-2">
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
-                More Features
+                Laboratory & Research
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
-                Explore additional tools and resources, including AI-driven
-                research assistants, lab automation solutions, and more, to
-                enhance your scientific endeavors.
+                Cutting-edge laboratory equipment, consumables, and research
+                tools to support scientific discovery and innovation across
+                various disciplines.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Healthcare */}
+        <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
+          <div className="relative space-y-8 py-12 p-8">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3063/3063816.png"
+              className="w-12"
+              width="512"
+              height="512"
+              alt="healthcare solutions illustration"
+            />
+            <div className="space-y-2">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+                Healthcare
+              </h5>
+              <p className="text-gray-600 dark:text-gray-300">
+                Comprehensive healthcare solutions, including diagnostic tools,
+                medical devices, and patient care technologies, to improve
+                outcomes and streamline operations.
               </p>
             </div>
           </div>

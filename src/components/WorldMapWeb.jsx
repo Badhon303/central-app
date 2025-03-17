@@ -4,6 +4,25 @@ import WorldMap from "@/components/ui/world-map";
 import { motion } from "motion/react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 
+const partnerLogos = {
+  "UNITED PHARMA INDUSTRIES CO., LTD": "/logos/united-pharma.png",
+  "KINHOO PHARMACEUTICAL CO., LTD": "/logos/kinhoo-logo.png",
+  "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD": "/logos/sozhou.png",
+  "GLOBE QUIMICA": "/logos/globe-cumica.png",
+  "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/zhunhai.png",
+  "ALPHA GROUP": "/logos/alpha-group.jpeg",
+  "KOEL": "/logos/KOEL.png",
+  "RC ENTERPRISE": "/logos/RC-enterprises.jpg",
+  "BOROSIL SCIENTIFIC LIMITED": "/logos/borosil.jpeg",
+  "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/svam.jpeg",
+  "RAVI RAJ FOILS LTD": "/logos/raviraj.png",
+  "DR. MAISCH": "/logos/dr-maisch.jpeg",
+  "KARL HECHT GMBH": "/logos/glaswarenfabrik.jpeg",
+  "DORSAN FILTRATION": "/logos/dorsan.jpeg",
+  "LIVEO RESEARCH": "/logos/liveo.jpeg",
+  "PT. ONEJECT": "/logos/oneject.jpeg",
+};
+
 const countryConnections = [
   {
     start: { lat: 1.3521, lng: 103.8198, name: "Singapore", flag: "https://flagcdn.com/sg.svg" },
@@ -36,13 +55,13 @@ const countryConnections = [
 ];
 
 export default function WorldMapWeb() {
-  // Sort connections by longitude
+  // Sorting connections by longitude
   const sortedConnections = [...countryConnections].sort(
     (a, b) => a.start.lng - b.start.lng
   );
 
   return (
-    <div className="py-20 dark:bg-gray-950 bg-white w-full">
+    <div className="dark:bg-gray-950 bg-white w-full">
       <div className="max-w-7xl mx-auto text-center">
         <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
           Remote{" "}
@@ -75,22 +94,25 @@ export default function WorldMapWeb() {
         }))}
       />
       <div className="max-w-screen mx-auto mt-8">
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-24">
-          {sortedConnections.map((connection, index) => (
-            <div
-              key={`connection-flag-${index}`}
-              className="flex flex-col items-center"
-            >
-              {/* Responsive Flag Sizes */}
-              <img
-                src={connection.start.flag}
-                alt={connection.start.name}
-                className="w-8 h-5 sm:w-16 sm:h-12 border border-black/90 dark:border-gray-300 object-cover"
-              />
-              <span className="text-[8px] sm:text-sm text-neutral-500 mt-2">
-                {connection.start.name}
-              </span>
-            </div>
+        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 px-4">
+          {Object.entries(partnerLogos).map(([name, logo]) => (
+            <TooltipProvider key={name}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="flex flex-col items-center p-4 rounded-lg">
+                    {/* Logos */}
+                    <img
+                      src={logo}
+                      alt={name}
+                      className="w-16 h-10 sm:w-20 sm:h-14 md:w-28 md:h-20 border border-black/90 dark:border-gray-300 object-fill rounded-sm"
+                    />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           ))}
         </div>
       </div>

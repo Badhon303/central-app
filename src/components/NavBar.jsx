@@ -188,25 +188,24 @@ export default function Navbar() {
                     </Link>
                   ))}
 
-                  {/* What We Do dropdown menu - Desktop version */}
+                  {/* dropdown menu - Desktop */}
                   <div className="hidden lg:block">
                     <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
+                      <DropdownMenuTrigger asChild className="focus:outline-none focus-visible:no-ring">
                         <button
-                          className={`flex items-center transition md:px-4
-          ${
-            isWhatWeDoActive()
-              ? "font-bold scale-110 duration-75"
-              : "font-normal"
-          }
-          ${
-            currentTheme === "dark"
-              ? "text-white dark:text-white"
-              : isScrolled
-              ? "text-gray-800"
-              : "text-white"
-          }
-          hover:text-primary`}
+                          className={`flex items-center transition md:px-4 
+                            ${
+                              isWhatWeDoActive()
+                                ? "font-bold scale-110 duration-75"
+                                : "font-normal"
+                            }
+                            ${
+                              currentTheme === "dark"
+                                ? "text-white dark:text-white"
+                                : isScrolled
+                                ? "text-gray-800"
+                                : "text-white"
+                            } hover:text-primary`}
                         >
                           <span>What We Do</span>
                           <ChevronDown className="ml-1 size-4" />

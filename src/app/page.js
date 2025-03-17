@@ -13,7 +13,7 @@ export default function Home() {
       <ImagesSlider />
       <HeroSection />
       <Features />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Blog />
       <WorldMapWeb />
     </div>
