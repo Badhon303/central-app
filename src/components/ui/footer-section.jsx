@@ -36,42 +36,42 @@ function Footerdemo() {
     <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-        <div className="relative">
-  {/* Logo */}
-  <div className="mb-6">
-    <img
-      src="/logos/csco.jpg"
-      alt="Central Scientific Company Logo"
-      className="w-28"
-    />
-  </div>
+          <div className="relative">
+            {/* Logo */}
+            <div className="mb-6">
+              <img
+                src="/logos/csco.jpg"
+                alt="Central Scientific Company Logo"
+                className="w-28"
+              />
+            </div>
 
-  {/* Punchy Description */}
-  <p className="mb-6 text-muted-foreground mr-20 sm:mr-0 sm:max-w-96">
-    Connecting world-class pharmaceuticals to the world, efficiently and
-    innovatively since 1990.
-  </p>
+            {/* Punchy Description */}
+            <p className="mb-6 text-muted-foreground mr-20 sm:mr-0 sm:max-w-96">
+              Connecting world-class pharmaceuticals to the world, efficiently
+              and innovatively since 1990.
+            </p>
 
-  <a
-    href="https://www.central-bd.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
-  >
-    <Globe className="h-4 w-4" />
-    <p>www.central-bd.com</p>
-  </a>
+            <a
+              href="https://www.central-bd.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
+            >
+              <Globe className="h-4 w-4" />
+              <p>www.central-bd.com</p>
+            </a>
 
-  <a
-    href="mailto:info@central-bd.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
-  >
-    <Mail className="h-4 w-4" />
-    <p>info@central-bd.com</p>
-  </a>
-</div>
+            <a
+              href="mailto:info@central-bd.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+              <p>info@central-bd.com</p>
+            </a>
+          </div>
 
           <div className="md:ml-8">
             <h3 className="mb-4 text-lg font-semibold ">Quick Links</h3>
