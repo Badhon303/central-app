@@ -128,16 +128,13 @@ export default function HeroSection() {
       </div>
       <Container>
         <div className="relative ml-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-3/5 text-center lg:text-left">
-              <h1 className="text-gray-900 text-balance dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
-                Shaping a world with{" "}
-                <span className="text-primary dark:text-white">
-                  reimagination.
-                </span>
+          <div className="flex flex-col lg:flex-row items-stretch">
+            <div className="lg:w-1/2 text-center lg:text-left p-4 bg-secondary flex flex-col justify-center">
+              <h1 className="text-balance text-white font-bold text-2xl md:text-4xl xl:text-5xl text-center">
+                The Journey Evolves...
               </h1>
-              <div className="mx-auto md:mx-0 mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
-              <p className="mt-8 text-gray-700 dark:text-gray-300">
+              <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-white rounded-full"></div>
+              <p className="mt-8 text-white items-center text-center">
                 Our journey begun as a trading company in supplying to the
                 Scientific Research Institutes and Private organisations in
                 Bangladesh. Immense dedication and prompt services helped us in
@@ -145,69 +142,94 @@ export default function HeroSection() {
                 Equipment's' throughout our journey which spans over 30 years.
               </p>
 
-              <div className="mt-16 flex flex-wrap justify-center lg:justify-start gap-y-4 gap-x-6">
+              <div className="mt-8 flex flex-wrap justify-center gap-x-6">
                 <a
                   href="#"
-                  className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                  className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
-                  <span className="relative text-base font-semibold text-white">
-                    Get started
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border-2 before:border-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-                >
-                  <span className="relative text-base font-semibold text-primary">
-                    Learn More
+                  <span className="relative text-base font-semibold text-secondary text-center">
+                    Explore More
                   </span>
                 </a>
               </div>
             </div>
-            
-            <div className="w-4/5 lg:w-2/5">
-              <div className="rounded-2xl overflow-hidden shadow-xl bg-white dark:bg-gray-800">
+
+            <div className="lg:w-1/2 flex items-stretch">
+              <div className="w-full overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center">
                 <img
-                  src={"/logos/gif/Square.gif"}
+                  src={"/logos/gif/HD.gif"}
                   alt="Hero Animation"
-                  width={500}
-                  height={500}
-                  className="w-full h-auto"
+                  width={400}
+                  height={400}
+                  className="w-full h-64 lg:h-96 object-fill"
                 />
               </div>
             </div>
           </div>
 
-          <div className="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
-            <div className="text-left">
-              <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
-                Primary Packaging Materials
-              </h6>
-              <p className="mt-2 text-gray-500">
-                High-quality materials designed for safe and efficient
-                pharmaceutical packaging.
+          <div className="flex md:flex-row flex-col justify-between py-10 mt-16 border-y border-gray-200 gap-4 items-center">
+            <div className="text-left w-full md:w-1/3">
+              <div className="flex items-center gap-6">
+                <div className="h-1 w-14 bg-secondary rounded-full"></div>
+                <h6 className="text-[12px] font-bold uppercase">Out Products</h6>
+              </div>
+              <h2 className="text-xl font-bold text-gray-800 mt-2">
+                Our worldwide partner
+              </h2>
+              <p className="text-gray-600 mt-4">
+                We offer a wide range of products, including different types of
+                milk powders, cheeses, and non-dairy products.
               </p>
+              <a
+                href="#"
+                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:bg-secondary transition-all duration-100 inline-block"
+              >
+                View Page
+              </a>
             </div>
-            <div className="text-left">
-              <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
-                Pharmaceuticals Ingredients
-              </h6>
-              <p className="mt-2 text-gray-500">
-                Essential ingredients sourced from trusted suppliers to ensure
-                product efficacy.
+
+            <div className="text-left w-full md:w-1/3">
+              <div className="flex items-center gap-6">
+                <div className="h-1 w-14 bg-secondary rounded-full"></div>
+                <h6 className="text-[12px] font-bold uppercase">Our Customers</h6>
+              </div>
+              <h2 className="text-xl font-bold text-gray-800 mt-2">
+                Check out our brands
+              </h2>
+              <p className="text-gray-600 mt-4">
+                Our dairy & non-dairy products, packed under our own brands, are
+                being transported to customers all over the world!
               </p>
+              <a
+                href="#"
+                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:bg-secondary transition-all duration-100 inline-block"
+              >
+                View Page
+              </a>
             </div>
-            <div className="text-left">
-              <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
-                Laboratory Consumables
-              </h6>
-              <p className="mt-2 text-gray-500">
-                Reliable consumables for precise laboratory testing and
-                analysis.
+
+            <div className="text-left w-full md:w-1/3 hover:bg-white transition-all duration-100">
+              <div className="flex items-center gap-6">
+                <div className="h-1 w-14 bg-secondary rounded-full"></div>
+                <h6 className="text-[12px] font-bold uppercase">Our Quality</h6>
+              </div>
+              <h2 className="text-xl font-bold text-gray-800 mt-2">
+                Health & safety
+              </h2>
+              <p className="text-gray-600 mt-4">
+                In order to show our customers that quality is important to us,
+                we only work with first-class production sites.
               </p>
+              <a
+                href="#"
+                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:bg-secondary transition-all duration-100 inline-block"
+              >
+                View Page
+              </a>
             </div>
           </div>
-          <Marquee className="mt-12 w-full" speed={50} pauseOnHover={true}>
+
+          {/* <Marquee className="mt-16 w-full" speed={50} pauseOnHover={true}>
             <div className="flex items-center justify-between w-full">
               {logos.map((logo, index) => (
                 <div
@@ -225,7 +247,7 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
-          </Marquee>
+          </Marquee> */}
         </div>
       </Container>
     </div>

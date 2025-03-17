@@ -38,24 +38,24 @@ export default function ProductSection() {
   const categoryImages = {
     api: "https://images.unsplash.com/photo-1563213126-a4273aed2016?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
     excipients: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    qcConsumables: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
     primaryPackaging: "https://images.unsplash.com/photo-1565726166189-e9814a05ffde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    qcConsumables: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
     medicalDevices: "https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   };
 
   const categoryIcons = {
     api: <FlaskConical className="w-12 h-12 text-white" />,
     excipients: <Flask className="w-12 h-12 text-white" />,
-    qcConsumables: <TestTube className="w-12 h-12 text-white" />,
     primaryPackaging: <Package className="w-12 h-12 text-white" />,
+    qcConsumables: <TestTube className="w-12 h-12 text-white" />,
     medicalDevices: <Stethoscope className="w-12 h-12 text-white" />,
   };
 
   const categoryTitles = {
     api: "API",
     excipients: "Excipients",
-    qcConsumables: "QC Consumables",
     primaryPackaging: "Primary Packaging",
+    qcConsumables: "QC Consumables",
     medicalDevices: "Medical Devices",
   };
 

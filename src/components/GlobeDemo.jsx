@@ -18,24 +18,24 @@ export function GlobeDemo() {
   ];
 
   // Map of partner names to their logo file paths
-  const partnerLogos = {
-    "UNITED PHARMA INDUSTRIES CO., LTD": "/logos/united-pharma.png",
-    "KINHOO PHARMACEUTICAL CO., LTD": "/logos/kinhoo-logo.png",
-    "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD": "/logos/sozhou.png",
-    "GLOBE QUIMICA": "/logos/globe-cumica.png",
-    "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/zhunhai.png",
-    "ALPHA GROUP": "/logos/alpha-group.jpeg",
-    "KOEL": "/logos/KOEL.png",
-    "RC ENTERPRISE": "/logos/RC-enterprises.jpg",
-    "BOROSIL SCIENTIFIC LIMITED": "/logos/borosil.jpeg",
-    "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/svam.jpeg",
-    "RAVI RAJ FOILS LTD": "/logos/raviraj.png",
-    "DR. MAISCH": "/logos/dr-maisch.jpeg",
-    "KARL HECHT GMBH": "/logos/glaswarenfabrik.jpeg",
-    "DORSAN FILTRATION": "/logos/dorsan.jpeg",
-    "LIVEO RESEARCH": "/logos/liveo.jpeg",
-    "PT. ONEJECT": "/logos/oneject.jpeg"
-  };
+const partnerLogos = {
+  "UNITED PHARMA INDUSTRIES CO., LTD": "/logos/united-pharma.png",
+  "KINHOO PHARMACEUTICAL CO., LTD": "/logos/kinhoo-logo.png",
+  "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD": "/logos/sozhou.png",
+  "GLOBE QUIMICA": "/logos/globe-cumica.png",
+  "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/zhunhai.png",
+  "ALPHA GROUP": "/logos/alpha-group.jpeg",
+  "KOEL": "/logos/KOEL.png",
+  "RC ENTERPRISE": "/logos/RC-enterprises.jpg",
+  "BOROSIL SCIENTIFIC LIMITED": "/logos/borosil.jpeg",
+  "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/svam.jpeg",
+  "RAVI RAJ FOILS LTD": "/logos/raviraj.png",
+  "DR. MAISCH": "/logos/dr-maisch.jpeg",
+  "KARL HECHT GMBH": "/logos/glaswarenfabrik.jpeg",
+  "DORSAN FILTRATION": "/logos/dorsan.jpeg",
+  "LIVEO RESEARCH": "/logos/liveo.jpeg",
+  "PT. ONEJECT": "/logos/oneject.jpeg",
+};
 
   return (
     <div className="relative py-16 md:py-24 ">
