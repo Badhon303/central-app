@@ -18,7 +18,7 @@ export const EventItem = ({ event, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group"
     >
-      <div className="overflow-hidden rounded-xl shadow-lg h-full bg-white dark:bg-gray-800">
+      <div className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-150 h-full bg-white dark:bg-gray-800">
         <div className="relative h-48 md:h-60 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/50 to-purple-500/30 mix-blend-multiply z-10"></div>
           {event.img && (
