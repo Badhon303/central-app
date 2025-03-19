@@ -47,11 +47,11 @@ const partnerLogos = {
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
       </div>
 
-      <motion.div className="relative container mx-auto max-w-5xl px-6 md:px-12">
-        <div className="text-center mb-8 flex flex-col">
+      <motion.div className="relative container mx-auto max-w-6xl px-6 md:px-12">
+        <div className="text-center mb-8 flex flex-col justify-center items-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">About Our <span className="text-primary dark:text-white">Global Partners</span></h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
-          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8">
+          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-3xl">
           At Central Scientific CO, we combine cutting-edge technology with
           groundbreaking research to deliver solutions that drive progress in
           science and industry. Our features are designed to empower
@@ -71,7 +71,7 @@ const partnerLogos = {
         </div>
 
         {/* Partner logos grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-10 items-center">
           {partnerCountries.flatMap((country) =>
             country.partners.map((partner, idx) => (
               <div key={`${country.name}-${idx}`} className="flex flex-col items-center cursor-pointer w-48 h-48 sm:w-72 sm:h-72  mx-auto">

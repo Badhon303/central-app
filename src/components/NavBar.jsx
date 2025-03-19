@@ -21,9 +21,9 @@ const links = [
 
 const whatWeDoLinks = [
   { to: "/products", label: "Our Products" },
-  { to: "/expertise", label: "Our Expertise" },
+  { to: "/globalPartners", label: "Our Expertise" },
   { to: "/customers", label: "Our Customers" },
-  { to: "/commitment", label: "Our Commitment" },
+  { to: "/regionalOffices", label: "Our Commitment" },
 ];
 
 export default function Navbar() {

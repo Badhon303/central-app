@@ -6,7 +6,7 @@ export default function GlobalPartners() {
   return (
     <div className="">
       {/* <Lamp /> */}
-      <BackgroundBoxesDemo title={"Global Partners"}/>
+      <BackgroundBoxesDemo title={"Our Expertise"}/>
       <GlobeDemo />
     </div>
   )
