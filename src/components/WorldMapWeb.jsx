@@ -170,7 +170,7 @@ export default function WorldMapWeb() {
         }))}
       />
       <div className="max-w-screen mx-auto mt-8">
-        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 px-4">
+        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 px-4 items-center justify-center self-center justify-items-center">
           {Object.entries(partnerLogos).map(([name, logo]) => (
             <TooltipProvider key={name}>
               <Tooltip>
