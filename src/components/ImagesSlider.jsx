@@ -16,7 +16,7 @@ export default function ImagesSlider() {
   ];
   return (
     <div>
-      <Slider className="h-screen" images={images}>
+      <Slider className="" images={images}>
         <div className="flex flex-col h-full relative top-1/3">
           <motion.div
             initial={{

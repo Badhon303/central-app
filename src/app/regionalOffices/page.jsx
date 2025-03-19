@@ -5,7 +5,7 @@ export default function RegionalOffices() {
   return (
     <div className="">
       {/* <Lamp /> */}
-      <BackgroundBoxesDemo title={"Upcoming Regional Offices"}/>
+      <BackgroundBoxesDemo title={"Our Commitment"}/>
       <RegionalOfficesSection/>
     </div>
   )

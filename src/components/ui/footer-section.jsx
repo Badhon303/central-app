@@ -40,7 +40,7 @@ function Footerdemo() {
             {/* Logo */}
             <div className="mb-6">
               <img
-                src="/logos/csco.jpg"
+                src={currentTheme == "dark" ? "/logos/Central-Scientific-Logo-dark.png" : "/logos/Central-Scientific-Logo.png"}
                 alt="Central Scientific Company Logo"
                 className="w-28"
               />
@@ -86,26 +86,26 @@ function Footerdemo() {
                 href="/about"
                 className="block transition-colors hover:text-primary"
               >
-                About Us
+                Who We Are
               </a>
-              <a
+              {/* <a
                 href="/product"
                 className="block transition-colors hover:text-primary"
               >
                 Products
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="/customers"
                 className="block transition-colors hover:text-primary"
               >
                 Customers
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="/globalPartners"
                 className="block transition-colors hover:text-primary"
               >
                 Global Partners
-              </a>
+              </a> */}
               <a
                 href="/careers"
                 className="block transition-colors hover:text-primary"
@@ -128,7 +128,7 @@ function Footerdemo() {
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold">Find Us At</h3>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
               <address className="space-y-2 text-sm not-italic">
                 <h4 className="font-semibold">Registered Address</h4>
                 <p>33/3 Shahid Nazrul Islam Road</p>
@@ -156,7 +156,7 @@ function Footerdemo() {
                       <span className="sr-only">Facebook</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Follow us on Facebook</p>
                   </TooltipContent>
                 </Tooltip>
@@ -173,7 +173,7 @@ function Footerdemo() {
                       <span className="sr-only">Twitter</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Follow us on Twitter</p>
                   </TooltipContent>
                 </Tooltip>
@@ -190,7 +190,7 @@ function Footerdemo() {
                       <span className="sr-only">Instagram</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Follow us on Instagram</p>
                   </TooltipContent>
                 </Tooltip>
@@ -207,7 +207,7 @@ function Footerdemo() {
                       <span className="sr-only">LinkedIn</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Connect with us on LinkedIn</p>
                   </TooltipContent>
                 </Tooltip>
@@ -224,7 +224,7 @@ function Footerdemo() {
                       <span className="sr-only">WhatsApp</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Connect us on WhatsApp</p>
                   </TooltipContent>
                 </Tooltip>
@@ -257,9 +257,6 @@ function Footerdemo() {
             </a>
             <a href="#" className="transition-colors hover:text-primary">
               Terms of Service
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
-              Cookie Settings
             </a>
           </nav>
         </div>
