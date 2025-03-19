@@ -79,13 +79,13 @@ export default function ContactSection() {
             href="https://www.central-bd.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-3">
                 <Globe className="w-6 h-6 text-primary" />
               </div>
-              <p className="text-gray-800 font-medium text-sm">
+              <p className="text-gray-800 dark:text-gray-200 font-medium text-sm">
                 www.central-bd.com
               </p>
             </div>
@@ -93,13 +93,13 @@ export default function ContactSection() {
 
           <a
             href="mailto:info@central-bd.com"
-            className="bg-white rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-3">
                 <Mail className="w-6 h-6 text-primary" />
               </div>
-              <p className="text-gray-800 font-medium text-sm">
+              <p className="text-gray-800 dark:text-gray-200 font-medium text-sm">
                 info@central-bd.com
               </p>
             </div>
@@ -107,13 +107,13 @@ export default function ContactSection() {
 
           <button
             onClick={scrollToForm}
-            className="bg-white rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer w-full"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer w-full"
           >
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-3">
                 <MessageSquare className="w-6 h-6 text-primary" />
               </div>
-              <p className="text-gray-800 font-medium text-sm">Contact Form</p>
+              <p className="text-gray-800 dark:text-gray-200 font-medium text-sm">Contact Form</p>
             </div>
           </button>
         </div>
@@ -130,7 +130,7 @@ export default function ContactSection() {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, name: e.target.value }))
               }
-              className="w-full bg-gray-50 border-gray-200"
+              className="w-full bg-gray-100 border-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600"
               required
             />
             <Input
@@ -140,7 +140,7 @@ export default function ContactSection() {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, email: e.target.value }))
               }
-              className="w-full bg-gray-50 border-gray-200"
+              className="w-full bg-gray-100 border-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600"
               required
             />
             <Input
@@ -149,7 +149,7 @@ export default function ContactSection() {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, subject: e.target.value }))
               }
-              className="w-full bg-gray-50 border-gray-200"
+              className="w-full bg-gray-100 border-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600"
               required
             />
             <Textarea
@@ -159,7 +159,7 @@ export default function ContactSection() {
                 setFormData((prev) => ({ ...prev, message: e.target.value }))
               }
               rows={5}
-              className="w-full bg-gray-50 border-gray-200"
+              className="w-full bg-gray-100 border-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600"
               required
             />
             <Button

@@ -168,15 +168,15 @@ export default function HeroSection() {
           </div>
 
           <div className="flex md:flex-row flex-col justify-between py-10 mt-16 border-y border-gray-200 gap-4 items-center">
-            <div className="text-left w-full md:w-1/3">
+            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-400 p-4 rounded-lg dark:bg-gray-800">
               <div className="flex items-center gap-6">
                 <div className="h-1 w-14 bg-secondary rounded-full"></div>
                 <h6 className="text-[12px] font-bold uppercase">Out Products</h6>
               </div>
-              <h2 className="text-xl font-bold text-gray-800 mt-2">
+              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
                 Our worldwide partner
               </h2>
-              <p className="text-gray-600 mt-4">
+              <p className="text-gray-600 dark:text-gray-200 mt-4">
                 We offer a wide range of products, including different types of
                 milk powders, cheeses, and non-dairy products.
               </p>
@@ -188,15 +188,15 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="text-left w-full md:w-1/3">
+            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-400 p-4 rounded-lg dark:bg-gray-800">
               <div className="flex items-center gap-6">
                 <div className="h-1 w-14 bg-secondary rounded-full"></div>
                 <h6 className="text-[12px] font-bold uppercase">Our Customers</h6>
               </div>
-              <h2 className="text-xl font-bold text-gray-800 mt-2">
+              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
                 Check out our brands
               </h2>
-              <p className="text-gray-600 mt-4">
+              <p className="text-gray-600 dark:text-gray-200 mt-4">
                 Our dairy & non-dairy products, packed under our own brands, are
                 being transported to customers all over the world!
               </p>
@@ -208,15 +208,15 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="text-left w-full md:w-1/3 hover:bg-white transition-all duration-100">
+            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-400 p-4 rounded-lg transition-all duration-100 dark:bg-gray-800">
               <div className="flex items-center gap-6">
                 <div className="h-1 w-14 bg-secondary rounded-full"></div>
                 <h6 className="text-[12px] font-bold uppercase">Our Quality</h6>
               </div>
-              <h2 className="text-xl font-bold text-gray-800 mt-2">
+              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
                 Health & safety
               </h2>
-              <p className="text-gray-600 mt-4">
+              <p className="text-gray-600 dark:text-gray-200 mt-4">
                 In order to show our customers that quality is important to us,
                 we only work with first-class production sites.
               </p>
