@@ -1,12 +1,14 @@
-import { HoverEffect } from "./ui/card-hover-effect"
+"use client";
+import { HoverEffect } from "./ui/card-hover-effect";
 
 export function CardHoverEffect() {
   return (
-    <div className="px-8">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <HoverEffect items={projects} />
     </div>
-  )
+  );
 }
+
 export const projects = [
   {
     title: "API",
@@ -17,7 +19,7 @@ export const projects = [
   {
     title: "Excipient",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+      "A streaming service that offers a wide variety of award-winning shows on thousands of internet-connected devices.",
     link: "https://netflix.com",
   },
   {
@@ -38,4 +40,4 @@ export const projects = [
       "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
     link: "https://amazon.com",
   },
-]
+];
