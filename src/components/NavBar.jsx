@@ -91,8 +91,8 @@ export default function Navbar() {
         className={`group w-full transition-all duration-300 ${
           isScrolled
             ? currentTheme === "dark"
-              ? "bg-gray-950 border-b border-gray-800"
-              : "bg-white border-b border-gray-200"
+              ? "bg-gray-950"
+              : "bg-white"
             : "bg-transparent"
         } ${isScrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}`}
       >
@@ -106,8 +106,17 @@ export default function Navbar() {
               >
                 <div aria-hidden="true" className="flex space-x-1">
                   <img
-                    src="/logos/csco.jpg"
-                    className="w-28 bg-white/30 rounded-lg"
+                    src={
+                      theme === "dark"
+                        ? isScrolled
+                          ? "/logos/Central-Scientific-Logo-dark.png"
+                          : "/logos/Central-Scientific-Logo-white.png"
+                        : isScrolled
+                        ? "/logos/Central-Scientific-Logo.png"
+                        : "/logos/Central-Scientific-Logo-white.png"
+                    }
+                    className="w-32 rounded-lg"
+                    alt="Central Scientific Logo"
                   />
                 </div>
               </Link>
@@ -191,7 +200,10 @@ export default function Navbar() {
                   {/* dropdown menu - Desktop */}
                   <div className="hidden lg:block">
                     <DropdownMenu>
-                      <DropdownMenuTrigger asChild className="focus:outline-none focus-visible:no-ring">
+                      <DropdownMenuTrigger
+                        asChild
+                        className="focus:outline-none focus-visible:no-ring"
+                      >
                         <button
                           className={`flex items-center transition md:px-4 
                             ${
