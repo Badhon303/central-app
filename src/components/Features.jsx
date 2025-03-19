@@ -32,7 +32,7 @@ export default function Features() {
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
           <div className="relative space-y-8 py-12 p-8">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/3629/3629890.png"
+              src="/logos/icons/pharmaceutical.png"
               className="w-12"
               width="512"
               height="512"
@@ -52,10 +52,10 @@ export default function Features() {
 
         {/* Food */}
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
-          <div className="relative space-y-8 py-12 p-8">
+          <div className="relative space-y-8 py-12 p-8 dark:text-white">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png"
-              className="w-12"
+              src="/logos/icons/fast-food.png"
+              className="w-12 dark:text-white"
               width="512"
               height="512"
               alt="food solutions illustration"
