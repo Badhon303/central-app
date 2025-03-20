@@ -1,8 +1,9 @@
-'use client'
+"use client";
 import React from "react";
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
-import CountUp, { useCountUp } from 'react-countup';
+import CountUp from "react-countup";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -23,7 +24,7 @@ export default function AboutSection() {
               About{" "}
               <span className="text-primary dark:text-white">The Company</span>
             </h2>
-            <div className="mx-auto mt-4 h-1 w-32  bg-primary rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-32 bg-primary rounded-full"></div>
           </div>
 
           {/* Who We Are - Directly under the title */}
@@ -43,96 +44,69 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* Enhanced Mission and Vision with more eye-catching design */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl group">
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#375eca]/90 to-[#3b82f6]/90 opacity-95 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
-
-              {/* Content */}
-              <div className="relative p-10 z-10 h-full flex flex-col">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0 p-4 bg-white/20 backdrop-blur-sm rounded-lg text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-8 w-8"
-                    >
-                      <path d="M12 2 2 7l10 5 10-5-10-5Z"></path>
-                      <path d="M2 17 12 22 22 17"></path>
-                      <path d="M2 12 12 17 22 12"></path>
-                    </svg>
-                  </div>
-                  <h3 className="ml-4 text-3xl font-bold text-white">
+          {/* Mission and Vision with grid photos*/}
+          <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Left Side */}
+              <div className="p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
+                <div className="mb-10">
+                  <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Mission
                   </h3>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Achieving customer outmost satisfaction as well as
+                    operational and organizational excellence without
+                    compromising from our values and business ethics. We aim to
+                    contribute to the advancement of healthcare by ensuring a
+                    secure and efficient supply chain, ultimately helping
+                    pharmaceutical industry to make easy access for people to
+                    essential medications to most advanced quality products.
+                  </p>
                 </div>
-                <div className="w-16 h-1 bg-white/60 rounded mb-6"></div>
-                <p className="text-white/90 leading-relaxed">
-                  Achieving customer outmost satisfaction as well as operational
-                  and organizational excellence without compromising from our
-                  values and business ethics. We aim to contribute to the
-                  advancement of healthcare by ensuring a secure and efficient
-                  supply chain, ultimately helping pharmaceutical industry to
-                  make easy access for people to essential medications to most
-                  advanced quality products. We thrive to be a innovational hub
-                  of pharmaceutical supplier, dedicated to providing our clients
-                  with a comprehensive range of pharmaceutical raw materials,
-                  ingredients, and products.
-                </p>
-                {/* Decorative element */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mb-16 blur-xl"></div>
-              </div>
-            </div>
 
-            {/* Vision Card */}
-            <div className="relative overflow-hidden rounded-2xl shadow-xl group">
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#375eca]/90 to-[#3b82f6]/90 opacity-95 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
-
-              {/* Content */}
-              <div className="relative p-10 z-10 h-full flex flex-col">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0 p-4 bg-white/20 backdrop-blur-sm rounded-lg text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-8 w-8"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                      <path d="M2 12h20"></path>
-                    </svg>
-                  </div>
-                  <h3 className="ml-4 text-3xl font-bold text-white">
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Vision
                   </h3>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Together, with our team, partners, and the global networks,
+                    we aim to build a future where the supplier not only solves
+                    problems but also inspires hope and transparent trade
+                    environment. We aim to be at the forefront of positive
+                    change, setting the standard for technological excellence,
+                    and leaving a lasting legacy of progress.
+                  </p>
                 </div>
-                <div className="w-16 h-1 bg-white/60 rounded mb-6"></div>
-                <p className="text-white/90 leading-relaxed">
-                  Together, with our team, partners, and the global networks, we
-                  aim to build a future where the supplier not only solves
-                  problems but also inspires hope and transparent trade
-                  environment. We aim to be at the forefront of positive change,
-                  setting the standard for technological excellence, and leaving
-                  a lasting legacy of progress.
-                </p>
-                {/* Decorative element */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mb-16 blur-xl"></div>
+              </div>
+
+              {/* Right side: Stacked photos */}
+              <div className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-8 md:p-12">
+                <div className="grid grid-cols-2 grid-rows-2 h-full">
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src="/logos/mv1.jpg"
+                      alt="CSCO Team"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src="/logos/mv2.jpg"
+                      alt="CSCO Office"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative overflow-hidden col-span-2">
+                    <Image
+                      src="/logos/mv3.jpg"
+                      alt="CSCO Collaboration"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
