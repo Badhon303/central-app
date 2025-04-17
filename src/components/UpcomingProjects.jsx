@@ -22,7 +22,9 @@ const ProjectItem = ({ project, index }) => (
         />
       )}
       {!project.img && (
-        <div className="w-full h-full bg-gray-200 dark:bg-gray-700 group-hover:scale-105 transition-transform duration-500 flex justify-center items-center">No Image</div>
+        <div className="w-full h-full bg-gray-200 dark:bg-gray-700 group-hover:scale-105 transition-transform duration-500 flex justify-center items-center">
+          No Image
+        </div>
       )}
     </div>
 
@@ -33,10 +35,16 @@ const ProjectItem = ({ project, index }) => (
           {project.title}
         </h4>
       </div>
-      <p className="text-gray-600 dark:text-gray-300 mb-6">{project.description}</p>
+      <p className="text-gray-600 dark:text-gray-300 mb-6">
+        {project.description}
+      </p>
       <div className="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700">
-        <span className="text-sm text-gray-500 dark:text-gray-400">Timeline</span>
-        <span className="font-medium text-gray-700 dark:text-gray-200">{project.timeline}</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400">
+          Timeline
+        </span>
+        <span className="font-medium text-gray-700 dark:text-gray-200">
+          {project.timeline}
+        </span>
       </div>
     </div>
   </motion.div>

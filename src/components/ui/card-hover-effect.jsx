@@ -64,7 +64,12 @@ export const Card = ({ className, children }) => {
 
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4 className={cn("text-white font-bold tracking-wide text-xl mb-2", className)}>
+    <h4
+      className={cn(
+        "text-white font-bold tracking-wide text-xl mb-2",
+        className
+      )}
+    >
       {children}
     </h4>
   );

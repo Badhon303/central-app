@@ -37,8 +37,14 @@ export default function ProductSection() {
     // hash navigation when component mounts
     const handleHashChange = () => {
       const hash = window.location.hash.substring(1);
-      const validCategories = ["api", "excipients", "primaryPackaging", "qcConsumables", "medicalDevices"];
-      
+      const validCategories = [
+        "api",
+        "excipients",
+        "primaryPackaging",
+        "qcConsumables",
+        "medicalDevices",
+      ];
+
       if (hash && validCategories.includes(hash)) {
         setSelectedCategory(hash);
         setTimeout(() => {
@@ -262,7 +268,10 @@ export default function ProductSection() {
             {selectedCategory === "api" && renderContent()}
           </div>
 
-          <div id="excipients" className={selectedCategory === "excipients" ? "" : "hidden"}>
+          <div
+            id="excipients"
+            className={selectedCategory === "excipients" ? "" : "hidden"}
+          >
             {selectedCategory === "excipients" && (
               <>
                 <div className="text-center mb-12">
@@ -278,7 +287,10 @@ export default function ProductSection() {
             )}
           </div>
 
-          <div id="primaryPackaging" className={selectedCategory === "primaryPackaging" ? "" : "hidden"}>
+          <div
+            id="primaryPackaging"
+            className={selectedCategory === "primaryPackaging" ? "" : "hidden"}
+          >
             {selectedCategory === "primaryPackaging" && (
               <>
                 <div className="text-center mb-12">
@@ -294,7 +306,10 @@ export default function ProductSection() {
             )}
           </div>
 
-          <div id="qcConsumables" className={selectedCategory === "qcConsumables" ? "" : "hidden"}>
+          <div
+            id="qcConsumables"
+            className={selectedCategory === "qcConsumables" ? "" : "hidden"}
+          >
             {selectedCategory === "qcConsumables" && (
               <>
                 <div className="text-center mb-12">
@@ -310,7 +325,10 @@ export default function ProductSection() {
             )}
           </div>
 
-          <div id="medicalDevices" className={selectedCategory === "medicalDevices" ? "" : "hidden"}>
+          <div
+            id="medicalDevices"
+            className={selectedCategory === "medicalDevices" ? "" : "hidden"}
+          >
             {selectedCategory === "medicalDevices" && (
               <>
                 <div className="text-center mb-12">
