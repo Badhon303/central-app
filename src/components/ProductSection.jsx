@@ -25,7 +25,7 @@ import CategoryGrid from "../app/products/components/categoryGrid";
 export default function ProductSection() {
   const [selectedCategory, setSelectedCategory] = useState("api");
   const [selectedLetter, setSelectedLetter] = useState("A");
-  
+
   const categoryIcons = {
     api: <FlaskConical className="w-12 h-12 text-white" />,
     excipients: <Flask className="w-12 h-12 text-white" />,
@@ -48,10 +48,10 @@ export default function ProductSection() {
         <thead>
           <tr className="bg-primary dark:bg-gray-700">
             <th className="py-4 px-6 text-sm font-semibold text-white uppercase tracking-wider border-b dark:border-gray-600 w-1/4 sm:w-1/3 text-left">
-              Logo
+              Manufacturer
             </th>
             <th className="py-4 px-6 text-left text-sm font-semibold text-white uppercase tracking-wider border-b dark:border-gray-600 w-1/4 sm:w-1/3">
-              Manufacturer
+              Description
             </th>
             <th className="py-4 px-6 text-left text-sm font-semibold text-white uppercase tracking-wider border-b dark:border-gray-600 w-1/2 sm:w-1/3">
               Products
@@ -82,7 +82,10 @@ export default function ProductSection() {
               <td className="py-4 px-6 w-1/2 sm:w-1/3">
                 <div className="grid grid-cols-1 gap-2">
                   {item.products.map((product, idx) => (
-                    <div key={idx} className="flex text-sm sm:text-base items-center space-x-2">
+                    <div
+                      key={idx}
+                      className="flex text-sm sm:text-base items-center space-x-2"
+                    >
                       <div className="w-2 h-2 rounded-full bg-primary"></div>
                       <span className="text-gray-700 dark:text-gray-300">
                         {product}
@@ -186,7 +189,7 @@ export default function ProductSection() {
       </div>
 
       <motion.div className="relative container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 mx-auto items-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
             Our{" "}
             <span className="text-primary dark:text-white">
@@ -194,7 +197,7 @@ export default function ProductSection() {
             </span>
           </h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto leading-relaxed">
             We take great pride in representing the world's foremost
             manufacturers in the pharmaceutical industry. Our partnership with
             these industry leaders demonstrates our unwavering commitment to

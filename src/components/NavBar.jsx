@@ -74,7 +74,7 @@ export default function Navbar() {
   // link text styling
   const getLinkStyle = () => {
     if (currentTheme === "dark") {
-      return "text-white dark:text-white dark:hover:text-primary";
+      return "text-white text-[15px] dark:text-white dark:hover:text-primary";
     } else {
       return isScrolled
         ? "text-gray-800 hover:text-primary"
@@ -98,7 +98,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
-            <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-fit">
+            <div className="relative z-20 flex items-center w-full justify-between md:px-0 lg:w-fit">
               <Link
                 href="/"
                 aria-label="logo"
@@ -115,7 +115,7 @@ export default function Navbar() {
                         ? "/logos/Central-Scientific-Logo.png"
                         : "/logos/Central-Scientific-Logo-white.png"
                     }
-                    className="w-32 rounded-lg"
+                    className="w-40 sm:w-44 rounded-lg"
                     alt="Central Scientific Logo"
                   />
                 </div>
@@ -169,35 +169,32 @@ export default function Navbar() {
                   id="links-group"
                   className="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm"
                 >
-                  {/* others links */}
-                  {links.map((link) => (
-                    <Link
-                      key={link.to}
-                      href={link.to}
-                      className={`block transition md:px-4
-                        ${
-                          isActive(link.to)
-                            ? "font-bold scale-110 duration-75"
-                            : "font-normal"
-                        }
-                        lg:${getLinkStyle()}
-                        ${
-                          currentTheme === "dark"
-                            ? "lg:dark:text-white"
-                            : "lg:dark:text-gray-200"
-                        }
-                        ${
-                          currentTheme === "dark"
-                            ? "text-white dark:text-white"
-                            : "text-gray-800"
-                        } lg:text-inherit`}
-                      onClick={toggleNavLinks}
-                    >
-                      <span>{link.label}</span>
-                    </Link>
-                  ))}
+                  {/* Who We Are link */}
+                  <Link
+                    href="/about"
+                    className={`block text-[15px] transition md:px-4
+                      ${
+                        isActive("/about")
+                          ? "font-bold scale-110 duration-75"
+                          : "font-normal"
+                      }
+                      lg:${getLinkStyle()}
+                      ${
+                        currentTheme === "dark"
+                          ? "lg:dark:text-white"
+                          : "lg:dark:text-gray-200"
+                      }
+                      ${
+                        currentTheme === "dark"
+                          ? "text-white dark:text-white"
+                          : "text-gray-800"
+                      } lg:text-inherit`}
+                    onClick={toggleNavLinks}
+                  >
+                    <span>Who We Are</span>
+                  </Link>
 
-                  {/* dropdown menu - Desktop */}
+                  {/* dropdown menu */}
                   <div className="hidden lg:block">
                     <DropdownMenu>
                       <DropdownMenuTrigger
@@ -205,12 +202,13 @@ export default function Navbar() {
                         className="focus:outline-none focus-visible:no-ring"
                       >
                         <button
-                          className={`flex items-center transition md:px-4 
+                          className={`flex items-center transition md:px-4 text-[15px] 
                             ${
                               isWhatWeDoActive()
                                 ? "font-bold scale-110 duration-75"
                                 : "font-normal"
                             }
+                            lg:${getLinkStyle()}
                             ${
                               currentTheme === "dark"
                                 ? "text-white dark:text-white"
@@ -253,15 +251,16 @@ export default function Navbar() {
                     </DropdownMenu>
                   </div>
 
-                  {/* What We Do dropdown for mobile */}
+                  {/* What We Do dropdown */}
                   <div className="lg:hidden">
                     <button
-                      className={`block transition mb-2
+                      className={`block transition mb-2 text-[15px]
                         ${
                           isWhatWeDoActive()
                             ? "font-bold scale-110 duration-75"
                             : "font-normal"
                         }
+                        lg:${getLinkStyle()}
                         ${
                           currentTheme === "dark"
                             ? "text-white dark:text-white"
@@ -289,7 +288,7 @@ export default function Navbar() {
                         <Link
                           key={item.to}
                           href={item.to}
-                          className={`block py-2
+                          className={`block py-2 text-[15px]
                             ${
                               isActive(item.to)
                                 ? "font-medium text-primary"
@@ -307,6 +306,34 @@ export default function Navbar() {
                       ))}
                     </div>
                   </div>
+
+                  {/* remaining links */}
+                  {links.slice(1).map((link) => (
+                    <Link
+                      key={link.to}
+                      href={link.to}
+                      className={`block transition md:px-4 text-[15px]
+                        ${
+                          isActive(link.to)
+                            ? "font-bold scale-110 duration-75"
+                            : "font-normal"
+                        }
+                        lg:${getLinkStyle()}
+                        ${
+                          currentTheme === "dark"
+                            ? "lg:dark:text-white"
+                            : "lg:dark:text-gray-200"
+                        }
+                        ${
+                          currentTheme === "dark"
+                            ? "text-white dark:text-white"
+                            : "text-gray-800"
+                        } lg:text-inherit`}
+                      onClick={toggleNavLinks}
+                    >
+                      <span>{link.label}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
               <button

@@ -51,7 +51,7 @@ const partnerLogos = {
         <div className="text-center mb-8 flex flex-col justify-center items-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">About Our <span className="text-primary dark:text-white">Global Partners</span></h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
-          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-3xl">
+          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
           At Central Scientific CO, we combine cutting-edge technology with
           groundbreaking research to deliver solutions that drive progress in
           science and industry. Our features are designed to empower

@@ -154,7 +154,7 @@ export default function WorldMapWeb() {
             ))}
           </span>
         </p>
-        <p className="text-sm md:text-lg text-neutral-500 max-w-5xl mx-auto py-4">
+        <p className=" text-neutral-500 max-w-5xl mx-auto py-4">
           With a global network of trusted manufacturers, we bring together
           expertise from around the world. Our smart collaboration ensures
           seamless integration, innovation, and quality across

@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import getEvents from "../../actions/getEvents";
 import { EventItem } from "./EventItem";
 
-export default function UpcomingEvents() {
+export default function UpcomingEvents({ inHome = false }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -29,7 +31,9 @@ export default function UpcomingEvents() {
     return (
       <section className="mb-20">
         <div className="flex justify-center items-center py-20">
-          <p className="text-lg text-gray-600 dark:text-gray-300">Loading events...</p>
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            Loading events...
+          </p>
         </div>
       </section>
     );
@@ -52,14 +56,24 @@ export default function UpcomingEvents() {
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col md:flex-row-reverse items-center justify-between mb-8"
+        className={`flex ${
+          inHome
+            ? "flex-col items-center justify-center"
+            : "flex-col md:flex-row items-center justify-between"
+        } mb-8`}
       >
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0">
+        <h3
+          className={`text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0 ${
+            inHome ? "text-center" : "text-right"
+          }`}
+        >
           Upcoming Events
         </h3>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${
+            inHome ? "px-16" : ""
+          }`}>
         {events.map((event, index) => (
           <EventItem key={event.id || index} event={event} index={index} />
         ))}

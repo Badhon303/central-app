@@ -129,8 +129,8 @@ export default function HeroSection() {
       <Container>
         <div className="relative ml-auto">
           <div className="flex flex-col lg:flex-row items-stretch">
-            <div className="lg:w-1/2 text-center lg:text-left p-4 bg-secondary flex flex-col justify-center">
-              <h1 className="text-balance text-white font-bold text-2xl md:text-4xl xl:text-5xl text-center">
+            <div className="lg:w-1/2 text-center lg:text-left p-4 bg-primary flex flex-col justify-center">
+              <h1 className="text-balance text-white font-bold text-xl md:text-3xl xl:text-4xl text-center">
                 The Journey Evolves...
               </h1>
               <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-white rounded-full"></div>
@@ -147,7 +147,7 @@ export default function HeroSection() {
                   href="#"
                   className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
-                  <span className="relative text-base font-semibold text-secondary text-center">
+                  <span className="relative text-base font-semibold text-primary text-center">
                     Explore More
                   </span>
                 </a>
@@ -167,18 +167,21 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="flex md:flex-row flex-col justify-between py-10 mt-16 border-y border-gray-200 gap-4 items-center">
-            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-400 p-4 rounded-lg dark:bg-gray-800">
+          <div className="flex md:flex-row flex-col justify-between py-6 mt-16 border-y border-gray-200 gap-4">
+            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-500 p-4 rounded-lg dark:bg-gray-900">
               <div className="flex items-center gap-6">
                 <div className="h-1 w-14 bg-secondary rounded-full"></div>
-                <h6 className="text-[12px] font-bold uppercase">Out Products</h6>
+                <h6 className="text-[12px] font-bold uppercase">
+                  Out Products
+                </h6>
               </div>
-              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
+              {/* <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
                 Our worldwide partner
-              </h2>
-              <p className="text-gray-600 dark:text-gray-200 mt-4">
-                We offer a wide range of products, including different types of
-                milk powders, cheeses, and non-dairy products.
+              </h2> */}
+              <p className="text-gray-600 text-[15px] dark:text-gray-200 mt-4">
+                We provide a comprehensive selection of products, including
+                various (APIs), Packaging Materials, QC Consumables, and Medical
+                Devices, all designed to meet the highest industry standards.
               </p>
               <a
                 href="#"
@@ -188,17 +191,19 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-400 p-4 rounded-lg dark:bg-gray-800">
+            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-500 p-4 rounded-lg dark:bg-gray-900">
               <div className="flex items-center gap-6">
                 <div className="h-1 w-14 bg-secondary rounded-full"></div>
-                <h6 className="text-[12px] font-bold uppercase">Our Customers</h6>
+                <h6 className="text-[12px] font-bold uppercase">
+                  Our Customers
+                </h6>
               </div>
-              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
+              {/* <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
                 Check out our brands
-              </h2>
-              <p className="text-gray-600 dark:text-gray-200 mt-4">
-                Our dairy & non-dairy products, packed under our own brands, are
-                being transported to customers all over the world!
+              </h2> */}
+              <p className="text-gray-600 text-[15px] dark:text-gray-200 mt-4">
+                Our customers are undisputed leaders in their respective fields,
+                setting industry standards for excellence and innovation.
               </p>
               <a
                 href="#"
@@ -208,17 +213,19 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-400 p-4 rounded-lg transition-all duration-100 dark:bg-gray-800">
+            <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-500 p-4 rounded-lg transition-all duration-100 dark:bg-gray-900">
               <div className="flex items-center gap-6">
                 <div className="h-1 w-14 bg-secondary rounded-full"></div>
                 <h6 className="text-[12px] font-bold uppercase">Our Quality</h6>
               </div>
-              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
+              {/* <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-2">
                 Health & safety
-              </h2>
-              <p className="text-gray-600 dark:text-gray-200 mt-4">
-                In order to show our customers that quality is important to us,
-                we only work with first-class production sites.
+              </h2> */}
+              <p className="text-gray-600 text-[15px] dark:text-gray-200 mt-4">
+                We ensure that every product we supply meets the highest
+                standards of quality, safety, efficacy, and reliability. We
+                understand that in the pharmaceutical industry, the stakes are
+                high, and the well-being of patients is paramount.
               </p>
               <a
                 href="#"

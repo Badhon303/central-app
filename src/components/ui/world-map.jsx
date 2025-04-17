@@ -14,7 +14,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
 
   const svgMap = map.getSVG({
     radius: 0.22,
-    color: currentTheme === "dark" ? "#FFFFFF40" : "#0a0a0a",
+    color: currentTheme === "dark" ? "#ffffff73" : "#559e31",
     shape: "circle",
     backgroundColor: currentTheme === "dark" ? "#030712" : "white",
   })

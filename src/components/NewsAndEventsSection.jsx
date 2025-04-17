@@ -6,6 +6,8 @@ import AreaOfFocus from "./AreaOfFocus";
 import UpcomingProjects from "./UpcomingProjects";
 import UpcomingEvents from "./UpcomingEvents";
 import WhatsNew from "./WhatsNew";
+import Blog from "@/components/Blog"
+
 
 export default function NewsAndEventsSection() {
   const fadeIn = {
@@ -37,6 +39,7 @@ export default function NewsAndEventsSection() {
           </motion.div>
 
           <AreaOfFocus />
+          <Blog />
           <UpcomingEvents />
           <UpcomingProjects />
           <WhatsNew/>
