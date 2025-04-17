@@ -60,11 +60,11 @@ export default function JoinCSCOSection() {
               Launch your career with CSCO
             </h3>
             <p className="text-white/90 text-lg mb-8">
-              We believe great businesses treat their employees like people,
-              not ID numbers — and that starts right here in our offices.
-              From hands-on training to our vibrant work environment and
-              truly supportive community, CSCO is the best place to kickstart
-              your career.
+              We believe great businesses treat their employees like people, not
+              ID numbers — and that starts right here in our offices. From
+              hands-on training to our vibrant work environment and truly
+              supportive community, CSCO is the best place to kickstart your
+              career.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 rounded-md font-medium">

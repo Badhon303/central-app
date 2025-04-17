@@ -17,7 +17,7 @@ export default function Home() {
       {/* <Testimonials /> */}
       {/* <Blog /> */}
       <UpcomingEvents inHome={inHome} />
-      <WorldMapWeb />
+      <WorldMapWeb inHome={inHome} />
     </div>
   )
 }

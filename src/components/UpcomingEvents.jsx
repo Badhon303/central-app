@@ -59,21 +59,31 @@ export default function UpcomingEvents({ inHome = false }) {
         className={`flex ${
           inHome
             ? "flex-col items-center justify-center"
-            : "flex-col md:flex-row items-center justify-between"
+            : "flex-col md:flex-row-reverse items-center justify-between"
         } mb-8`}
       >
         <h3
-          className={`text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0 ${
-            inHome ? "text-center" : "text-right"
+          className={`text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 ${
+            inHome ? "text-center md:mb-4" : "text-right md:mb-0"
           }`}
         >
           Upcoming Events
         </h3>
+        <p className={`text-gray-600 dark:text-gray-300 text-center max-w-5xl ${
+            inHome ? "block" : "hidden"
+          }`}>
+          Stay updated with our latest events, workshops, and conferences where
+          innovation meets opportunity. Join us to explore groundbreaking ideas,
+          connect with industry leaders, and be part of the future of scientific
+          advancement.
+        </p>
       </motion.div>
 
-      <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${
-            inHome ? "px-16" : ""
-          }`}>
+      <div
+        className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${
+          inHome ? "px-16" : ""
+        }`}
+      >
         {events.map((event, index) => (
           <EventItem key={event.id || index} event={event} index={index} />
         ))}

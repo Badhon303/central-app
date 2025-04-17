@@ -1,38 +1,38 @@
-"use client"
-import { useRef } from "react"
+"use client";
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import DottedMap from "dotted-map"
-import Image from "next/image"
-import { useTheme } from "next-themes"
+import DottedMap from "dotted-map";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
-  const svgRef = useRef(null)
-  const map = new DottedMap({ height: 100, grid: "diagonal" })
+  const svgRef = useRef(null);
+  const map = new DottedMap({ height: 100, grid: "diagonal" });
 
-  const { theme, systemTheme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
+  const { theme, systemTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   const svgMap = map.getSVG({
     radius: 0.22,
     color: currentTheme === "dark" ? "#ffffff73" : "#559e31",
     shape: "circle",
     backgroundColor: currentTheme === "dark" ? "#030712" : "white",
-  })
+  });
 
   const projectPoint = (lat, lng) => {
-    const x = (lng + 180) * (800 / 360)
-    const y = (90 - lat) * (400 / 180)
-    return { x, y }
-  }
+    const x = (lng + 180) * (800 / 360);
+    const y = (90 - lat) * (400 / 180);
+    return { x, y };
+  };
 
   const createCurvedPath = (start, end) => {
-    const midX = (start.x + end.x) / 2
-    const midY = Math.min(start.y, end.y) - 50
-    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`
-  }
+    const midX = (start.x + end.x) / 2;
+    const midY = Math.min(start.y, end.y) - 50;
+    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
+  };
 
   return (
-    <div className="w-full aspect-[2/1] dark:bg-background bg-white rounded-lg  relative font-sans">
+    <div className="w-full aspect-[2/1] dark:bg-background bg-white rounded-lg relative font-sans">
       <Image
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none"
@@ -47,8 +47,8 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
         className="w-full h-full absolute inset-0 pointer-events-none select-none"
       >
         {dots.map((dot, i) => {
-          const startPoint = projectPoint(dot.start.lat, dot.start.lng)
-          const endPoint = projectPoint(dot.end.lat, dot.end.lng)
+          const startPoint = projectPoint(dot.start.lat, dot.start.lng);
+          const endPoint = projectPoint(dot.end.lat, dot.end.lng);
           return (
             <g key={`path-group-${i}`}>
               <motion.path
@@ -70,7 +70,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                 key={`start-upper-${i}`}
               ></motion.path>
             </g>
-          )
+          );
         })}
 
         <defs>
@@ -152,5 +152,5 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
         ))}
       </svg>
     </div>
-  )
+  );
 }

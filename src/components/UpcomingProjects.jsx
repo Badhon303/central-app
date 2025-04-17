@@ -80,7 +80,7 @@ export default function UpcomingProjects() {
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col md:flex-row-reverse items-center justify-between mb-8"
+        className="flex flex-col md:flex-row items-center justify-between mb-8"
       >
         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0">
           Upcoming Projects
