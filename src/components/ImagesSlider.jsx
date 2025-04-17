@@ -39,8 +39,7 @@ export default function ImagesSlider() {
               duration: 0.6,
             }}
             className="flex flex-col items-center justify-center"
-          >
-          </motion.div>
+          ></motion.div>
         </div>
 
         {/* Categories */}

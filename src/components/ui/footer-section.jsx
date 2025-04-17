@@ -36,7 +36,11 @@ function Footerdemo() {
             {/* Logo */}
             <div className="mb-6">
               <img
-                src={currentTheme == "dark" ? "/logos/Central-Scientific-Logo-dark.png" : "/logos/Central-Scientific-Logo.png"}
+                src={
+                  currentTheme == "dark"
+                    ? "/logos/Central-Scientific-Logo-dark.png"
+                    : "/logos/Central-Scientific-Logo.png"
+                }
                 alt="Central Scientific Company Logo"
                 className="w-36"
               />

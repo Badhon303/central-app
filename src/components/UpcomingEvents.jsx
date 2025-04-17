@@ -69,9 +69,11 @@ export default function UpcomingEvents({ inHome = false }) {
         >
           Upcoming Events
         </h3>
-        <p className={`text-gray-600 dark:text-gray-300 text-center max-w-5xl ${
+        <p
+          className={`text-gray-600 dark:text-gray-300 text-center max-w-5xl ${
             inHome ? "block" : "hidden"
-          }`}>
+          }`}
+        >
           Stay updated with our latest events, workshops, and conferences where
           innovation meets opportunity. Join us to explore groundbreaking ideas,
           connect with industry leaders, and be part of the future of scientific

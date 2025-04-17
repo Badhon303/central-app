@@ -46,12 +46,12 @@ export default function ContactSection() {
     <section className="relative">
       {/* Hero Section with Background Image */}
       <div className="relative h-[400px] overflow-hidden">
-      <Image
-        src="/logos/contact-us-2.jpg"
-        alt="Contact Us Image"
-        fill
-        className="object-cover object-center"
-      />
+        <Image
+          src="/logos/contact-us-2.jpg"
+          alt="Contact Us Image"
+          fill
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative h-full max-w-6xl mx-auto px-4 flex flex-col justify-center">
@@ -113,7 +113,9 @@ export default function ContactSection() {
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-3">
                 <MessageSquare className="w-6 h-6 text-primary" />
               </div>
-              <p className="text-gray-800 dark:text-gray-200 font-medium text-sm">Contact Form</p>
+              <p className="text-gray-800 dark:text-gray-200 font-medium text-sm">
+                Contact Form
+              </p>
             </div>
           </button>
         </div>
@@ -135,7 +137,7 @@ export default function ContactSection() {
             />
             <Input
               type="email"
-              placeholder="E-MAIL"
+              placeholder="Your Email"
               value={formData.email}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, email: e.target.value }))
@@ -144,7 +146,7 @@ export default function ContactSection() {
               required
             />
             <Input
-              placeholder="SUBJECT"
+              placeholder="Subject"
               value={formData.subject}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, subject: e.target.value }))
@@ -153,7 +155,7 @@ export default function ContactSection() {
               required
             />
             <Textarea
-              placeholder="MESSAGE"
+              placeholder="You message here..."
               value={formData.message}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, message: e.target.value }))

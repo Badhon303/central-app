@@ -6,8 +6,7 @@ import AreaOfFocus from "./AreaOfFocus";
 import UpcomingProjects from "./UpcomingProjects";
 import UpcomingEvents from "./UpcomingEvents";
 import WhatsNew from "./WhatsNew";
-import Blog from "@/components/Blog"
-
+import Blog from "@/components/Blog";
 
 export default function NewsAndEventsSection() {
   const fadeIn = {
@@ -28,12 +27,12 @@ export default function NewsAndEventsSection() {
       <Container>
         <div className="relative">
           {/* Section heading */}
-          <motion.div
-            className="text-center mb-14"
-          >
+          <motion.div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
-              News, Upcoming {" "}
-              <span className="text-primary dark:text-white">Projects and Events</span>
+              News, Upcoming{" "}
+              <span className="text-primary dark:text-white">
+                Projects and Events
+              </span>
             </h2>
             <div className="mx-auto mt-4 h-1 w-32 md:w-60 bg-primary rounded-full"></div>
           </motion.div>
@@ -42,7 +41,7 @@ export default function NewsAndEventsSection() {
           <UpcomingEvents />
           <UpcomingProjects />
           <Blog />
-          <WhatsNew/>
+          <WhatsNew />
         </div>
       </Container>
     </div>
