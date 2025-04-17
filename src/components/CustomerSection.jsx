@@ -15,14 +15,14 @@ export function CustomerSection() {
       </div>
 
       <motion.div className="relative container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 capitalize">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
             Meet our{" "}
             <span className="text-primary dark:text-white">happy clients</span>
           </h2>
 
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400 my-4 max-w-[600px] mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto">
             Trusted by leading organizations for our expertise and reliability,
             we strive to build lasting relationships with our valued customers.
             Our comprehensive solutions are designed to address their unique

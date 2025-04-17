@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -13,15 +12,12 @@ import {
 import {
   Facebook,
   Globe,
-  Instagram,
   Linkedin,
   Mail,
   Moon,
-  Send,
   Sun,
   Twitter,
 } from "lucide-react";
-import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
 function Footerdemo() {
@@ -42,7 +38,7 @@ function Footerdemo() {
               <img
                 src={currentTheme == "dark" ? "/logos/Central-Scientific-Logo-dark.png" : "/logos/Central-Scientific-Logo.png"}
                 alt="Central Scientific Company Logo"
-                className="w-28"
+                className="w-36"
               />
             </div>
 
@@ -141,7 +137,7 @@ function Footerdemo() {
               </address>
             </div>
           </div>
-          <div className="relative">
+          <div className="md:ml-8 relative">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
             <div className="mb-6 flex space-x-1">
               <TooltipProvider>
@@ -186,46 +182,12 @@ function Footerdemo() {
                       size="icon"
                       className="rounded-full"
                     >
-                      <Instagram className="h-4 w-4" />
-                      <span className="sr-only">Instagram</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent className="bg-white">
-                    <p>Follow us on Instagram</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
                       <Linkedin className="h-4 w-4" />
                       <span className="sr-only">LinkedIn</span>
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent className="bg-white">
                     <p>Connect with us on LinkedIn</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <IconBrandWhatsapp className="h-4 w-4" />
-                      <span className="sr-only">WhatsApp</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent className="bg-white">
-                    <p>Connect us on WhatsApp</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>

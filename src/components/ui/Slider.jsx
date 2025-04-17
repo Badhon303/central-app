@@ -6,8 +6,6 @@ import React, { useEffect, useState } from "react"
 export const Slider = ({
   images,
   children,
-  overlay = true,
-  overlayClassName,
   className,
   autoplay = true,
   direction = "up",
@@ -66,7 +64,7 @@ export const Slider = ({
     if (autoplay) {
       interval = setInterval(() => {
         handleNext()
-      }, 5000)
+      }, 10000)
     }
 
     return () => {
@@ -94,14 +92,14 @@ export const Slider = ({
       opacity: 1,
       y: "-150%",
       transition: {
-        duration: 1,
+        duration: 2,
       },
     },
     downExit: {
       opacity: 1,
       y: "150%",
       transition: {
-        duration: 1,
+        duration: 2,
       },
     },
   }
@@ -133,7 +131,7 @@ export const Slider = ({
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
-            className="image h-full w-full absolute inset-0 object-cover object-center"
+            className="image h-full w-full absolute inset-0 object-fit"
           />
         </AnimatePresence>
       )}

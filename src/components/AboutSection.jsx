@@ -22,14 +22,14 @@ export default function AboutSection() {
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
               About{" "}
-              <span className="text-primary dark:text-white">The Company</span>
+              <span className="text-primary dark:text-white">Us</span>
             </h2>
-            <div className="mx-auto mt-4 h-1 w-32 bg-primary rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-28 bg-primary rounded-full"></div>
           </div>
 
           {/* Who We Are - Directly under the title */}
-          <div className="mb-16 max-w-3xl mx-auto text-center">
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          <div className="mb-16 max-w-5xl mx-auto text-center">
+            <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
               Central Scientific Company was incorporated in the year 1990,
               Central is a transparent trader, providing highly competitive,
               faster, efficient, and professional services. It facilitates a
@@ -48,7 +48,7 @@ export default function AboutSection() {
           <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Left Side */}
-              <div className="p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
+              <div className="p-4 md:p-6 flex flex-col justify-center order-2 lg:order-1">
                 <div className="mb-10">
                   <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Mission
@@ -80,7 +80,7 @@ export default function AboutSection() {
               </div>
 
               {/* Right side: Stacked photos */}
-              <div className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-8 md:p-12">
+              {/* <div className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-8 md:p-12">
                 <div className="grid grid-cols-2 grid-rows-2 h-full">
                   <div className="relative overflow-hidden">
                     <Image
@@ -107,7 +107,17 @@ export default function AboutSection() {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
+              <div className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-4 md:p-6">
+  <div className="relative h-full overflow-hidden">
+    <Image
+      src="/logos/About/about_top.jpeg" // Replace this with your desired image path
+      alt="CSCO Team"
+      fill
+      className="object-cover"
+    />
+  </div>
+</div>
             </div>
           </div>
 
@@ -145,7 +155,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    <CountUp start={0} end={10} duration={2} delay={1} />+
+                    <CountUp start={0} end={10} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Years of experience
@@ -153,7 +163,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    <CountUp start={0} end={200} duration={2} delay={1} />+
+                    <CountUp start={0} end={200} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Projects completed
@@ -161,7 +171,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    <CountUp start={0} end={50} duration={2} delay={1} />+
+                    <CountUp start={0} end={50} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Team members
@@ -169,7 +179,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    <CountUp start={0} end={100} duration={2} delay={1} />%
+                    <CountUp start={0} end={100} duration={7} delay={1} />%
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Client satisfaction

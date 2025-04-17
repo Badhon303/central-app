@@ -17,7 +17,7 @@ export default function Features() {
           />
         </svg>
 
-        <h2 className="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2 text-center">
+        <h2 className="my-4 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2 text-center">
           A technology-first approach to scientific innovation
         </h2>
         <p className="text-gray-600 dark:text-gray-300 text-center">
@@ -86,7 +86,7 @@ export default function Features() {
 
             <div className="space-y-2">
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
-                Laboratory & Research
+                Laboratory
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
                 Cutting-edge laboratory equipment, consumables, and research
