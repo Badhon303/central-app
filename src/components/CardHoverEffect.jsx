@@ -14,30 +14,30 @@ export const projects = [
     title: "API",
     description:
       "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+    link: "/products#api",
   },
   {
     title: "Excipient",
     description:
       "A streaming service that offers a wide variety of award-winning shows on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+    link: "/products#excipients",
   },
   {
     title: "Primary Packaging",
     description:
       "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+    link: "/products#primaryPackaging",
   },
   {
     title: "QC Consumables",
     description:
       "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+    link: "/products#qcConsumables",
   },
   {
     title: "Medical device",
     description:
       "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+    link: "/products#medicalDevices",
   },
 ];

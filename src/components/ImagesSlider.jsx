@@ -18,7 +18,6 @@ export default function ImagesSlider() {
 
   return (
     <section className="relative">
-      {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
         <Slider className="h-full" images={images} />
       </div>
@@ -41,18 +40,10 @@ export default function ImagesSlider() {
             }}
             className="flex flex-col items-center justify-center"
           >
-            {/* <motion.p className="font-bold text-3xl lg:text-5xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
-              WELCOME TO CENTRAL SCIENTIFIC CO.
-            </motion.p>
-            <motion.p className="font-bold px-6 text-base md:text-2xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-2">
-              By choosing CSCO, you are partnering with a mature, dynamic,
-              transparent and reliable company, run by professionals with
-              extensive experience in the field.
-            </motion.p> */}
           </motion.div>
         </div>
 
-        {/* Categories Section */}
+        {/* Categories */}
         <section className="">
           <div className="container mx-auto">
             <CardHoverEffect />

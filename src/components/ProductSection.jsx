@@ -1,7 +1,6 @@
-// ProductSection.js
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FlaskRound as Flask,
@@ -34,8 +33,34 @@ export default function ProductSection() {
     medicalDevices: <Stethoscope className="w-12 h-12 text-white" />,
   };
 
+  useEffect(() => {
+    // hash navigation when component mounts
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1);
+      const validCategories = ["api", "excipients", "primaryPackaging", "qcConsumables", "medicalDevices"];
+      
+      if (hash && validCategories.includes(hash)) {
+        setSelectedCategory(hash);
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 0);
+      }
+    };
+
+    handleHashChange();
+
+    // listening for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+    // updating URL hash without triggering a full page reload
+    window.history.pushState(null, null, `#${category}`);
   };
 
   const handleLetterClick = (letter) => {
@@ -179,7 +204,7 @@ export default function ProductSection() {
 
   return (
     <div className="relative py-16 md:py-24">
-      {/* Background gradient */}
+      {/* gradient */}
       <div
         aria-hidden="true"
         className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
@@ -209,7 +234,7 @@ export default function ProductSection() {
           </p>
         </div>
 
-        {/* Category Grid */}
+        {/* Category */}
         <div className="text-center mb-12">
           <p className="text-2xl font-bold text-gray-800 dark:text-white">
             Our Product Categories
@@ -223,18 +248,83 @@ export default function ProductSection() {
           categoryTitles={categoryTitles}
         />
 
-        {/* Content Section */}
+        {/* Content Sections with IDs for hash navigation */}
         <div className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
-              A Closer Look
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-              {categoryDescriptions[selectedCategory]}
-            </p>
+          <div id="api" className={selectedCategory === "api" ? "" : "hidden"}>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                A Closer Look
+              </h2>
+              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                {categoryDescriptions[selectedCategory]}
+              </p>
+            </div>
+            {selectedCategory === "api" && renderContent()}
           </div>
 
-          {renderContent()}
+          <div id="excipients" className={selectedCategory === "excipients" ? "" : "hidden"}>
+            {selectedCategory === "excipients" && (
+              <>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                    A Closer Look
+                  </h2>
+                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                    {categoryDescriptions[selectedCategory]}
+                  </p>
+                </div>
+                {renderContent()}
+              </>
+            )}
+          </div>
+
+          <div id="primaryPackaging" className={selectedCategory === "primaryPackaging" ? "" : "hidden"}>
+            {selectedCategory === "primaryPackaging" && (
+              <>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                    A Closer Look
+                  </h2>
+                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                    {categoryDescriptions[selectedCategory]}
+                  </p>
+                </div>
+                {renderContent()}
+              </>
+            )}
+          </div>
+
+          <div id="qcConsumables" className={selectedCategory === "qcConsumables" ? "" : "hidden"}>
+            {selectedCategory === "qcConsumables" && (
+              <>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                    A Closer Look
+                  </h2>
+                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                    {categoryDescriptions[selectedCategory]}
+                  </p>
+                </div>
+                {renderContent()}
+              </>
+            )}
+          </div>
+
+          <div id="medicalDevices" className={selectedCategory === "medicalDevices" ? "" : "hidden"}>
+            {selectedCategory === "medicalDevices" && (
+              <>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                    A Closer Look
+                  </h2>
+                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                    {categoryDescriptions[selectedCategory]}
+                  </p>
+                </div>
+                {renderContent()}
+              </>
+            )}
+          </div>
         </div>
       </motion.div>
     </div>
