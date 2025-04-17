@@ -21,8 +21,7 @@ export default function AboutSection() {
           {/* Section heading */}
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
-              About{" "}
-              <span className="text-primary dark:text-white">Us</span>
+              About <span className="text-primary dark:text-white">Us</span>
             </h2>
             <div className="mx-auto mt-4 h-1 w-28 bg-primary rounded-full"></div>
           </div>
@@ -58,9 +57,9 @@ export default function AboutSection() {
                     operational and organizational excellence without
                     compromising from our values and business ethics. We aim to
                     contribute to the advancement of healthcare by ensuring a
-                    secure and efficient supply chain, ultimately helping
-                    pharmaceutical industry to make easy access for people to
-                    essential medications to most advanced quality products.
+                    secure and efficient supply chain, facilitating easy access
+                    to essential medications, and providing the pharmaceutical
+                    industry with advanced, high-quality products.
                   </p>
                 </div>
 
@@ -109,15 +108,15 @@ export default function AboutSection() {
                 </div>
               </div> */}
               <div className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-4 md:p-6">
-  <div className="relative h-full overflow-hidden">
-    <Image
-      src="/logos/About/about_top.jpeg" // Replace this with your desired image path
-      alt="CSCO Team"
-      fill
-      className="object-cover"
-    />
-  </div>
-</div>
+                <div className="relative h-full overflow-hidden">
+                  <Image
+                    src="/logos/About/about_top.jpeg" // Replace this with your desired image path
+                    alt="CSCO Team"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 

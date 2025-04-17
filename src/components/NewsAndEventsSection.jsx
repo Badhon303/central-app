@@ -39,9 +39,9 @@ export default function NewsAndEventsSection() {
           </motion.div>
 
           <AreaOfFocus />
-          <Blog />
           <UpcomingEvents />
           <UpcomingProjects />
+          <Blog />
           <WhatsNew/>
         </div>
       </Container>

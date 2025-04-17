@@ -2,12 +2,8 @@
 
 import WorldMap from "@/components/ui/world-map";
 import { motion } from "motion/react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip";
+import { InfiniteSlider } from "./ui/infinite-slider";
+import { CustomerSection } from "./CustomerSection";
 
 const partnerLogos = {
   "UNITED PHARMA INDUSTRIES CO., LTD": "/logos/united-pharma.png",
@@ -129,7 +125,7 @@ const countryConnections = [
   },
 ];
 
-export default function WorldMapWeb() {
+export default function WorldMapWeb({ inHome = false }) {
   // Sorting connections by longitude
   const sortedConnections = [...countryConnections].sort(
     (a, b) => a.start.lng - b.start.lng
@@ -154,7 +150,7 @@ export default function WorldMapWeb() {
             ))}
           </span>
         </p>
-        <p className=" text-neutral-500 max-w-5xl mx-auto py-4">
+        <p className="text-neutral-500 max-w-5xl mx-auto py-4">
           With a global network of trusted manufacturers, we bring together
           expertise from around the world. Our smart collaboration ensures
           seamless integration, innovation, and quality across
@@ -169,27 +165,38 @@ export default function WorldMapWeb() {
           tooltipContent: `${connection.start.name} to ${connection.end.name}`,
         }))}
       />
-      <div className="max-w-screen mx-auto mt-8">
-        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 px-4 items-center justify-center self-center justify-items-center">
-          {Object.entries(partnerLogos).map(([name, logo]) => (
-            <TooltipProvider key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center p-4 rounded-lg">
-                    {/* Logos */}
-                    <img
-                      src={logo}
-                      alt={name}
-                      className="w-16 h-10 sm:w-20 sm:h-14 md:w-28 md:h-20 border border-black/90 dark:border-gray-300 object-fill rounded-sm"
-                    />
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent className="bg-white dark:bg-gray-800">
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          ))}
+      <div className="flex flex-col gap-6 sm:gap-8 items-center justify-center">
+        <div>
+          <h2 className="text-center text-2xl md:text-3xl font-bold dark:text-white text-black mt-8">
+            Global Partners
+          </h2>
+
+          <div className="max-w-screen mx-auto mt-4 px-4">
+            <InfiniteSlider
+              duration={80}
+              durationOnHover={120}
+              className="py-4"
+            >
+              {Object.entries(partnerLogos).map(([name, logo]) => (
+                <div
+                  key={name}
+                  className="flex flex-col items-center p-2 sm:p-4 rounded-lg mx-1 sm:mx-2"
+                >
+                  <img
+                    src={logo}
+                    alt={name}
+                    className="w-16 h-10 sm:w-20 sm:h-14 md:w-28 md:h-20 border border-black/90 dark:border-gray-300 object-fill rounded-sm"
+                  />
+                </div>
+              ))}
+            </InfiniteSlider>
+          </div>
+        </div>
+        <div className="w-5xl">
+          <h2 className="text-center text-2xl md:text-3xl font-bold dark:text-white text-black mt-8">
+            Our Clients
+          </h2>
+          <CustomerSection inHome={inHome} />
         </div>
       </div>
     </div>
