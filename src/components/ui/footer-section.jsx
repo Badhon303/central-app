@@ -29,7 +29,7 @@ function Footerdemo() {
   };
 
   return (
-    <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
+    <footer className="relative border-t bg-background transition-colors duration-300">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
@@ -43,7 +43,7 @@ function Footerdemo() {
             </div>
 
             {/* Punchy Description */}
-            <p className="mb-6 text-muted-foreground mr-20 sm:mr-0 sm:max-w-96">
+            <p className="mb-6 sm:text-base mr-20 sm:mr-0 sm:max-w-96">
               Connecting world-class pharmaceuticals to the world, efficiently
               and innovatively since 1990.
             </p>
@@ -52,7 +52,7 @@ function Footerdemo() {
               href="https://www.central-bd.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
+              className="flex items-center gap-2 sm:text-base cursor-pointer dark:text-gray-200 hover:text-primary transition-colors"
             >
               <Globe className="h-4 w-4" />
               <p>www.central-bd.com</p>
@@ -62,7 +62,7 @@ function Footerdemo() {
               href="mailto:info@central-bd.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 sm:text-base cursor-pointer text-gray-600 dark:text-gray-200 hover:text-primary transition-colors"
+              className="flex items-center gap-2 sm:text-base cursor-pointer dark:text-gray-200 hover:text-primary transition-colors"
             >
               <Mail className="h-4 w-4" />
               <p>info@central-bd.com</p>
