@@ -256,7 +256,7 @@ export const apiProducts = {
       },
       {
         manufacturer: "Alpha Group",
-        logo: "/logos/alpha-group.jpeg",
+        logo: "/logos/Manufacturer-Logos/alpha.png",
         products: [
           "Lactose",
         ],
@@ -268,7 +268,7 @@ export const apiProducts = {
       },
       {
         manufacturer: "RC Enterprise ",
-        logo: "/logos/RC-enterprises.jpg",
+        logo: "/logos/Manufacturer-Logos/rc.png",
         products: [
           "Psyllium Husk",
         ],
@@ -278,14 +278,14 @@ export const apiProducts = {
   export const primaryPackagingData = [
     {
         manufacturer: "Svam Toyal Packaging Industries Pvt. Ltd",
-        logo: "/logos/svam.jpg",
+        logo: "/logos/Manufacturer-Logos/svam.png",
         products: [
           "Alu Alu Bottom Foil",
         ],
       },
       {
         manufacturer: "RAVIRAJ FOILS LIMITED",
-        logo: "/logos/ravirajFossils.jpg",
+        logo: "/logos/Manufacturer-Logos/raviraj.jpg",
         products: [
           "Top Blister Foil",
           "Strip Pack Foil",
@@ -295,7 +295,7 @@ export const apiProducts = {
       },
       {
         manufacturer: "Borosil Scentific",
-        logo: "/logos/borosil.jpeg",
+        logo: "/logos/Manufacturer-Logos/borossil.png",
         products: [
           "Glass Ampoules",
           "Glass Vials",
@@ -348,7 +348,7 @@ export const apiProducts = {
       },
       {
         manufacturer: "Assistant Germany",
-        logo: "/logos/glaswarenfabrik.jpeg",
+        logo: "/logos/Manufacturer-Logos/assistent.png",
         products: [
           "Glassware",
         ],
@@ -365,7 +365,7 @@ export const apiProducts = {
   export const medicalDevicesData = [
     {
         manufacturer: "PT Oneject Indonesia",
-        logo: "/logos/oneject.jpeg",
+        logo: "/logos/Manufacturer-Logos/oneject.png",
         products: [
           "ADS Syringe",
           "Safety Box",
