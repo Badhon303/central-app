@@ -6,6 +6,31 @@ import CountUp from "react-countup";
 import Image from "next/image";
 
 export default function AboutSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="relative py-16 md:py-24" id="about">
       <div
@@ -18,7 +43,7 @@ export default function AboutSection() {
 
       <Container>
         <div className="relative">
-          {/* Section heading */}
+          {/* heading */}
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
               About <span className="text-primary dark:text-white">Us</span>
@@ -26,7 +51,7 @@ export default function AboutSection() {
             <div className="mx-auto mt-4 h-1 w-28 bg-primary rounded-full"></div>
           </div>
 
-          {/* Who We Are - Directly under the title */}
+          {/* Who We Are */}
           <div className="mb-16 max-w-5xl mx-auto text-center">
             <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
               Central Scientific Company was incorporated in the year 1990,
@@ -43,12 +68,21 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* Mission and Vision with grid photos*/}
-          <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+          {/* Mission and Vision*/}
+          <motion.div
+            className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Left Side */}
-              <div className="p-4 md:p-6 flex flex-col justify-center order-2 lg:order-1">
-                <div className="mb-10">
+              <motion.div
+                className="p-4 md:p-6 flex flex-col justify-center order-2 lg:order-1"
+                variants={itemVariants}
+              >
+                <motion.div className="mb-10" variants={itemVariants}>
                   <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Mission
                   </h3>
@@ -61,9 +95,9 @@ export default function AboutSection() {
                     to essential medications, and providing the pharmaceutical
                     industry with advanced, high-quality products.
                   </p>
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div variants={itemVariants}>
                   <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Vision
                   </h3>
@@ -75,52 +109,33 @@ export default function AboutSection() {
                     change, setting the standard for technological excellence,
                     and leaving a lasting legacy of progress.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              {/* Right side: Stacked photos */}
-              {/* <div className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-8 md:p-12">
-                <div className="grid grid-cols-2 grid-rows-2 h-full">
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/logos/mv1.jpg"
-                      alt="CSCO Team"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/logos/mv2.jpg"
-                      alt="CSCO Office"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative overflow-hidden col-span-2">
-                    <Image
-                      src="/logos/mv3.jpg"
-                      alt="CSCO Collaboration"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </div> */}
-              <div className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-4 md:p-6">
-                <div className="relative h-full overflow-hidden">
+              {/* Right side */}
+              <motion.div
+                className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-4 md:p-6"
+                variants={itemVariants}
+              >
+                <motion.div
+                  className="relative h-full overflow-hidden rounded-lg"
+                  initial={{ scale: 1.05, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
                   <Image
-                    src="/logos/About/about_top.jpeg" // Replace this with your desired image path
+                    src="/logos/About/about_top.jpeg"
                     alt="CSCO Team"
                     fill
                     className="object-cover"
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Additional "About Us" content */}
+          {/* Additional */}
           <div className="mt-16 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm dark:border dark:border-gray-800 rounded-xl p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div className="space-y-6">

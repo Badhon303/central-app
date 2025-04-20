@@ -51,64 +51,64 @@ export function CustomerSection({ inHome = false }) {
             {/* Each grid cell is a flex container to center the image */}
             <div className="flex justify-center items-center border aspect-square">
               <img
-                src="/logos/customers/ACI.jpg"
+                src="/logos/Customer-Logos/aci.png"
                 alt="ACI"
-                className={`aspect-square ${
+                className={` ${
                   inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>
             <div className="flex justify-center items-center border aspect-square">
               <img
-                src="/logos/customers/nipro.jpg"
+                src="/logos/Customer-Logos/nipro.png"
                 alt="Nipro"
-                className={`aspect-square ${
-                  inHome ? "w-[60px] sm:w-[100px]" : "w-[130px]"
+                className={` ${
+                  inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>
             <div className="flex justify-center items-center border aspect-square">
               <img
-                src="/logos/customers/popular.jpg"
+                src="/logos/Customer-Logos/popular.png"
                 alt="Popular"
-                className={`aspect-square ${
-                  inHome ? "w-[60px] sm:w-[100px]" : "w-[130px]"
+                className={` ${
+                  inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>
             <div className="flex justify-center items-center border aspect-square">
               <img
-                src="/logos/customers/incepta.jpg"
+                src="/logos/Customer-Logos/incepta.png"
                 alt="Incepta"
-                className={`aspect-square ${
-                  inHome ? "w-[60px] sm:w-[100px]" : "w-[130px]"
+                className={` ${
+                  inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>
             <div className="flex justify-center items-center border aspect-square">
               <img
-                src="/logos/customers/Everest.jpeg"
+                src="/logos/Customer-Logos/everest.jpeg"
                 alt="Everest"
-                className={`aspect-square ${
-                  inHome ? "w-[60px] sm:w-[100px]" : "w-[130px]"
+                className={` ${
+                  inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>
             <div className="flex justify-center items-center border aspect-square">
               <img
-                src="/logos/customers/eskayef.jpg"
+                src="/logos/Customer-Logos/skf.png"
                 alt="Eskayef"
-                className={`aspect-square ${
-                  inHome ? "w-[60px] sm:w-[100px]" : "w-[130px]"
+                className={` ${
+                  inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>
             <div className="flex justify-center items-center border aspect-square">
               <img
-                src="/logos/customers/beacon.png"
+                src="/logos/Customer-Logos/beacon.png"
                 alt="Beacon"
-                className={`aspect-square ${
-                  inHome ? "w-[60px] sm:w-[100px]" : "w-[130px]"
+                className={`${
+                  inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>
@@ -116,8 +116,8 @@ export function CustomerSection({ inHome = false }) {
               <img
                 src="/logos/customers/ACME.jpg"
                 alt="ACME"
-                className={`aspect-square ${
-                  inHome ? "w-[60px] sm:w-[100px]" : "w-[130px]"
+                className={` ${
+                  inHome ? "w-[60px] sm:w-[100px]" : "w-[120px]"
                 } rounded-[4px]`}
               />
             </div>

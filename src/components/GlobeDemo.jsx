@@ -13,6 +13,7 @@ export function GlobeDemo() {
         "UNITED PHARMA INDUSTRIES CO., LTD",
         "KINHOO PHARMACEUTICAL CO., LTD",
         "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD",
+        "Acetar Bio-Tech Inc",
       ],
     },
     { name: "Brazil", code: "BR", partners: ["GLOBE QUIMICA"] },
@@ -43,24 +44,26 @@ export function GlobeDemo() {
     { name: "Indonesia", code: "ID", partners: ["PT. ONEJECT"] },
   ];
 
-  // Map of partner names to their logo file paths
+  // partner names to their logo file paths
   const partnerLogos = {
     "UNITED PHARMA INDUSTRIES CO., LTD": "/logos/united-pharma.png",
     "KINHOO PHARMACEUTICAL CO., LTD": "/logos/kinhoo-logo.png",
     "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD": "/logos/sozhou.png",
     "GLOBE QUIMICA": "/logos/globe-cumica.png",
-    "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/zhunhai.png",
-    "ALPHA GROUP": "/logos/alpha-group.jpeg",
+    "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/Manufacturer-Logos/zuhai.png",
+    "ALPHA GROUP": "/logos/Manufacturer-Logos/alpha.png",
     KOEL: "/logos/KOEL.png",
-    "RC ENTERPRISE": "/logos/RC-enterprises.jpg",
-    "BOROSIL SCIENTIFIC LIMITED": "/logos/borosil.jpeg",
-    "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/svam.jpeg",
-    "RAVI RAJ FOILS LTD": "/logos/raviraj.png",
+    "RC ENTERPRISE": "/logos/Manufacturer-Logos/rc.png",
+    "BOROSIL SCIENTIFIC LIMITED": "/logos/Manufacturer-Logos/borossil.png",
+    "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/Manufacturer-Logos/svam.png",
+    "RAVI RAJ FOILS LTD": "/logos/Manufacturer-Logos/raviraj.jpg",
     "DR. MAISCH": "/logos/dr-maisch.jpeg",
-    "KARL HECHT GMBH": "/logos/glaswarenfabrik.jpeg",
-    "DORSAN FILTRATION": "/logos/dorsan.jpeg",
+    "KARL HECHT GMBH": "/logos/Manufacturer-Logos/assistent.png",
+    "DORSAN FILTRATION": "/logos/Manufacturer-Logos/dorsan.jpg",
     "LIVEO RESEARCH": "/logos/liveo.jpeg",
-    "PT. ONEJECT": "/logos/oneject.jpeg",
+    "PT. ONEJECT": "/logos/Manufacturer-Logos/oneject.png",
+    "Acetar Bio-Tech Inc": "/logos/Manufacturer-Logos/acetar.png",
+
   };
 
   return (
