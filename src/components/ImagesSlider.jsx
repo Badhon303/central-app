@@ -17,7 +17,7 @@ export default function ImagesSlider() {
   ];
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Slider className="h-full" images={images} />
       </div>

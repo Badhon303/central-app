@@ -26,7 +26,7 @@ export default function Features() {
               alt="pharmaceutical solutions"
             />
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Pharmaceuticals
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
@@ -48,7 +48,7 @@ export default function Features() {
               alt="food solutions illustration"
             />
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Food
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
@@ -72,7 +72,7 @@ export default function Features() {
             />
 
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Laboratory
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
@@ -95,7 +95,7 @@ export default function Features() {
               alt="healthcare solutions illustration"
             />
             <div className="space-y-2">
-              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+              <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Healthcare
               </h5>
               <p className="text-gray-600 dark:text-gray-300">

@@ -48,7 +48,7 @@ export default function AboutSection() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
               About <span className="text-primary dark:text-white">Us</span>
             </h2>
-            <div className="mx-auto mt-4 h-1 w-28 bg-primary rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-28 bg-secondary rounded-full"></div>
           </div>
 
           {/* Who We Are */}
@@ -156,14 +156,12 @@ export default function AboutSection() {
                   solutions that drive real results.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a
-                    href="#"
-                    className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-                  >
-                    <span className="relative text-base font-semibold text-white">
-                      Learn more
-                    </span>
-                  </a>
+                <a
+                  href="#"
+                  className="mt-6 text-sm px-4 py-2 text-white font-semibold bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
+                >
+                  Learn More
+                </a>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">

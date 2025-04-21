@@ -84,7 +84,7 @@ export function GlobeDemo() {
               Global Partners
             </span>
           </h2>
-          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
           <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
             At Central Scientific CO, we combine cutting-edge technology with
             groundbreaking research to deliver solutions that drive progress in

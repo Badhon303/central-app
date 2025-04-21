@@ -89,7 +89,7 @@ export default function FAQSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
             Frequently <span className="text-primary">Asked Questions</span>
           </h2>
-          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
         </div>
 
         <div className="max-w-4xl mx-auto">

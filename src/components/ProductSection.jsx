@@ -227,7 +227,7 @@ export default function ProductSection() {
               Product Portfolio
             </span>
           </h2>
-          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
           <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto leading-relaxed">
             We take great pride in representing the world's foremost
             manufacturers in the pharmaceutical industry. Our partnership with
@@ -257,7 +257,7 @@ export default function ProductSection() {
         {/* Content Sections with IDs for hash navigation */}
         <div className="mt-20">
           <div id="api" className={selectedCategory === "api" ? "" : "hidden"}>
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                 A Closer Look
               </h2>
@@ -274,7 +274,7 @@ export default function ProductSection() {
           >
             {selectedCategory === "excipients" && (
               <>
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
@@ -293,7 +293,7 @@ export default function ProductSection() {
           >
             {selectedCategory === "primaryPackaging" && (
               <>
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
@@ -312,7 +312,7 @@ export default function ProductSection() {
           >
             {selectedCategory === "qcConsumables" && (
               <>
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
@@ -331,7 +331,7 @@ export default function ProductSection() {
           >
             {selectedCategory === "medicalDevices" && (
               <>
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
