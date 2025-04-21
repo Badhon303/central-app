@@ -133,7 +133,7 @@ export default function HeroSection() {
               <h1 className="text-balance text-white font-bold text-xl md:text-3xl xl:text-4xl text-center">
                 The Journey Evolves...
               </h1>
-              <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-white rounded-full"></div>
+              <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
               <p className="mt-8 text-white items-center text-center">
                 Our journey begun as a trading company in supplying to the
                 Scientific Research Institutes and Private organisations in
@@ -142,14 +142,12 @@ export default function HeroSection() {
                 Equipment's' throughout our journey which spans over 30 years.
               </p>
 
-              <div className="mt-8 flex flex-wrap justify-center gap-x-6">
+              <div className="mt-8 flex justify-center">
                 <a
                   href="#"
-                  className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                  className="mt-6 text-sm px-4 py-2 text-primary font-semibold bg-white rounded-full hover:scale-110 transition-all duration-200 inline-block"
                 >
-                  <span className="relative text-base font-semibold text-primary text-center">
-                    Explore More
-                  </span>
+                  Explore More
                 </a>
               </div>
             </div>
@@ -167,7 +165,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="flex md:flex-row flex-col justify-between py-6 mt-16 border-y border-gray-200 gap-4">
+          <div className="flex md:flex-row flex-col justify-between py-6 mt-16 gap-4">
             <div className="text-left w-full md:w-1/3 dark:border dark:border-gray-500 p-4 rounded-lg dark:bg-gray-900">
               <div className="flex items-center gap-6">
                 <div className="h-1 w-14 bg-secondary rounded-full"></div>
@@ -185,7 +183,7 @@ export default function HeroSection() {
               </p>
               <a
                 href="#"
-                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:bg-secondary transition-all duration-100 inline-block"
+                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
               >
                 View Page
               </a>
@@ -207,7 +205,7 @@ export default function HeroSection() {
               </p>
               <a
                 href="#"
-                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:bg-secondary transition-all duration-100 inline-block"
+                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
               >
                 View Page
               </a>
@@ -229,7 +227,7 @@ export default function HeroSection() {
               </p>
               <a
                 href="#"
-                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:bg-secondary transition-all duration-100 inline-block"
+                className="mt-6 text-sm px-4 py-2 text-white bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
               >
                 View Page
               </a>

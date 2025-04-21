@@ -34,7 +34,7 @@ export default function NewsAndEventsSection() {
                 Projects and Events
               </span>
             </h2>
-            <div className="mx-auto mt-4 h-1 w-32 md:w-60 bg-primary rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-32 md:w-60 bg-secondary rounded-full"></div>
           </motion.div>
 
           <AreaOfFocus />

@@ -152,7 +152,7 @@ const RegionalOfficesSection = () => {
               Global Presence
             </span>
           </h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
         </div>
 
         {/* Regional Offices */}

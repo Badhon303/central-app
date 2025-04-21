@@ -29,7 +29,7 @@ export function CustomerSection({ inHome = false }) {
             <span className="text-primary dark:text-white">happy clients</span>
           </h2>
 
-          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
           <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto">
             Trusted by leading organizations for our expertise and reliability,
             we strive to build lasting relationships with our valued customers.
