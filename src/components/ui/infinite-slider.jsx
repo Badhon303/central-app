@@ -83,7 +83,7 @@ export function InfiniteSlider({
           ...(direction === 'horizontal'
             ? { x: translation }
             : { y: translation }),
-          gap: `${gap}px`,
+          gap: `10px sm:${gap}px`,
           flexDirection: direction === 'horizontal' ? 'row' : 'column',
         }}
         ref={ref}

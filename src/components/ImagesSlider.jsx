@@ -44,7 +44,7 @@ export default function ImagesSlider() {
 
         {/* Categories */}
         <section className="">
-          <div className="container mx-auto">
+          <div className="mx-auto">
             <CardHoverEffect />
             <AnimatedCard />
           </div>

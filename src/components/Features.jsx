@@ -64,7 +64,7 @@ export default function Features() {
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
           <div className="relative space-y-8 py-12 p-8">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/2867/2867288.png"
+              src="/logos/icons/lab.png"
               className="w-12"
               width="512"
               height="512"
@@ -88,7 +88,7 @@ export default function Features() {
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
           <div className="relative space-y-8 py-12 p-8">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/3063/3063816.png"
+              src="/logos/icons/healthcare.png"
               className="w-12"
               width="512"
               height="512"
