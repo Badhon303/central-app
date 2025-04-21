@@ -219,7 +219,7 @@ export default function ProductSection() {
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
       </div>
 
-      <motion.div className="relative container mx-auto px-4">
+      <motion.div className="relative container mx-auto">
         <div className="text-center mb-12 mx-auto items-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
             Our{" "}

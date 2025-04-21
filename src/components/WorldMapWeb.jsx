@@ -186,14 +186,14 @@ export default function WorldMapWeb({ inHome = false }) {
                   <img
                     src={logo}
                     alt={name}
-                    className="w-16 h-10 sm:w-20 sm:h-14 md:w-28 md:h-20 border border-black/90 dark:border-gray-300 object-fill rounded-sm"
+                    className="w-16 h-10 sm:w-20 sm:h-14 md:w-28 md:h-20 border border-black/80 dark:border-gray-400 object-fill rounded-sm"
                   />
                 </div>
               ))}
             </InfiniteSlider>
           </div>
         </div>
-        <div className="w-5xl">
+        <div className="">
           <h2 className="text-center text-2xl md:text-3xl font-bold dark:text-white text-black mt-8">
             Our Clients
           </h2>

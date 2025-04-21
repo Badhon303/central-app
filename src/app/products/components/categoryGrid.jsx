@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function CategoryGrid({ selectedCategory, handleCategoryClick, categoryImages, categoryIcons, categoryTitles }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 p-4 gap-12 sm:gap-10 mb-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 p-4 gap-12 sm:gap-8 mb-16">
       {Object.entries(categoryTitles).map(([key, title]) => (
         <motion.div
           key={key}
