@@ -134,7 +134,7 @@ export default function HeroSection() {
                 The Journey Evolves...
               </h1>
               <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
-              <p className="mt-8 text-white items-center text-center">
+              <p className="mt-4 sm:mt-8 text-white items-center text-center">
                 Our journey begun as a trading company in supplying to the
                 Scientific Research Institutes and Private organisations in
                 Bangladesh. Immense dedication and prompt services helped us in
@@ -142,10 +142,10 @@ export default function HeroSection() {
                 Equipment's' throughout our journey which spans over 30 years.
               </p>
 
-              <div className="mt-8 flex justify-center">
+              <div className="mt-4 sm:mt-8 flex justify-center">
                 <a
                   href="#"
-                  className="mt-6 text-sm px-4 py-2 text-primary font-semibold bg-white rounded-full hover:scale-110 transition-all duration-200 inline-block"
+                  className="mt-2 sm:mt-6 text-sm px-4 py-2 text-primary font-semibold bg-white rounded-full hover:scale-110 transition-all duration-200 inline-block"
                 >
                   Explore More
                 </a>

@@ -77,9 +77,7 @@ export default function JobListingsSection() {
     <div className="relative">
       <div className="flex justify-between items-center mb-8">
         <h3 className="text-3xl font-bold">
-          <span className="text-gray-700 dark:text-white">
-            Open Positions
-          </span>
+          <span className="text-gray-700 dark:text-white">Open Positions</span>
         </h3>
         {/* Department filter tabs */}
         <div className="hidden md:flex space-x-2 bg-white/80 dark:bg-gray-800/80 p-1 rounded-lg shadow-sm">
@@ -151,7 +149,7 @@ export default function JobListingsSection() {
             className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-gray-700"
           >
             <div
-              className="p-6 cursor-pointer"
+              className="py-4 px-2 sm:p-6 cursor-pointer"
               onClick={() => toggleJobExpand(job.id)}
             >
               <div className="flex justify-between items-start">
@@ -160,7 +158,7 @@ export default function JobListingsSection() {
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
                       <Briefcase size={20} />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-800 dark:text-white">
+                    <h4 className="sm:text-xl text-base font-bold text-gray-800 dark:text-white">
                       {job.title}
                     </h4>
                   </div>
@@ -178,13 +176,13 @@ export default function JobListingsSection() {
                 </div>
 
                 <div className="text-right">
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <div className="text-gray-500 dark:text-gray-400 mb-2 text-[10px] sm:text-sm">
                     {job.postedDate}
                   </div>
                   <div className="flex gap-2">
                     <Badge
                       variant="outline"
-                      className="bg-primary/10 text-primary border-primary dark:bg-primary-900/30 dark:text-primary dark:border-primary"
+                      className="bg-primary/10 text-[10px] sm:text-sm p-1 text-primary border-primary dark:bg-primary-900/30 dark:text-primary dark:border-primary"
                     >
                       {job.type}
                     </Badge>

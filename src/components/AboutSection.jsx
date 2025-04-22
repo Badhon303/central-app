@@ -136,7 +136,7 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Additional */}
-          <div className="mt-16 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm dark:border dark:border-gray-800 rounded-xl p-8">
+          <div className="mt-16 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm dark:border dark:border-gray-800 rounded-xl p-4 md:p-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div className="space-y-6">
                 <h3 className="text-3xl font-bold text-gray-700 dark:text-white">

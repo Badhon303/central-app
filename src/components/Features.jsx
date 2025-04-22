@@ -41,7 +41,7 @@ export default function Features() {
         <div className="group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-900">
           <div className="relative space-y-8 py-12 p-8 dark:text-white">
             <img
-              src="/logos/icons/fast-food.png"
+              src="/logos/icons/food.png"
               className="w-12 dark:text-white"
               width="512"
               height="512"
