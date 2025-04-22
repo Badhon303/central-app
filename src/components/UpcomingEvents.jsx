@@ -63,14 +63,14 @@ export default function UpcomingEvents({ inHome = false }) {
         } mb-8`}
       >
         <h3
-          className={`text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 ${
-            inHome ? "text-center md:mb-4" : "text-right md:mb-0"
+          className={`font-bold text-gray-800 dark:text-white mb-6 ${
+            inHome ? "text-center md:mb-4 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2" : "text-right md:mb-0 text-3xl md:text-4xl "
           }`}
         >
           Upcoming Events
         </h3>
         <p
-          className={`text-gray-600 dark:text-gray-300 text-center max-w-5xl ${
+          className={`text-gray-600 dark:text-gray-300 text-center max-w-5xl px-4 ${
             inHome ? "block" : "hidden"
           }`}
         >

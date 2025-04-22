@@ -131,7 +131,7 @@ export const Slider = ({
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
-            className={`image h-full w-full absolute inset-0 md:object-fit object-cover`}
+            className={`image h-full w-full absolute inset-0 md:object-fit`}
           />
         </AnimatePresence>
       )}
