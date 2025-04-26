@@ -82,7 +82,7 @@ export default function AboutSection() {
                 className="p-4 md:p-6 flex flex-col justify-center order-2 lg:order-1"
                 variants={itemVariants}
               >
-                <motion.div className="mb-10" variants={itemVariants}>
+                <motion.div className="mb-10 space-y-3" variants={itemVariants}>
                   <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Mission
                   </h3>
@@ -97,7 +97,7 @@ export default function AboutSection() {
                   </p>
                 </motion.div>
 
-                <motion.div variants={itemVariants}>
+                <motion.div className="space-y-3" variants={itemVariants}>
                   <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Vision
                   </h3>
@@ -128,7 +128,7 @@ export default function AboutSection() {
                     src="/logos/About/about_top.jpeg"
                     alt="CSCO Team"
                     fill
-                    className="object-cover"
+                    className="object-fit sm:object-cover"
                   />
                 </motion.div>
               </motion.div>
@@ -156,12 +156,12 @@ export default function AboutSection() {
                   solutions that drive real results.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                <a
-                  href="#"
-                  className="mt-6 text-sm px-4 py-2 text-white font-semibold bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
-                >
-                  Learn More
-                </a>
+                  <a
+                    href="#"
+                    className="mt-6 text-sm px-4 py-2 text-white font-semibold bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
+                  >
+                    Learn More
+                  </a>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
