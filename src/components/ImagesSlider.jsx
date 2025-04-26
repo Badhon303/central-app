@@ -6,7 +6,7 @@ import { CardHoverEffect } from "@/components/CardHoverEffect";
 import { AnimatedCard } from "./AnimatedCard";
 
 export default function ImagesSlider() {
-  const images = [
+  const desktopImages  = [
     "/logos/Home-Page-Pictures/1.png",
     "/logos/Home-Page-Pictures/2.png",
     "/logos/Home-Page-Pictures/3.png",
@@ -16,10 +16,23 @@ export default function ImagesSlider() {
     "/logos/Home-Page-Pictures/7.png",
   ];
 
+  const mobileImages = [
+    "/logos/Home-Page-Pictures/1_mobile_new.jpg",
+    "/logos/Home-Page-Pictures/2_mobile_new.jpg",
+    "/logos/Home-Page-Pictures/3_mobile_new.jpg",
+    "/logos/Home-Page-Pictures/4_mobile_new.jpg",
+    // "/logos/Home-Page-Pictures/5_mobile.png",
+    "/logos/Home-Page-Pictures/6_mobile_new.jpg",
+    // "/logos/Home-Page-Pictures/7_mobile.png",
+  ];
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Slider className="h-full" images={images} />
+        <Slider className="h-full" images={desktopImages}
+          mobileImages={mobileImages}
+          autoplay={true}
+          delay={5000} />
       </div>
 
       {/* Content Overlay */}
