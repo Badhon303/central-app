@@ -39,7 +39,7 @@ export function CustomerSection({ inHome = false }) {
           </p>
         </div>
 
-        {/* Customer logos grid - MAIN CHANGE IS HERE */}
+        {/* Customer logos grid */}
         <div className={`${inHome ? "pt-6 w-full px-4" : "py-10"}`}>
           <div
             className={`grid ${
