@@ -42,10 +42,10 @@ export function CustomerSection({ inHome = false }) {
         {/* Customer logos grid - MAIN CHANGE IS HERE */}
         <div className={`${inHome ? "pt-6 w-full px-4" : "py-10"}`}>
           <div
-            className={`grid border border-gray-400 dark:border-gray-600 ${
+            className={`grid ${
               inHome
                 ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-0 sm:gap-4"
-                : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
+                : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 border border-gray-400 dark:border-gray-600"
             }`}
           >
             {[
@@ -60,7 +60,7 @@ export function CustomerSection({ inHome = false }) {
             ].map((logo, index) => (
               <div 
                 key={logo.alt}
-                className="flex justify-center items-center border border-gray-400 dark:border-gray-600 aspect-square"
+                className="flex justify-center items-center border-2 border-gray-400 dark:border-gray-500 aspect-square"
                 style={{
                   padding: inHome ? "2rem" : "4rem",
                 }}
