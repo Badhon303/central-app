@@ -261,7 +261,7 @@ export default function ProductSection() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                 A Closer Look
               </h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+              <p className="mt-4 text-base text-gray-600 dark:text-gray-300">
                 {categoryDescriptions[selectedCategory]}
               </p>
             </div>
@@ -278,7 +278,7 @@ export default function ProductSection() {
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
-                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                  <p className="mt-4 text-base text-gray-600 dark:text-gray-300">
                     {categoryDescriptions[selectedCategory]}
                   </p>
                 </div>
@@ -297,7 +297,7 @@ export default function ProductSection() {
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
-                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                  <p className="mt-4 text-base text-gray-600 dark:text-gray-300">
                     {categoryDescriptions[selectedCategory]}
                   </p>
                 </div>
@@ -316,7 +316,7 @@ export default function ProductSection() {
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
-                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                  <p className="mt-4 text-base text-gray-600 dark:text-gray-300">
                     {categoryDescriptions[selectedCategory]}
                   </p>
                 </div>
@@ -335,7 +335,7 @@ export default function ProductSection() {
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
                     A Closer Look
                   </h2>
-                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                  <p className="mt-4 text-base text-gray-600 dark:text-gray-300">
                     {categoryDescriptions[selectedCategory]}
                   </p>
                 </div>

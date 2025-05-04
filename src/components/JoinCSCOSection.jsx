@@ -9,17 +9,36 @@ export default function JoinCSCOSection() {
       <div className="relative overflow-hidden rounded-2xl shadow-2xl h-[600px]">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
+          {/* Mobile */}
+          <Image
+            src="/logos/Career/career_top_mobile_2.jpeg"
+            alt="CSCO Team"
+            fill
+            className="object-cover sm:hidden"
+            priority
+          />
+          
+          {/* Medium screens */}
+          <Image
+            src="/logos/Career/career_top_mobile_1.png"
+            alt="CSCO Team"
+            fill
+            className="object-cover hidden sm:block md:hidden"
+            priority
+          />
+          
+          {/* Desktop */}
           <Image
             src="/logos/Career/career_top.jpeg"
             alt="CSCO Team"
             fill
-            className="object-cover"
+            className="object-cover hidden md:block"
             priority
           />
         </div>
         
         {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/50 to-transparent w-full h-full" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/70 sm:from-black/80 via-black/60  sm:via-black/50 to-black/30 sm:to-transparent w-full h-full" />
         
         {/* Content Container */}
         <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8">
