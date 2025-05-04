@@ -34,49 +34,49 @@ const countryConnections = [
       flag: "https://flagcdn.com/sg.svg",
     },
     end: {
-      lat: 48.1351,
-      lng: 11.582,
-      name: "Munich",
+      lat: 51.1657,
+      lng: 10.4515,
+      name: "Germany",
       flag: "https://flagcdn.com/de.svg",
     },
   },
   {
     start: {
-      lat: 48.1351,
-      lng: 11.582,
-      name: "Munich",
+      lat: 51.1657,
+      lng: 10.4515,
+      name: "Germany",
       flag: "https://flagcdn.com/de.svg",
     },
     end: {
-      lat: 42.3601,
-      lng: -71.0589,
-      name: "Boston",
+      lat: 37.0902,
+      lng: -95.7129,
+      name: "United States",
       flag: "https://flagcdn.com/us.svg",
     },
   },
   {
     start: {
-      lat: 42.3601,
-      lng: -71.0589,
-      name: "Boston",
+      lat: 37.0902,
+      lng: -95.7129,
+      name: "United States",
       flag: "https://flagcdn.com/us.svg",
     },
     end: {
-      lat: 19.076,
-      lng: 72.8777,
-      name: "Mumbai",
+      lat: 20.5937,
+      lng: 78.9629,
+      name: "India",
       flag: "https://flagcdn.com/in.svg",
     },
   },
   {
     start: {
-      lat: 19.076,
-      lng: 72.8777,
-      name: "Mumbai",
+      lat: 20.5937, // India
+      lng: 78.9629,
+      name: "India",
       flag: "https://flagcdn.com/in.svg",
     },
     end: {
-      lat: 35.8617,
+      lat: 35.8617, // China (good as is)
       lng: 104.1954,
       name: "China",
       flag: "https://flagcdn.com/cn.svg",
@@ -84,13 +84,13 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 35.8617,
+      lat: 35.8617, // China
       lng: 104.1954,
       name: "China",
       flag: "https://flagcdn.com/cn.svg",
     },
     end: {
-      lat: 36.2048,
+      lat: 36.2048, // Japan (good as is)
       lng: 138.2529,
       name: "Japan",
       flag: "https://flagcdn.com/jp.svg",
@@ -98,13 +98,13 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 36.2048,
+      lat: 36.2048, // Japan
       lng: 138.2529,
       name: "Japan",
       flag: "https://flagcdn.com/jp.svg",
     },
     end: {
-      lat: 46.8182,
+      lat: 46.8182, // Switzerland
       lng: 8.2275,
       name: "Switzerland",
       flag: "https://flagcdn.com/ch.svg",
@@ -112,13 +112,13 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 36.2048,
+      lat: 36.2048, // Japan
       lng: 138.2529,
       name: "Japan",
       flag: "https://flagcdn.com/jp.svg",
     },
     end: {
-      lat: 1.3521,
+      lat: 1.3521, // Singapore
       lng: 103.8198,
       name: "Singapore",
       flag: "https://flagcdn.com/sg.svg",
