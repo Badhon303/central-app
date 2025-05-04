@@ -74,7 +74,7 @@ export default function ContactSection() {
 
       {/* Overlapping Cards Section */}
       <div className="max-w-4xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-4 -mt-24">
+        <div className="grid md:grid-cols-3 gap-4 -mt-8 sm:-mt-14">
           <a
             href="https://www.central-bd.com"
             target="_blank"
