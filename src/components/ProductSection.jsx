@@ -228,7 +228,7 @@ export default function ProductSection() {
             </span>
           </h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
-          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
             We take great pride in representing the world's foremost
             manufacturers in the pharmaceutical industry. Our partnership with
             these industry leaders demonstrates our unwavering commitment to

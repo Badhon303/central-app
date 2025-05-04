@@ -50,7 +50,8 @@ export function GlobeDemo() {
     "KINHOO PHARMACEUTICAL CO., LTD": "/logos/kinhoo-logo.png",
     "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD": "/logos/sozhou.png",
     "GLOBE QUIMICA": "/logos/globe-cumica.png",
-    "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/Manufacturer-Logos/zuhai.png",
+    "ZHUHAI UNITED LABORATORIES CO., LTD":
+      "/logos/Manufacturer-Logos/zuhai.png",
     "ALPHA GROUP": "/logos/Manufacturer-Logos/alpha.png",
     KOEL: "/logos/KOEL.png",
     "RC ENTERPRISE": "/logos/Manufacturer-Logos/rc.png",
@@ -63,7 +64,6 @@ export function GlobeDemo() {
     "LIVEO RESEARCH": "/logos/liveo.jpeg",
     "PT. ONEJECT": "/logos/Manufacturer-Logos/oneject.png",
     "Acetar Bio-Tech Inc": "/logos/Manufacturer-Logos/acetar.png",
-
   };
 
   return (

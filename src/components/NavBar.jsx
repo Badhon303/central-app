@@ -9,7 +9,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/navbar-dropdown";
 import { Check, ChevronDown, Moon, Sun } from "lucide-react";
 
 const links = [
@@ -225,27 +225,17 @@ export default function Navbar() {
                         className="min-w-[180px] bg-white dark:bg-gray-800 rounded-md shadow-lg p-1 z-50"
                         align="start"
                       >
-                        {whatWeDoLinks.map((item) => (
-                          <DropdownMenuItem
-                            key={item.to}
-                            className={`px-2 py-2 text-sm rounded-sm cursor-pointer ${
-                              isActive(item.to)
-                                ? "bg-primary/10 font-medium"
-                                : "hover:bg-gray-100 dark:hover:bg-gray-700"
-                            } ${
-                              currentTheme === "dark"
-                                ? "text-white"
-                                : "text-gray-700"
-                            }`}
-                            asChild
-                          >
-                            <Link href={item.to}>
-                              <span>{item.label}</span>
-                              {isActive(item.to) && (
-                                <Check className="ml-2 size-4" />
-                              )}{" "}
-                            </Link>
-                          </DropdownMenuItem>
+                        {whatWeDoLinks.map((item, key) => (
+                          <DropdownMenuItem 
+                          key={item.label}
+                          active={isActive(item.to)} // Pass true/false based on active state
+                          className="px-3 py-2 rounded-md" // Additional styling if needed
+                          asChild
+                        >
+                          <Link href={item.to}>
+                            {item.label}
+                          </Link>
+                        </DropdownMenuItem>
                         ))}
                       </DropdownMenuContent>
                     </DropdownMenu>
@@ -286,7 +276,7 @@ export default function Navbar() {
                     >
                       {whatWeDoLinks.map((item) => (
                         <Link
-                          key={item.to}
+                          key={item.label}
                           href={item.to}
                           className={`block py-2 text-[15px]
                             ${
