@@ -1,7 +1,7 @@
 "use client";
 
 import WorldMap from "@/components/ui/world-map";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { InfiniteSlider } from "./ui/infinite-slider";
 import { CustomerSection } from "./CustomerSection";
 
@@ -158,14 +158,7 @@ export default function WorldMapWeb({ inHome = false }) {
           borders—empowering us to deliver excellence, no matter where you are.
         </p>
       </div>
-      <WorldMap
-        dots={countryConnections.map((connection, index) => ({
-          key: `connection-dot-${index}`,
-          start: { lat: connection.start.lat, lng: connection.start.lng },
-          end: { lat: connection.end.lat, lng: connection.end.lng },
-          tooltipContent: `${connection.start.name} to ${connection.end.name}`,
-        }))}
-      />
+      <WorldMap dots={sortedConnections} lineColor="#0ea5e9" />
       <div className="flex flex-col gap-6 sm:gap-8 items-center justify-center">
         <div>
           <h2 className="text-center text-2xl md:text-3xl font-bold dark:text-white text-black mt-8">

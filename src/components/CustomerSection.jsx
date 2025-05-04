@@ -42,7 +42,7 @@ export function CustomerSection({ inHome = false }) {
         {/* Customer logos grid - MAIN CHANGE IS HERE */}
         <div className={`${inHome ? "pt-6 w-full px-4" : "py-10"}`}>
           <div
-            className={`grid ${
+            className={`grid border border-gray-400 dark:border-gray-600 ${
               inHome
                 ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-0 sm:gap-4"
                 : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
@@ -59,10 +59,10 @@ export function CustomerSection({ inHome = false }) {
               { src: "/logos/customers/ACME.jpg", alt: "ACME" },
             ].map((logo, index) => (
               <div 
-                key={index}
-                className="flex justify-center items-center border aspect-square"
+                key={logo.alt}
+                className="flex justify-center items-center border border-gray-400 dark:border-gray-600 aspect-square"
                 style={{
-                  padding: inHome ? "2rem" : "5rem",
+                  padding: inHome ? "2rem" : "4rem",
                 }}
               >
                 <img

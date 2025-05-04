@@ -54,11 +54,11 @@ export default function JoinCSCOSection() {
                 supportive community, CSCO is the best place to kickstart your
                 career.
               </p>
-              <div className="flex flex-wrap gap-4 justify-end">
+              {/* <div className="flex flex-wrap gap-4 justify-end">
                 <Button className="bg-white text-blue-600 text-primary font-semibold rounded-full hover:scale-110 hover:text-white transition-all duration-200 px-6 py-4">
                   Apply today
                 </Button>
-              </div>
+              </div> */}
               <div className="mt-8 text-white/80">
                 {/* <p className="text-xl font-medium">
                   We're looking for amazing talent to join CSCO in 2025.
