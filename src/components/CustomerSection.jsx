@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function CustomerSection({ inHome = false }) {
   return (
     <div className={`relative ${inHome ? "py-0" : "py-16 md:py-24"}`}>
-      {/* Background gradient (only for customer section) */}
+      {/* background gradient */}
       <div
         aria-hidden="true"
         className={`absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20 ${
@@ -19,7 +19,7 @@ export function CustomerSection({ inHome = false }) {
       <motion.div
         className={`relative ${inHome ? "w-full" : "container mx-auto px-4"}`}
       >
-        {/* Section header (only for customer section) */}
+        {/* header */}
         <div
           className={`text-center mb-12 capitalize ${
             inHome ? "hidden" : "block"
@@ -52,15 +52,15 @@ export function CustomerSection({ inHome = false }) {
               { src: "/logos/Customer-Logos/aci.png", alt: "ACI" },
               { src: "/logos/Customer-Logos/nipro.png", alt: "Nipro" },
               { src: "/logos/Customer-Logos/popular.png", alt: "Popular" },
-              { src: "/logos/Customer-Logos/incepta.png", alt: "Incepta" },
+              { src: "/logos/Customer-Logos/Incepta.png", alt: "Incepta" },
               { src: "/logos/Customer-Logos/everest.jpeg", alt: "Everest" },
               { src: "/logos/Customer-Logos/skf.png", alt: "Eskayef" },
               { src: "/logos/Customer-Logos/beacon.png", alt: "Beacon" },
               { src: "/logos/customers/ACME.jpg", alt: "ACME" },
             ].map((logo, index) => (
-              <div 
+              <div
                 key={logo.alt}
-                className="flex justify-center items-center border-2 border-gray-400 dark:border-gray-500 aspect-square"
+                className="flex justify-center items-center border border-gray-400 dark:border-gray-500 aspect-square"
                 style={{
                   padding: inHome ? "2rem" : "4rem",
                 }}

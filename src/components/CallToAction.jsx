@@ -1,7 +1,7 @@
-import Image from "next/image"
+import Image from "next/image";
 
-import Container from "@/components/Container"
-import avatar from "@/app/images/avatars/avatar-2.webp"
+import Container from "@/components/Container";
+import avatar from "@/app/images/avatars/avatar-2.webp";
 
 export default function CallToAction() {
   return (
@@ -87,5 +87,5 @@ export default function CallToAction() {
         </div>
       </Container>
     </div>
-  )
+  );
 }

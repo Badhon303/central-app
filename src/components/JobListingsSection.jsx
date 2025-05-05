@@ -1,64 +1,99 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, ArrowRight, Briefcase, Building } from "lucide-react";
+import { MapPin, ArrowRight, Briefcase } from "lucide-react";
+import getJobs from "../../actions/getJobs";
 
-const jobListings = [
-  {
-    id: 1,
-    company: "CSCO",
-    title: "Digital Marketing Specialist",
-    location: "Dhaka, Bangladesh",
-    department: "Marketing",
-    type: "Full Time",
-    level: "Mid Level",
-    description:
-      "We are a team of founders, operators and angel investors who have built, scaled and successfully exited startups. We use our combined knowledge and experience to be a value-add to the founders we invest in.",
-    postedDate: "Just Now",
-  },
-  {
-    id: 2,
-    company: "CSCO",
-    title: "Tax Analysis Expert",
-    location: "Chittagong, Bangladesh",
-    department: "Finance",
-    type: "Full Time",
-    level: "Mid Level",
-    description:
-      "We're looking for someone with an eye of detail who enjoys a fast-moving startup with flexibility and speed. You will be working with external accountants to model tax calculations of various country.",
-    postedDate: "Just Now",
-  },
-  {
-    id: 3,
-    company: "CSCO",
-    title: "Customer Success Manager",
-    location: "Dhaka, Bangladesh",
-    department: "Customer Support",
-    type: "Full Time",
-    level: "Mid Level",
-    description:
-      "Position for our mid-market segment is a client facing role focused on unlocking significant value for our customers and prospects through transforming the technology that powers their lending processes.",
-    postedDate: "05/09/2024",
-  },
-  {
-    id: 4,
-    company: "CSCO",
-    title: "Product Manager",
-    location: "Dhaka, Bangladesh",
-    department: "Product",
-    type: "Full Time",
-    level: "Mid Level",
-    description:
-      "Important is looking for a hands-on product manager to drive award-winning products from concept to creation.",
-    postedDate: "05/09/2024",
-  },
-];
+// Helper function to format date
+const formatDate = (dateString) => {
+  if (!dateString) return "Just Now";
+
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return "Just Now";
+
+  const now = new Date();
+  const diffInDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+
+  if (diffInDays === 0) return "Today";
+  if (diffInDays === 1) return "Yesterday";
+  if (diffInDays < 7) return `${diffInDays} days ago`;
+
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+};
+
+// Lexical JSON parser
+const renderLexicalContent = (lexicalData) => {
+  if (!lexicalData?.root?.children) return null;
+
+  return lexicalData.root.children.map((node, index) => {
+    if (node.type === "paragraph") {
+      return (
+        <p key={index} className="mb-4 text-gray-600 dark:text-gray-300">
+          {node.children?.map((child, i) => (
+            <span key={i}>{child.text}</span>
+          ))}
+        </p>
+      );
+    } else if (node.type === "heading") {
+      return (
+        <h3
+          key={index}
+          className="text-lg font-semibold text-gray-800 dark:text-white mt-6 mb-3"
+        >
+          {node.children?.map((child, i) => (
+            <span key={i}>{child.text}</span>
+          ))}
+        </h3>
+      );
+    } else if (node.type === "list") {
+      return (
+        <ul
+          key={index}
+          className="list-disc pl-5 mb-4 text-gray-600 dark:text-gray-300"
+        >
+          {node.children?.map((item, i) => (
+            <li key={i} className="mb-1">
+              {item.children?.map((child, j) => (
+                <span key={j}>{child.text}</span>
+              ))}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return null;
+  });
+};
 
 export default function JobListingsSection() {
   const [activeTab, setActiveTab] = useState("all");
   const [expandedJob, setExpandedJob] = useState(null);
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchJobs() {
+      try {
+        setLoading(true);
+        const jobsData = await getJobs();
+        setJobs(jobsData);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching jobs:", err);
+        setError("Failed to load jobs. Please try again later.");
+        setLoading(false);
+      }
+    }
+
+    fetchJobs();
+  }, []);
 
   const toggleJobExpand = (id) => {
     if (expandedJob === id) {
@@ -70,17 +105,53 @@ export default function JobListingsSection() {
 
   const filteredJobs =
     activeTab === "all"
-      ? jobListings
-      : jobListings.filter((job) => job.department.toLowerCase() === activeTab);
+      ? jobs
+      : jobs.filter((job) => job.department?.toLowerCase() === activeTab);
+
+  if (loading) {
+    return (
+      <div className="relative">
+        <div className="flex justify-between items-center mb-8">
+          <h3 className="text-3xl font-bold">
+            <span className="text-gray-700 dark:text-white">
+              Open Positions
+            </span>
+          </h3>
+        </div>
+        <div className="flex justify-center items-center py-20">
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            Loading jobs...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="relative">
+        <div className="flex justify-between items-center mb-8">
+          <h3 className="text-3xl font-bold">
+            <span className="text-gray-700 dark:text-white">
+              Open Positions
+            </span>
+          </h3>
+        </div>
+        <div className="flex justify-center items-center py-20">
+          <p className="text-lg text-red-500">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative">
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row gap-8 sm:gap-0 justify-between items-center mb-8">
         <h3 className="text-3xl font-bold">
           <span className="text-gray-700 dark:text-white">Open Positions</span>
         </h3>
-        {/* Department filter tabs */}
-        <div className="hidden md:flex space-x-2 bg-white/80 dark:bg-gray-800/80 p-1 rounded-lg shadow-sm">
+        {/* filter tabs */}
+        <div className="flex space-x-2 bg-white/80 dark:bg-gray-800/80 p-1 rounded-lg shadow-sm overflow-x-auto">
           <button
             onClick={() => setActiveTab("all")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -90,6 +161,16 @@ export default function JobListingsSection() {
             }`}
           >
             All
+          </button>
+          <button
+            onClick={() => setActiveTab("engineering")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              activeTab === "engineering"
+                ? "bg-primary text-white"
+                : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            }`}
+          >
+            Engineering
           </button>
           <button
             onClick={() => setActiveTab("marketing")}
@@ -111,34 +192,10 @@ export default function JobListingsSection() {
           >
             Finance
           </button>
-          <button
-            onClick={() => setActiveTab("product")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              activeTab === "product"
-                ? "bg-primary text-white"
-                : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-            }`}
-          >
-            Product
-          </button>
         </div>
       </div>
 
-      {/* Mobile filter dropdown */}
-      <div className="md:hidden mb-6">
-        <select
-          className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-          value={activeTab}
-          onChange={(e) => setActiveTab(e.target.value)}
-        >
-          <option value="all">All Departments</option>
-          <option value="marketing">Marketing</option>
-          <option value="finance">Finance</option>
-          <option value="product">Product</option>
-        </select>
-      </div>
-
-      {/* Job listings */}
+      {/* job listings */}
       <div className="space-y-6">
         {filteredJobs.map((job) => (
           <motion.div
@@ -158,53 +215,105 @@ export default function JobListingsSection() {
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
                       <Briefcase size={20} />
                     </div>
-                    <h4 className="sm:text-xl text-base font-bold text-gray-800 dark:text-white">
-                      {job.title}
-                    </h4>
+                    <div>
+                      <h4 className="sm:text-xl text-base font-bold text-gray-800 dark:text-white">
+                        {job.title}
+                      </h4>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {job.designation}
+                      </p>
+                    </div>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3 mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    {/* <div className="flex items-center">
-                      <Building size={16} className="mr-1" />
-                      <span>{job.company}</span>
-                    </div> */}
                     <div className="flex items-center">
                       <MapPin size={16} className="mr-1" />
-                      <span>{job.location}</span>
+                      <span>{job.location || "Location not specified"}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="text-right">
                   <div className="text-gray-500 dark:text-gray-400 mb-2 text-[10px] sm:text-sm">
-                    {job.postedDate}
+                    {formatDate(job.createdAt)}
                   </div>
                   <div className="flex gap-2">
                     <Badge
                       variant="outline"
                       className="bg-primary/10 text-[10px] sm:text-sm p-1 text-primary border-primary dark:bg-primary-900/30 dark:text-primary dark:border-primary"
                     >
-                      {job.type}
+                      {job.jobType === "onsite"
+                        ? "On Site"
+                        : job.jobType || "Full Time"}
                     </Badge>
-                    {/* <Badge
+                    <Badge
                       variant="outline"
-                      className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-800"
+                      className="bg-primary/10 text-[10px] sm:text-sm p-1 text-primary border-primary dark:bg-primary-900/30 dark:text-primary dark:border-primary"
                     >
-                      {job.level}
-                    </Badge> */}
+                      {job.yearOfExperience || "0"} yrs exp
+                    </Badge>
                   </div>
                 </div>
               </div>
 
-              {/* Job description */}
+              {/* details - expanded view */}
               {expandedJob === job.id && (
                 <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    {job.description}
-                  </p>
-                  <Button className="mt-2">
-                    Apply Now <ArrowRight size={16} className="ml-2" />
-                  </Button>
+                  <div className="prose dark:prose-invert max-w-none">
+                    {job.details ? (
+                      renderLexicalContent(job.details)
+                    ) : (
+                      <p className="text-gray-600 dark:text-gray-300">
+                        No job details available.
+                      </p>
+                    )}
+                  </div>
+
+                  {/* additional information */}
+                  <div className="mt-6">
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
+                      Key Information
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600 dark:text-gray-300">
+                      <div>
+                        <h4 className="font-medium">Education:</h4>
+                        <p>{job.education || "Not specified"}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Experience:</h4>
+                        <p>{job.yearOfExperience || "0"} years</p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Application Deadline:</h4>
+                        <p>
+                          {job.deadline
+                            ? new Date(job.deadline).toLocaleDateString(
+                                "en-US",
+                                {
+                                  year: "numeric",
+                                  month: "long",
+                                  day: "numeric",
+                                }
+                              )
+                            : "Not specified"}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Job Type:</h4>
+                        <p>
+                          {job.jobType === "onsite"
+                            ? "On Site"
+                            : job.jobType || "Full Time"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className=" flex justify-end items-center">
+                    <Button className="mt-6 w-full sm:w-auto">
+                      Apply Now <ArrowRight size={16} className="ml-2" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>
@@ -212,15 +321,15 @@ export default function JobListingsSection() {
         ))}
       </div>
 
-      {/* No jobs found message */}
-      {filteredJobs.length === 0 && (
-        <div className="text-center py-12 bg-white/80 dark:bg-gray-800/80 rounded-xl">
-          <p className="text-gray-600 dark:text-gray-300 text-lg">
+      {/* no jobs found */}
+      {filteredJobs.length === 0 && !loading && (
+        <div className="text-center py-8 bg-white/80 dark:bg-gray-800/80 rounded-xl">
+          <p className="text-gray-600 dark:text-gray-300 text-base">
             No open positions in this department at the moment.
           </p>
           <Button
             variant="outline"
-            className="mt-4"
+            className="mt-8 border-primary"
             onClick={() => setActiveTab("all")}
           >
             View all positions
