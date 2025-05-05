@@ -7,17 +7,17 @@ export default function JoinCSCOSection() {
   return (
     <div className="mb-20">
       <div className="relative overflow-hidden rounded-2xl shadow-2xl h-[600px]">
-        {/* Background Image */}
+        {/* background Image */}
         <div className="absolute inset-0 w-full h-full">
-          {/* Mobile */}
+          {/* mobile */}
           <Image
             src="/logos/Career/career_top_mobile_2.jpeg"
             alt="CSCO Team"
             fill
-            className="object-cover sm:hidden"
+            className="object-cover sm:hidden filter blur-sm"
             priority
           />
-          
+
           {/* Medium screens */}
           <Image
             src="/logos/Career/career_top_mobile_1.png"
@@ -26,8 +26,8 @@ export default function JoinCSCOSection() {
             className="object-cover hidden sm:block md:hidden"
             priority
           />
-          
-          {/* Desktop */}
+
+          {/* desktop */}
           <Image
             src="/logos/Career/career_top.jpeg"
             alt="CSCO Team"
@@ -36,11 +36,10 @@ export default function JoinCSCOSection() {
             priority
           />
         </div>
-        
-        {/* Dark Gradient Overlay */}
+
+        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 sm:from-black/80 via-black/60  sm:via-black/50 to-black/30 sm:to-transparent w-full h-full" />
-        
-        {/* Content Container */}
+
         <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-full flex items-center">
             <div className="max-w-xl ml-auto text-right">
@@ -48,8 +47,8 @@ export default function JoinCSCOSection() {
                 Launch your career with CSCO
               </h3>
               <p className="text-white/90 text-lg mb-8">
-                We believe great businesses treat their employees like people, not
-                ID numbers — and that starts right here in our offices. From
+                We believe great businesses treat their employees like people,
+                not ID numbers — and that starts right here in our offices. From
                 hands-on training to our vibrant work environment and truly
                 supportive community, CSCO is the best place to kickstart your
                 career.
