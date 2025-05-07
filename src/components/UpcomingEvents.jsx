@@ -59,7 +59,7 @@ export default function UpcomingEvents({ inHome = false }) {
         className={`flex ${
           inHome
             ? "flex-col items-center justify-center"
-            : "flex-col md:flex-row-reverse items-center justify-between"
+            : "flex-col md:flex-row items-center justify-between"
         } mb-8`}
       >
         <h3
@@ -85,7 +85,7 @@ export default function UpcomingEvents({ inHome = false }) {
 
       <div
         className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${
-          inHome ? "px-16" : ""
+          inHome ? "px-8 sm:px-16" : ""
         }`}
       >
         {events.map((event, index) => (

@@ -26,11 +26,15 @@ export default function ProductSection() {
   const [selectedLetter, setSelectedLetter] = useState("A");
 
   const categoryIcons = {
-    api: <FlaskConical className="w-12 h-12 text-white" />,
-    excipients: <Flask className="w-12 h-12 text-white" />,
-    primaryPackaging: <Package className="w-12 h-12 text-white" />,
-    qcConsumables: <TestTube className="w-12 h-12 text-white" />,
-    medicalDevices: <Stethoscope className="w-12 h-12 text-white" />,
+    api: <FlaskConical className="w-8 md:w-12 h-8 md:h-12 text-white" />,
+    excipients: <Flask className="w-8 md:w-12 h-8 md:h-12 text-white" />,
+    primaryPackaging: (
+      <Package className="w-8 md:w-12 h-8 md:h-12 text-white" />
+    ),
+    qcConsumables: <TestTube className="w-8 md:w-12 h-8 md:h-12 text-white" />,
+    medicalDevices: (
+      <Stethoscope className="w-8 md:w-12 h-8 md:h-12 text-white" />
+    ),
   };
 
   useEffect(() => {
@@ -210,25 +214,14 @@ export default function ProductSection() {
 
   return (
     <div className="relative py-16 md:py-24">
-      {/* gradient */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
-      >
-        <div className="blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-blue-700"></div>
-        <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
-      </div>
-
-      <motion.div className="relative container mx-auto">
-        <div className="text-center mb-12 mx-auto items-center">
+      <motion.div className="relative container mx-auto max-w-6xl px-6 md:px-12">
+        <div className={`text-center mb-12 capitalize`}>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
-            Our{" "}
-            <span className="text-primary dark:text-white">
-              Product Portfolio
-            </span>
+            Our product{" "}
+            <span className="text-primary dark:text-white">portfolio</span>
           </h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
-          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto">
             We take great pride in representing the world's foremost
             manufacturers in the pharmaceutical industry. Our partnership with
             these industry leaders demonstrates our unwavering commitment to
@@ -242,7 +235,7 @@ export default function ProductSection() {
 
         {/* Category */}
         <div className="text-center mb-12">
-          <p className="text-2xl font-bold text-gray-800 dark:text-white">
+          <p className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
             Our Product Categories
           </p>
         </div>

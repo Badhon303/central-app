@@ -68,8 +68,6 @@ export default function HeroSection() {
                 <img
                   src={"/logos/gif/HD.gif"}
                   alt="Hero Animation"
-                  width={400}
-                  height={400}
                   className="w-full h-64 lg:h-96 object-fill"
                 />
               </div>

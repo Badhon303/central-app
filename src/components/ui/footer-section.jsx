@@ -17,6 +17,7 @@ import {
   Moon,
   Sun,
   Twitter,
+  X,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 
@@ -143,7 +144,7 @@ function Footerdemo() {
           </div>
           <div className="md:ml-8 relative">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
-            <div className="mb-6 flex space-x-1">
+            <div className="mb-6 flex space-x-2">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -152,7 +153,7 @@ function Footerdemo() {
                       size="icon"
                       className="rounded-full"
                     >
-                      <Facebook className="h-4 w-4" />
+                      <Facebook className="size-5" />
                       <span className="sr-only">Facebook</span>
                     </Button>
                   </TooltipTrigger>
@@ -169,7 +170,13 @@ function Footerdemo() {
                       size="icon"
                       className="rounded-full"
                     >
-                      <Twitter className="h-4 w-4" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        className="size-5"
+                      >
+                        <path d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"></path>
+                      </svg>
                       <span className="sr-only">Twitter</span>
                     </Button>
                   </TooltipTrigger>
@@ -186,7 +193,7 @@ function Footerdemo() {
                       size="icon"
                       className="rounded-full"
                     >
-                      <Linkedin className="h-4 w-4" />
+                      <Linkedin className="size-5" />
                       <span className="sr-only">LinkedIn</span>
                     </Button>
                   </TooltipTrigger>
@@ -197,7 +204,7 @@ function Footerdemo() {
               </TooltipProvider>
             </div>
             <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
+              <Sun className="size-5" />
               <Switch
                 id="dark-mode"
                 className="border-2"
@@ -206,7 +213,7 @@ function Footerdemo() {
                   handleThemeChange(currentTheme === "dark" ? "light" : "dark")
                 }
               />
-              <Moon className="h-4 w-4" />
+              <Moon className="size-5" />
               <Label htmlFor="dark-mode" className="sr-only">
                 Toggle dark mode
               </Label>

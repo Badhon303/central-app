@@ -12,7 +12,7 @@ const partnerLogos = {
   "GLOBE QUIMICA": "/logos/globe-cumica.png",
   "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/Manufacturer-Logos/zuhai.png",
   "ALPHA GROUP": "/logos/Manufacturer-Logos/alpha.png",
-  KOEL: "/logos/KOEL.png",
+  KOEL: "/logos/koel.jpg",
   "RC ENTERPRISE": "/logos/Manufacturer-Logos/rc.png",
   "BOROSIL SCIENTIFIC LIMITED": "/logos/Manufacturer-Logos/borossil.png",
   "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/Manufacturer-Logos/svam.png",
@@ -151,7 +151,7 @@ export default function WorldMapWeb({ inHome = false }) {
             ))}
           </span>
         </p>
-        <p className="text-neutral-500 max-w-5xl mx-auto py-4">
+        <p className="text-neutral-500 max-w-5xl mx-auto py-4 px-4">
           With a global network of trusted manufacturers, we bring together
           expertise from around the world. Our smart collaboration ensures
           seamless integration, innovation, and quality across
@@ -179,7 +179,7 @@ export default function WorldMapWeb({ inHome = false }) {
                   <img
                     src={logo}
                     alt={name}
-                    className="w-16 h-10 sm:w-20 sm:h-14 md:w-28 md:h-20 border border-black/80 dark:border-gray-400 object-fill rounded-sm"
+                    className="w-20 h-14 sm:w-24 sm:h-16 md:w-32 md:h-20 border border-black/80 dark:border-gray-400 object-fit rounded-sm"
                   />
                 </div>
               ))}

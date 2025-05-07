@@ -158,7 +158,7 @@ export const Slider = ({
 
       {areImagesLoaded && (
         <AnimatePresence mode="wait">
-          {/* Desktop Images */}
+          {/* Desktop images */}
           <motion.img
             key={`desktop-${currentIndex}`}
             src={loadedImages[currentIndex % loadedImages.length]}
@@ -170,7 +170,7 @@ export const Slider = ({
             alt={`Slide ${currentIndex + 1}`}
           />
 
-          {/* Mobile Images */}
+          {/* Mobile images */}
           {hasMobileImages ? (
             <motion.img
               key={`mobile-${currentIndex}`}

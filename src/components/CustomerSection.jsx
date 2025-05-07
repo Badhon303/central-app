@@ -5,19 +5,8 @@ import { motion } from "framer-motion";
 export function CustomerSection({ inHome = false }) {
   return (
     <div className={`relative ${inHome ? "py-0" : "py-16 md:py-24"}`}>
-      {/* background gradient */}
-      <div
-        aria-hidden="true"
-        className={`absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20 ${
-          inHome ? "hidden" : "block"
-        }`}
-      >
-        <div className="blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-blue-700"></div>
-        <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
-      </div>
-
       <motion.div
-        className={`relative ${inHome ? "w-full" : "container mx-auto px-4"}`}
+        className={`relative ${inHome ? "w-full" : "mx-auto px-4"}`}
       >
         {/* header */}
         <div
@@ -44,26 +33,29 @@ export function CustomerSection({ inHome = false }) {
           <div
             className={`grid ${
               inHome
-                ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-0 sm:gap-4"
-                : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 border border-gray-400 dark:border-gray-600"
+                ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-0 sm:gap-6"
+                : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-4 sm:px-8"
             }`}
           >
             {[
-              { src: "/logos/Customer-Logos/aci.png", alt: "ACI" },
-              { src: "/logos/Customer-Logos/nipro.png", alt: "Nipro" },
-              { src: "/logos/Customer-Logos/popular.png", alt: "Popular" },
-              { src: "/logos/Customer-Logos/Incepta.png", alt: "Incepta" },
-              { src: "/logos/Customer-Logos/everest.jpeg", alt: "Everest" },
               { src: "/logos/Customer-Logos/skf.png", alt: "Eskayef" },
+              { src: "/logos/Customer-Logos/Incepta.png", alt: "Incepta" },
+              { src: "/logos/Customer-Logos/aci.png", alt: "ACI" },
+              { src: "/logos/Customer-Logos/popular.png", alt: "Popular" },
               { src: "/logos/Customer-Logos/beacon.png", alt: "Beacon" },
               { src: "/logos/customers/ACME.jpg", alt: "ACME" },
-            ].map((logo, index) => (
+              { src: "/logos/Customer-Logos/beximco.png", alt: "Beximco" },
+              { src: "/logos/Customer-Logos/everest.jpeg", alt: "Everest" },
+              { src: "/logos/Customer-Logos/ibn-sina.png", alt: "Ibn-Sina" },
+              { src: "/logos/Customer-Logos/nipro.png", alt: "Nipro" },
+            ].map((logo) => (
               <div
                 key={logo.alt}
-                className="flex justify-center items-center border border-gray-400 dark:border-gray-500 aspect-square"
-                style={{
-                  padding: inHome ? "2rem" : "4rem",
-                }}
+                className={`flex justify-center items-center border border-gray-400 dark:border-gray-500 aspect-square ${
+                  inHome 
+                    ? "p-2 sm:p-4 md:p-6 lg:p-10" 
+                    : "p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20"
+                }`}
               >
                 <img
                   src={logo.src}
