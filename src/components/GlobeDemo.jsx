@@ -53,7 +53,7 @@ export function GlobeDemo() {
     "ZHUHAI UNITED LABORATORIES CO., LTD":
       "/logos/Manufacturer-Logos/zuhai.png",
     "ALPHA GROUP": "/logos/Manufacturer-Logos/alpha.png",
-    KOEL: "/logos/KOEL.png",
+    KOEL: "/logos/koel.jpg",
     "RC ENTERPRISE": "/logos/Manufacturer-Logos/rc.png",
     "BOROSIL SCIENTIFIC LIMITED": "/logos/Manufacturer-Logos/borossil.png",
     "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/Manufacturer-Logos/svam.png",
@@ -68,14 +68,6 @@ export function GlobeDemo() {
 
   return (
     <div className="relative py-16 md:py-24 ">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
-      >
-        <div className="blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-blue-700"></div>
-        <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
-      </div>
-
       <motion.div className="relative container mx-auto max-w-6xl px-6 md:px-12">
         <div className="text-center mb-8 flex flex-col justify-center items-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
