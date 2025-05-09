@@ -70,13 +70,13 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 20.5937, // India
+      lat: 20.5937,
       lng: 78.9629,
       name: "India",
       flag: "https://flagcdn.com/in.svg",
     },
     end: {
-      lat: 35.8617, // China (good as is)
+      lat: 35.8617,
       lng: 104.1954,
       name: "China",
       flag: "https://flagcdn.com/cn.svg",
@@ -84,13 +84,13 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 35.8617, // China
+      lat: 35.8617,
       lng: 104.1954,
       name: "China",
       flag: "https://flagcdn.com/cn.svg",
     },
     end: {
-      lat: 36.2048, // Japan (good as is)
+      lat: 36.2048,
       lng: 138.2529,
       name: "Japan",
       flag: "https://flagcdn.com/jp.svg",
@@ -98,13 +98,13 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 36.2048, // Japan
+      lat: 36.2048,
       lng: 138.2529,
       name: "Japan",
       flag: "https://flagcdn.com/jp.svg",
     },
     end: {
-      lat: 46.8182, // Switzerland
+      lat: 46.8182,
       lng: 8.2275,
       name: "Switzerland",
       flag: "https://flagcdn.com/ch.svg",
@@ -112,13 +112,13 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 36.2048, // Japan
+      lat: 36.2048,
       lng: 138.2529,
       name: "Japan",
       flag: "https://flagcdn.com/jp.svg",
     },
     end: {
-      lat: 1.3521, // Singapore
+      lat: 1.3521,
       lng: 103.8198,
       name: "Singapore",
       flag: "https://flagcdn.com/sg.svg",
@@ -165,7 +165,7 @@ export default function WorldMapWeb({ inHome = false }) {
             Global Partners
           </h2>
 
-          <div className="max-w-[400px] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto mt-4 px-4">
+          <div className="max-w-[300px] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto mt-4 px-4">
             <InfiniteSlider
               duration={80}
               durationOnHover={120}

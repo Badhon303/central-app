@@ -43,7 +43,7 @@ function Footerdemo() {
                     : "/logos/Central-Scientific-Logo.png"
                 }
                 alt="Central Scientific Company Logo"
-                className="w-36"
+                className="w-44"
               />
             </div>
 
