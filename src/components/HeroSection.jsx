@@ -3,10 +3,6 @@ import Container from "@/components/Container";
 import Image from "next/image";
 
 export default function HeroSection() {
-  const logos = [
-    // ... (keep your existing logos array)
-  ];
-
   // Common paragraph text with fixed height
   const cardContent = [
     {

@@ -20,16 +20,13 @@ const GLOBE_CONFIG = {
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
   markers: [
-    { location: [14.5995, 120.9842], size: 0.03 },
-    { location: [19.076, 72.8777], size: 0.1 },
-    { location: [23.8103, 90.4125], size: 0.05 },
-    { location: [30.0444, 31.2357], size: 0.07 },
-    { location: [39.9042, 116.4074], size: 0.08 },
-    { location: [-23.5505, -46.6333], size: 0.1 },
-    { location: [19.4326, -99.1332], size: 0.1 },
-    { location: [40.7128, -74.006], size: 0.1 },
-    { location: [34.6937, 135.5022], size: 0.05 },
-    { location: [41.0082, 28.9784], size: 0.06 },
+    { location: [1.3521, 103.8198], size: 0.03 },  // Singapore
+    { location: [51.1657, 10.4515], size: 0.1 },   // Germany
+    { location: [37.0902, -95.7129], size: 0.07 }, // United States
+    { location: [20.5937, 78.9629], size: 0.07 },  // India
+    { location: [35.8617, 104.1954], size: 0.08 }, // China
+    { location: [36.2048, 138.2529], size: 0.1 },  // Japan
+    { location: [46.8182, 8.2275], size: 0.08 },    // Switzerland
   ],
 }
 

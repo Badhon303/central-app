@@ -4,9 +4,10 @@ import React from "react";
 import { Slider } from "./ui/Slider";
 import { CardHoverEffect } from "@/components/CardHoverEffect";
 import { AnimatedCard } from "./AnimatedCard";
+import ImageCarousel from "./ui/image-carousel";
 
 export default function ImagesSlider() {
-  const desktopImages  = [
+  const desktopImages = [
     "/logos/Home-Page-Pictures/1.png",
     "/logos/Home-Page-Pictures/2.png",
     "/logos/Home-Page-Pictures/3.png",
@@ -27,42 +28,30 @@ export default function ImagesSlider() {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <div className="relative">
+      {/* Image slider background */}
       <div className="absolute inset-0 z-0">
-        <Slider className="h-full" images={desktopImages}
+        <ImageCarousel
+          images={desktopImages}
           mobileImages={mobileImages}
           autoplay={true}
-          delay={5000} />
+          delay={5000}
+          className="h-full"
+        />
       </div>
 
-      {/* Content Overlay */}
-      <div className="relative z-10">
-        {/* Welcome Section */}
-        <div className="h-screen flex flex-col items-center justify-center">
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: -80,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
-            className="flex flex-col items-center justify-center"
-          ></motion.div>
-        </div>
+      {/* Content overlay (z-10) */}
+      <div className="">
+        <div className="h-screen flex flex-col items-center justify-center"></div>
 
-        {/* Categories */}
-        <section className="">
+        {/* Cards section */}
+        <section className="relative z-20">
           <div className="mx-auto">
             <CardHoverEffect />
             <AnimatedCard />
           </div>
         </section>
       </div>
-    </section>
+    </div>
   );
 }
