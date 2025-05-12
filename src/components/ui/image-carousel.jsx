@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useCallback  } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ImageCarousel = ({
   images,
   mobileImages,
+  titles,
+  subtexts,
   autoplay = true,
   delay = 5000,
   className,
@@ -54,7 +56,7 @@ const ImageCarousel = ({
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* Image Slides */}
+      {/* image Slides */}
       <div className="absolute inset-0 w-full h-full">
         {displayImages.map((image, index) => (
           <div
@@ -66,16 +68,24 @@ const ImageCarousel = ({
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-fit"
+              className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 flex flex-col items-center justify-center transform translate-y-[-14%] md:translate-y-[-10%]">
+              <div className="bg-gradient-to-r from-green-400 via-green-500 to-yellow-500 bg-opacity-80 text-white text-center px-6 py-4 rounded-lg max-w-lg">
+                <h1 className="text-2xl md:text-4xl font-bold">
+                  {titles[index]}
+                </h1>
+                <p className="text-sm md:text-lg mt-2">{subtexts[index]}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Navigation buttons */}
+      {/* navigation buttons */}
       <button
         onClick={handlePrevious}
-        className={`absolute w-fit left-4 sm:left-auto sm:right-20 top-[calc(50%-12rem)] lg:top-[calc(90%-8rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
+        className={`absolute w-fit left-4 md:left-auto md:right-20 top-[calc(50%-10rem)] md:top-[calc(90%-8rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Previous slide"
       >
         <ChevronLeft size={24} />
@@ -83,25 +93,11 @@ const ImageCarousel = ({
 
       <button
         onClick={handleNext}
-        className={`absolute w-fit right-4 top-[calc(50%-12rem)] lg:top-[calc(90%-8rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
+        className={`absolute w-fit right-4 top-[calc(50%-10rem)] md:top-[calc(90%-8rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Next slide"
       >
         <ChevronRight size={24} />
       </button>
-
-      {/* Slide indicators */}
-      {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full focus:outline-none transition-colors ${
-              index === currentIndex ? "bg-white" : "bg-white/50"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div> */}
     </div>
   );
 };

@@ -44,14 +44,24 @@ export default function ContactSection() {
 
   return (
     <section className="relative">
-      {/* Hero Section with Background Image */}
       <div className="relative h-[400px] overflow-hidden">
-        <Image
-          src="/logos/contact-us-2.jpg"
-          alt="Contact Us Image"
-          fill
-          className="object-cover object-center"
-        />
+        <div className="hidden sm:block">
+          <Image
+            src="/logos/Home-Page-Pictures/coverimages/contact-us.jpeg"
+            alt="Contact Us Image for larger screens"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
+        {/* smaller screens */}
+        <div className="block sm:hidden">
+          <Image
+            src="/logos/Home-Page-Pictures/coverimages/mobile/contact-us.jpeg"
+            alt="Contact Us Image for smaller screens"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative h-full max-w-6xl mx-auto px-4 flex flex-col justify-center">
@@ -72,7 +82,7 @@ export default function ContactSection() {
         </div>
       </div>
 
-      {/* Overlapping Cards Section */}
+      {/* overlapping Cards */}
       <div className="max-w-4xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-4 -mt-8 sm:-mt-14">
           <a

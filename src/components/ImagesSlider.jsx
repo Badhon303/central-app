@@ -1,30 +1,48 @@
 "use client";
-import { motion } from "framer-motion";
 import React from "react";
-import { Slider } from "./ui/Slider";
 import { CardHoverEffect } from "@/components/CardHoverEffect";
 import { AnimatedCard } from "./AnimatedCard";
 import ImageCarousel from "./ui/image-carousel";
 
 export default function ImagesSlider() {
   const desktopImages = [
-    "/logos/Home-Page-Pictures/1.png",
-    "/logos/Home-Page-Pictures/2.png",
-    "/logos/Home-Page-Pictures/3.png",
-    "/logos/Home-Page-Pictures/4.png",
-    "/logos/Home-Page-Pictures/5.png",
-    "/logos/Home-Page-Pictures/6.png",
-    "/logos/Home-Page-Pictures/7.png",
+    "/logos/Home-Page-Pictures/coverimages/1.jpg",
+    "/logos/Home-Page-Pictures/coverimages/2.jpg",
+    "/logos/Home-Page-Pictures/coverimages/3.jpg",
+    "/logos/Home-Page-Pictures/coverimages/4.jpg",
+    "/logos/Home-Page-Pictures/coverimages/5.jpg",
+    "/logos/Home-Page-Pictures/coverimages/6.jpg",
+    "/logos/Home-Page-Pictures/coverimages/7.jpg",
   ];
 
   const mobileImages = [
-    "/logos/Home-Page-Pictures/1_mobile_new.jpg",
-    "/logos/Home-Page-Pictures/2_mobile_new.jpg",
-    "/logos/Home-Page-Pictures/3_mobile_new.jpg",
-    "/logos/Home-Page-Pictures/4_mobile_new.jpg",
-    // "/logos/Home-Page-Pictures/5_mobile.png",
-    "/logos/Home-Page-Pictures/6_mobile_new.jpg",
-    // "/logos/Home-Page-Pictures/7_mobile.png",
+    "/logos/Home-Page-Pictures/coverimages/mobile/1.jpg",
+    "/logos/Home-Page-Pictures/coverimages/mobile/2.jpg",
+    "/logos/Home-Page-Pictures/coverimages/mobile/3.jpg",
+    "/logos/Home-Page-Pictures/coverimages/mobile/4.jpg",
+    "/logos/Home-Page-Pictures/coverimages/mobile/5.jpg",
+    "/logos/Home-Page-Pictures/coverimages/mobile/6.jpg",
+    "/logos/Home-Page-Pictures/coverimages/mobile/7.jpg",
+  ];
+
+  const titles = [
+    "Title 1",
+    "Title 2",
+    "Title 3",
+    "Title 4",
+    "Title 5",
+    "Title 6",
+    "Title 7",
+  ];
+
+  const subtexts = [
+    "Subtext for slide 1",
+    "Subtext for slide 2",
+    "Subtext for slide 3",
+    "Subtext for slide 4",
+    "Subtext for slide 5",
+    "Subtext for slide 6",
+    "Subtext for slide 7",
   ];
 
   return (
@@ -34,17 +52,19 @@ export default function ImagesSlider() {
         <ImageCarousel
           images={desktopImages}
           mobileImages={mobileImages}
+          titles={titles}
+          subtexts={subtexts}
           autoplay={true}
           delay={5000}
           className="h-full"
         />
       </div>
 
-      {/* Content overlay (z-10) */}
+      {/* content overlay */}
       <div className="">
-        <div className="h-screen flex flex-col items-center justify-center"></div>
+        <div className="h-screen flex flex-col text-lg items-center justify-center"></div>
 
-        {/* Cards section */}
+        {/* cards section */}
         <section className="relative z-20">
           <div className="mx-auto">
             <CardHoverEffect />
