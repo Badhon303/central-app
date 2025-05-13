@@ -65,7 +65,7 @@ export default function UpcomingEvents({ inHome = false }) {
         <h3
           className={`font-bold text-gray-800 dark:text-white mb-6 ${
             inHome
-              ? "text-center md:mb-4 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2"
+              ? "text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2 text-center"
               : "text-right md:mb-0 text-3xl md:text-4xl "
           }`}
         >

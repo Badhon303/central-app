@@ -102,12 +102,12 @@ export default function ProductSection() {
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className=""
             >
-              <td className="py-4 px-6 w-1/4 sm:w-1/3">
+              <td className="py-2 px-2 sm:py-4 sm:px-6 w-1/4 sm:w-1/3">
                 <div className="flex justify-start">
                   <img
                     src={item.logo}
                     alt={`${item.manufacturer} logo`}
-                    className="w-16 h-10 sm:w-28 sm:h-20 md:w-40 md:h-24 object-contain rounded-lg"
+                    className="w-20 h-16 sm:w-32 sm:h-24 md:w-44 md:h-24 object-contain rounded-lg"
                   />
                 </div>
               </td>

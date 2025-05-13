@@ -54,7 +54,7 @@ export function GlobeDemo() {
     "ZHUHAI UNITED LABORATORIES CO., LTD":
       "/logos/Manufacturer-Logos/zuhai.png",
     "ALPHA GROUP": "/logos/Manufacturer-Logos/alpha.png",
-    "Patel Chem Specialties Limited": "/logos/patel-chem.jpg",
+    "Patel Chem Specialties Limited": "/logos/patel-chem-specialist.png",
     KOEL: "/logos/koel.jpg",
     "RC ENTERPRISE": "/logos/Manufacturer-Logos/rc.png",
     "BOROSIL SCIENTIFIC LIMITED": "/logos/Manufacturer-Logos/borossil.png",

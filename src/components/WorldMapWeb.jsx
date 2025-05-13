@@ -165,7 +165,7 @@ export default function WorldMapWeb({ inHome = false }) {
             Global Partners
           </h2>
 
-          <div className="max-w-[300px] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto mt-4 px-4">
+          <div className="max-w-[350px] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto mt-4 px-4">
             <InfiniteSlider
               duration={80}
               durationOnHover={120}

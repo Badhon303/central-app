@@ -86,10 +86,15 @@ export default {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+		textShadow: {
+        sm: '1px 1px 2px rgba(0,0,0,0.5)',
+        DEFAULT: '2px 2px 4px rgba(0,0,0,0.5)',
+        lg: '3px 3px 6px rgba(0,0,0,0.5)',
+      },
   	}
   },
-  plugins: [addVariablesForColors, require("tailwindcss-animate")],
+  plugins: [addVariablesForColors,addTextShadowUtilities, require("tailwindcss-animate")],
 }
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g., var(--gray-200).
@@ -103,3 +108,15 @@ function addVariablesForColors({ addBase, theme }) {
     ":root": newVars,
   })
 }
+
+function addTextShadowUtilities({ addUtilities, theme }) {
+  const shadows = theme('textShadow') || {}
+  const newUtilities = Object.entries(shadows).reduce((acc, [key, value]) => {
+    acc[`.text-shadow${key === 'DEFAULT' ? '' : `-${key}`}`] = {
+      textShadow: value,
+    }
+    return acc
+  }, {})
+  addUtilities(newUtilities, ['responsive'])
+}
+
