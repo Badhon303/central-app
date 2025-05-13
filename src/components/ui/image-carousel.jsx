@@ -70,12 +70,19 @@ const ImageCarousel = ({
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center transform translate-y-[-14%] md:translate-y-[-10%]">
-              <div className="bg-gradient-to-r from-green-400 via-green-500 to-yellow-500 bg-opacity-80 text-white text-center px-6 py-4 rounded-lg max-w-lg">
-                <h1 className="text-2xl md:text-4xl font-bold">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-opacity-50 transform translate-y-[-14%] md:translate-y-[-10%]">
+              <div
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(59, 130, 246, 0.7), rgba(6, 182, 212, 0.7), rgba(16, 185, 129, 0.7))",
+                }}
+                className="text-white text-center px-6 py-4 rounded-3xl max-w-lg md:max-w-2xl"
+              >
+                {" "}
+                <h1 className="text-3xl md:text-5xl font-bold">
                   {titles[index]}
                 </h1>
-                <p className="text-sm md:text-lg mt-2">{subtexts[index]}</p>
+                <p className="text-lg md:text-xl mt-2">{subtexts[index]}</p>
               </div>
             </div>
           </div>
@@ -85,7 +92,7 @@ const ImageCarousel = ({
       {/* navigation buttons */}
       <button
         onClick={handlePrevious}
-        className={`absolute w-fit left-4 md:left-auto md:right-20 top-[calc(50%-10rem)] md:top-[calc(90%-8rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
+        className={`absolute w-fit left-4 md:left-auto md:right-20 top-[calc(50%-10rem)] md:top-[calc(90%-10rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Previous slide"
       >
         <ChevronLeft size={24} />
@@ -93,7 +100,7 @@ const ImageCarousel = ({
 
       <button
         onClick={handleNext}
-        className={`absolute w-fit right-4 top-[calc(50%-10rem)] md:top-[calc(90%-8rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
+        className={`absolute w-fit right-4 top-[calc(50%-10rem)] md:top-[calc(90%-10rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Next slide"
       >
         <ChevronRight size={24} />
