@@ -33,7 +33,7 @@ export function CustomerSection({ inHome = false }) {
           <div
             className={`grid ${
               inHome
-                ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-0 sm:gap-6_"
+                ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-4"
                 : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-4 sm:px-8"
             }`}
           >

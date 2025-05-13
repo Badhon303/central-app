@@ -241,7 +241,7 @@ export const apiProducts = {
   export const excipientsData = [
     {
         manufacturer: "Patel Chem Specialties Limited",
-        logo: "/logos/patel-chem.jpg",
+        logo: "/logos/patel-chem-specialist.png",
         products: [
           "Carboxymethyl Cellulose Sodium",
           "Croscarmellose Sodium",
@@ -341,7 +341,7 @@ export const apiProducts = {
       },
       {
         manufacturer: "Dosan Living Filtration",
-        logo: "/logos/dorsan.jpeg",
+        logo: "/logos/Manufacturer-Logos/dorsan.jpg",
         products: [
           "Syringe Filters",
         ],
