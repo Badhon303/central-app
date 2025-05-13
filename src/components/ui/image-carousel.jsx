@@ -74,7 +74,7 @@ const ImageCarousel = ({
               <div
                 style={{
                   background:
-                    "linear-gradient(to right, rgba(59, 130, 246, 0.7), rgba(6, 182, 212, 0.7), rgba(16, 185, 129, 0.7))",
+                    "linear-gradient(to right, rgba(59, 130, 246, 0.7), rgba(6, 182, 212, 0.7), rgba(16, 185, 89, 0.7))",
                 }}
                 className="text-white text-center px-6 py-4 rounded-3xl max-w-lg md:max-w-2xl"
               >
@@ -82,7 +82,9 @@ const ImageCarousel = ({
                 <h1 className="text-3xl md:text-5xl font-bold">
                   {titles[index]}
                 </h1>
-                <p className="text-lg md:text-xl mt-2">{subtexts[index]}</p>
+                <p className="text-lg md:text-xl mt-2 font-extralight">
+                  {subtexts[index]}
+                </p>
               </div>
             </div>
           </div>
