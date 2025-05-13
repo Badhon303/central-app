@@ -36,13 +36,13 @@ export default function ImagesSlider() {
   ];
 
   const subtexts = [
-    "By choosing Central, you are partering with a dynmaic, transparent and energetic teams of professionals who are passionately dedicated to excellence in the fields of pharmaceuticals and food",
+    "By choosing Central, you are partnering with a dynamic, transparent and energetic team of professionals who are passionately dedicated to excellence in the fields of pharmaceuticals and food",
     "Explore. Build. Thrive. Together",
     "Applying High-Purity APIs and Advanced Packaging Solutions to Safeguard Pharmaceuticals Excellence",
     "Advanced Laboratory Consumables for Peak Performance",
     "Hornessing Nature's Strength",
     "Your Source for Quality Nutraceuticals",
-    "Built to serve, grown to last",
+    "Built to Serve, Grown to Last",
   ];
 
   return (
