@@ -26,23 +26,23 @@ export default function ImagesSlider() {
   ];
 
   const titles = [
-    "Title 1",
-    "Title 2",
-    "Title 3",
-    "Title 4",
-    "Title 5",
-    "Title 6",
-    "Title 7",
+    "WELCOME TO CENTRAL",
+    "Opportunity Awaits",
+    "From API's to Primary Packaging",
+    "Crafted For Precision",
+    "Pure Ingredients",
+    "Nutraceuticals for a Stronger Tomorrow",
+    "Bloom Hub",
   ];
 
   const subtexts = [
-    "Subtext for slide 1",
-    "Subtext for slide 2",
-    "Subtext for slide 3",
-    "Subtext for slide 4",
-    "Subtext for slide 5",
-    "Subtext for slide 6",
-    "Subtext for slide 7",
+    "By choosing Central, you are partering with a dynmaic, transparent and energetic teams of professionals who are passionately dedicated to excellence in the fields of pharmaceuticals and food",
+    "Explore. Build. Thrive. Together",
+    "Applying High-Purity APIs and Advanced Packaging Solutions to Safeguard Pharmaceuticals Excellence",
+    "Advanced Laboratory Consumables for Peak Performance",
+    "Hornessing Nature's Strength",
+    "Your Source for Quality Nutraceuticals",
+    "Built to serve, grown to last",
   ];
 
   return (
