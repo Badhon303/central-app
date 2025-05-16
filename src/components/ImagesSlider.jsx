@@ -6,23 +6,23 @@ import ImageCarousel from "./ui/image-carousel";
 
 export default function ImagesSlider() {
   const desktopImages = [
-    "/logos/Home-Page-Pictures/coverimages/1.jpg",
-    "/logos/Home-Page-Pictures/coverimages/2.jpg",
+    "/logos/Home-Page-Pictures/coverimages/1.png",
+    "/logos/Home-Page-Pictures/coverimages/2.png",
     "/logos/Home-Page-Pictures/coverimages/3.jpg",
-    "/logos/Home-Page-Pictures/coverimages/4.jpg",
-    "/logos/Home-Page-Pictures/coverimages/5.jpg",
-    "/logos/Home-Page-Pictures/coverimages/6.jpg",
-    "/logos/Home-Page-Pictures/coverimages/7.jpg",
+    "/logos/Home-Page-Pictures/coverimages/4.png",
+    "/logos/Home-Page-Pictures/coverimages/5.png",
+    "/logos/Home-Page-Pictures/coverimages/6.png",
+    "/logos/Home-Page-Pictures/coverimages/7.png",
   ];
 
   const mobileImages = [
-    "/logos/Home-Page-Pictures/coverimages/mobile/1.jpg",
-    "/logos/Home-Page-Pictures/coverimages/mobile/2.jpg",
-    "/logos/Home-Page-Pictures/coverimages/mobile/3.jpg",
-    "/logos/Home-Page-Pictures/coverimages/mobile/4.jpg",
-    "/logos/Home-Page-Pictures/coverimages/mobile/5.jpg",
+    "/logos/Home-Page-Pictures/coverimages/1.png",
+    "/logos/Home-Page-Pictures/coverimages/2.png",
+    "/logos/Home-Page-Pictures/coverimages/3.jpg",
+    "/logos/Home-Page-Pictures/coverimages/4.png",
+    "/logos/Home-Page-Pictures/coverimages/5.png",
     "/logos/Home-Page-Pictures/coverimages/mobile/6.jpg",
-    "/logos/Home-Page-Pictures/coverimages/mobile/7.jpg",
+    "/logos/Home-Page-Pictures/coverimages/7.png",
   ];
 
   const titles = [
