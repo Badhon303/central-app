@@ -28,10 +28,10 @@ const partnerLogos = {
 const countryConnections = [
   {
     start: {
-      lat: 1.3521,
-      lng: 103.8198,
-      name: "Singapore",
-      flag: "https://flagcdn.com/sg.svg",
+      lat: 23.685,
+      lng: 90.3563,
+      name: "Bangladesh",
+      flag: "https://flagcdn.com/bd.svg",
     },
     end: {
       lat: 51.1657,
@@ -42,10 +42,10 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 51.1657,
-      lng: 10.4515,
-      name: "Germany",
-      flag: "https://flagcdn.com/de.svg",
+      lat: 23.685,
+      lng: 90.3563,
+      name: "Bangladesh",
+      flag: "https://flagcdn.com/bd.svg",
     },
     end: {
       lat: 37.0902,
@@ -56,10 +56,10 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 37.0902,
-      lng: -95.7129,
-      name: "United States",
-      flag: "https://flagcdn.com/us.svg",
+      lat: 23.685,
+      lng: 90.3563,
+      name: "Bangladesh",
+      flag: "https://flagcdn.com/bd.svg",
     },
     end: {
       lat: 20.5937,
@@ -70,10 +70,10 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 20.5937,
-      lng: 78.9629,
-      name: "India",
-      flag: "https://flagcdn.com/in.svg",
+      lat: 23.685,
+      lng: 90.3563,
+      name: "Bangladesh",
+      flag: "https://flagcdn.com/bd.svg",
     },
     end: {
       lat: 35.8617,
@@ -84,10 +84,10 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 35.8617,
-      lng: 104.1954,
-      name: "China",
-      flag: "https://flagcdn.com/cn.svg",
+      lat: 23.685,
+      lng: 90.3563,
+      name: "Bangladesh",
+      flag: "https://flagcdn.com/bd.svg",
     },
     end: {
       lat: 36.2048,
@@ -98,10 +98,10 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 36.2048,
-      lng: 138.2529,
-      name: "Japan",
-      flag: "https://flagcdn.com/jp.svg",
+      lat: 23.685,
+      lng: 90.3563,
+      name: "Bangladesh",
+      flag: "https://flagcdn.com/bd.svg",
     },
     end: {
       lat: 46.8182,
@@ -112,10 +112,10 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 36.2048,
-      lng: 138.2529,
-      name: "Japan",
-      flag: "https://flagcdn.com/jp.svg",
+      lat: 23.685,
+      lng: 90.3563,
+      name: "Bangladesh",
+      flag: "https://flagcdn.com/bd.svg",
     },
     end: {
       lat: 1.3521,

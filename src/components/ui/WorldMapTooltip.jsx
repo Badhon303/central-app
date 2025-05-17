@@ -24,32 +24,6 @@ const WorldMapTooltip = ({ x, y, name, flag, color }) => {
       {/* Visible point */}
       <circle cx={x} cy={y} r="2" fill={color} />
 
-      {/* Pulsing animation */}
-      {/* <circle
-        cx={x}
-        cy={y}
-        r="2"
-        fill={color}
-        opacity="0.5"
-      >
-        <animate
-          attributeName="r"
-          from="2"
-          to="8"
-          dur="1.5s"
-          begin="0s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          from="0.5"
-          to="0"
-          dur="1.5s"
-          begin="0s"
-          repeatCount="indefinite"
-        />
-      </circle> */}
-
       {/* Tooltip */}
       {isTooltipVisible && (
         <foreignObject
@@ -58,6 +32,7 @@ const WorldMapTooltip = ({ x, y, name, flag, color }) => {
           width="120"
           height="30"
           style={{ overflow: "visible", zIndex: 50 }}
+          className="z-100"
         >
           <div
             style={{
@@ -71,11 +46,13 @@ const WorldMapTooltip = ({ x, y, name, flag, color }) => {
               gap: "6px",
               width: "max-content",
             }}
+            className="z-100"
           >
             <img
               src={flag}
               alt={name}
               style={{ width: "16px", height: "12px" }}
+              className="z-100"
             />
             <span>{name}</span>
           </div>
