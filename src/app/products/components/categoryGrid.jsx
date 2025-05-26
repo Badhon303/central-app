@@ -11,7 +11,7 @@ export default function CategoryGrid({
   categoryTitles,
 }) {
   return (
-    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-12 p-4 mb-8 sm:mb-16 mx-auto justify-center">
+    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-12 p-4 mb-8 sm:mb-12 mx-auto justify-center">
       {Object.entries(categoryTitles).map(([key, title]) => (
         <motion.div
           key={key}

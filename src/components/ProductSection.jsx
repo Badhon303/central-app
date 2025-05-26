@@ -141,14 +141,14 @@ export default function ProductSection() {
       case "api":
         return (
           <>
-            <div className="flex flex-wrap justify-center gap-4 mb-12 items-center">
+            <div className="flex flex-wrap justify-center gap-2 lg-screen:gap-4 mb-12 items-center">
               {Object.keys(apiProducts).map((letter) => (
                 <motion.div
                   key={letter}
-                  className={`cursor-pointer font-bold px-3 py-2 rounded-full ${
+                  className={`cursor-pointer font-bold px-1 lg:px-2 py-1 lg:py-2 rounded-full ${
                     selectedLetter === letter
-                      ? "text-primary text-4xl"
-                      : "dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-lg transition-all duration-200"
+                      ? "text-primary text-3xl"
+                      : "dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-sm md:text-base lg-screen:text-lg transition-all duration-200"
                   }`}
                   onClick={() => handleLetterClick(letter)}
                   whileHover={{ scale: 1.1 }}

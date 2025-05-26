@@ -3,7 +3,6 @@ import Container from "@/components/Container";
 import Image from "next/image";
 
 export default function HeroSection() {
-  // Common paragraph text with fixed height
   const cardContent = [
     {
       title: "Our Products",
@@ -25,31 +24,31 @@ export default function HeroSection() {
   return (
     <div className="relative" id="home">
       {/* Background elements */}
-      <div
+      {/* <div
         aria-hidden="true"
         className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
       >
         <div className="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
-      </div>
+      </div> */}
 
       <Container>
         <div className="relative ml-auto">
           {/* Hero section */}
           <div className="flex flex-col lg:flex-row items-stretch">
             <div className="lg:w-1/2 text-center lg:text-left p-4 bg-primary flex flex-col justify-center">
-              <h1 className="text-balance text-white font-bold text-xl md:text-3xl xl:text-4xl text-center">
+              <h1 className="text-balance text-white font-bold text-2xl md:text-3xl xl:text-4xl text-center">
                 The Journey Evolves...
               </h1>
               <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
-              <p className="mt-4 sm:mt-8 text-white items-center text-center">
+              <p className="mt-4 sm:mt-6 text-white items-center text-center px-2 md:px-4">
                 Our journey begun as a trading company in supplying to the
                 Scientific Research Institutes and Private organisations in
                 Bangladesh. Immense dedication and prompt services helped us in
                 achieving to be recognised as a leading supplier of Scientific
                 Equipment's' throughout our journey which spans over 30 years.
               </p>
-              <div className="mt-4 sm:mt-8 flex justify-center">
+              <div className="mt-4 sm:mt-6 flex justify-center">
                 <a
                   href="#"
                   className="mt-2 sm:mt-6 text-sm px-4 py-2 text-primary font-semibold bg-white rounded-full hover:scale-110 transition-all duration-200 inline-block"
@@ -62,15 +61,14 @@ export default function HeroSection() {
             <div className="lg:w-1/2 flex items-stretch">
               <div className="w-full overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center">
                 <img
-                  src={"/logos/gif/HD.gif"}
+                  src={"/logos/gif/gif-central.gif"}
                   alt="Hero Animation"
-                  className="w-full h-64 lg:h-96 object-fill"
+                  className="w-full h-64 lg:h-96 object-cover"
                 />
               </div>
             </div>
           </div>
 
-          {/* Cards section */}
           <div className="flex md:flex-row flex-col justify-between py-6 mt-16 gap-4">
             {cardContent.map((card, index) => (
               <div
