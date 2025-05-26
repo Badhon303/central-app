@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 export function CustomerSection({ inHome = false }) {
   return (
     <div className={`relative ${inHome ? "py-0" : "py-16 md:py-24"}`}>
-      <motion.div
-        className={`relative ${inHome ? "w-full" : "mx-auto px-4"}`}
-      >
+      <motion.div className={`relative ${inHome ? "w-full" : "mx-auto px-4"}`}>
         {/* header */}
         <div
           className={`text-center mb-12 capitalize ${
@@ -38,22 +36,22 @@ export function CustomerSection({ inHome = false }) {
             }`}
           >
             {[
-              { src: "/logos/Customer-Logos/skf.png", alt: "Eskayef" },
               { src: "/logos/Customer-Logos/Incepta.png", alt: "Incepta" },
-              { src: "/logos/Customer-Logos/aci.png", alt: "ACI" },
-              { src: "/logos/Customer-Logos/popular.png", alt: "Popular" },
-              { src: "/logos/Customer-Logos/beacon.png", alt: "Beacon" },
-              { src: "/logos/customers/ACME.jpg", alt: "ACME" },
               { src: "/logos/Customer-Logos/beximco.png", alt: "Beximco" },
-              { src: "/logos/Customer-Logos/everest.jpeg", alt: "Everest" },
-              { src: "/logos/Customer-Logos/ibn-sina.png", alt: "Ibn-Sina" },
+              { src: "/logos/Customer-Logos/skf.png", alt: "Eskayef" },
+              { src: "/logos/Customer-Logos/popular.png", alt: "Popular" },
+              { src: "/logos/customers/ACME.jpg", alt: "ACME" },
+              { src: "/logos/Customer-Logos/aci.png", alt: "ACI" },
+              { src: "/logos/Customer-Logos/beacon.png", alt: "Beacon" },
               { src: "/logos/Customer-Logos/nipro.png", alt: "Nipro" },
+              { src: "/logos/Customer-Logos/ibn-sina.png", alt: "Ibn-Sina" },
+              { src: "/logos/Customer-Logos/everest.jpeg", alt: "Everest" },
             ].map((logo) => (
               <div
                 key={logo.alt}
                 className={`flex justify-center items-center border border-gray-400 dark:border-gray-500 aspect-square ${
-                  inHome 
-                    ? "p-2 sm:p-4 md:p-6 lg:p-10" 
+                  inHome
+                    ? "p-2 sm:p-4 md:p-6 lg:p-10"
                     : "p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20"
                 }`}
               >

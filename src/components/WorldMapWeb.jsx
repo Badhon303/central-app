@@ -135,9 +135,9 @@ export default function WorldMapWeb({ inHome = false }) {
   return (
     <div className="dark:bg-gray-950 bg-white w-full">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2 text-center">
+        <p className="text-2xl font-bold text-gray-800 dark:text-white md:text-4xl px-2 text-center">
           Remote{" "}
-          <span className="text-neutral-400">
+          <span className="text-gray-800 dark:text-white">
             {"Connectivity".split("").map((word, index) => (
               <motion.span
                 key={`connectivity-letter-${index}`}
@@ -151,7 +151,7 @@ export default function WorldMapWeb({ inHome = false }) {
             ))}
           </span>
         </p>
-        <p className="text-neutral-500 max-w-5xl mx-auto py-4 px-4">
+        <p className="text-gray-600 dark:text-gray-300 text-center max-w-5xl mx-auto py-4 px-4">
           With a global network of trusted manufacturers, we bring together
           expertise from around the world. Our smart collaboration ensures
           seamless integration, innovation, and quality across

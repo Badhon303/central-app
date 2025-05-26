@@ -74,15 +74,15 @@ const ImageCarousel = ({
               <div
                 style={{
                   background:
-                    "linear-gradient(to right, rgba(59, 130, 246, 0.7), rgba(6, 182, 212, 0.7), rgba(16, 185, 148, 0.7))",
+                    "linear-gradient(to right, rgba(59, 130, 246, 0.75), rgba(6, 182, 212, 0.75), rgba(16, 185, 148, 0.75))",
                 }}
-                className="text-white text-center px-4 sm:px-6 py-4 rounded-sm sm:rounded-3xl max-w-lg md:max-w-3xl lg-screen:max-w-5xl xl-screen:max-w-7xl 2xl-screen:max-w-8xl"
+                className="text-white text-center px-4 sm:px-6 py-4 rounded-sm sm:rounded-3xl max-w-lg md:max-w-3xl lg-screen:max-w-5xl xl-screen:max-w-6xl"
               >
                 {" "}
-                <h1 className="text-3xl md:text-6xl xl-screen:text-8xl font-bold text-shadow-lg">
+                <h1 className="text-3xl md:text-4xl lg-screen:text-5xl xl-screen:text-6xl font-bold text-shadow-lg">
                   {titles[index]}
                 </h1>
-                <p className="text-base md:text-2xl xl-screen:text-4xl mt-2 font-{50} text-shadow-sm">
+                <p className="text-base md:text-2xl mt-2 font-{50} text-shadow-sm">
                   {subtexts[index]}
                 </p>
               </div>
@@ -94,10 +94,10 @@ const ImageCarousel = ({
       {/* navigation buttons */}
       <button
         onClick={handlePrevious}
-        className={`absolute w-fit left-4 md:left-auto md:right-20 lg-screen:left-auto lg-screen:right-28 xl-screen:left-auto xl-screen:right-28 top-[calc(50%-10rem)] md:top-[calc(90%-10rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
+        className={`absolute w-fit left-4 md:left-auto md:right-20 lg-screen:left-auto lg-screen:right-24 top-[calc(50%-10rem)] md:top-[calc(90%-10rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Previous slide"
       >
-        <ChevronLeft className="size-6 md:size-8 xl-screen:size-12 2xl-screen:size-14" />
+        <ChevronLeft className="size-6 md:size-7 lg-screen:size-8" />
       </button>
 
       <button
@@ -105,7 +105,7 @@ const ImageCarousel = ({
         className={`absolute w-fit right-4 top-[calc(50%-10rem)] md:top-[calc(90%-10rem)] md:right-6 transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Next slide"
       >
-        <ChevronRight className="size-6 md:size-8 xl-screen:size-12 2xl-screen:size-14" />
+        <ChevronRight className="size-6 md:size-7 lg-screen:size-8" />
       </button>
     </div>
   );
