@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 
 export default function JoinCSCOSection() {
   return (
@@ -14,7 +13,7 @@ export default function JoinCSCOSection() {
             src="/logos/Career/career_top_mobile_2.jpeg"
             alt="CSCO Team"
             fill
-            className="object-cover sm:hidden filter blur-sm"
+            className="object-cover sm:hidden filter blur-[2px]"
             priority
           />
 
@@ -38,7 +37,7 @@ export default function JoinCSCOSection() {
         </div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-l from-black/70 sm:from-black/80 via-black/60  sm:via-black/50 to-black/30 sm:to-transparent w-full h-full" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/40 to-black/10 sm:to-transparent w-full h-full" />
 
         <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-full flex items-center">
