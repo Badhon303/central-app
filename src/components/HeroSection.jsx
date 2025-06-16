@@ -60,9 +60,12 @@ export default function HeroSection() {
 
             <div className="lg:w-1/2 flex items-stretch">
               <div className="w-full overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center">
-                <img
-                  src={"/logos/gif/gif-central.gif"}
-                  alt="Hero Animation"
+                <video
+                  src="/logos/video/central.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-64 lg:h-96 object-cover"
                 />
               </div>

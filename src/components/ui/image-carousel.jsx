@@ -79,10 +79,10 @@ const ImageCarousel = ({
                 className="text-white text-center px-4 sm:px-6 py-4 rounded-sm sm:rounded-3xl max-w-lg md:max-w-3xl lg-screen:max-w-5xl xl-screen:max-w-6xl"
               >
                 {" "}
-                <h1 className="text-3xl md:text-4xl lg-screen:text-5xl xl-screen:text-6xl font-bold text-shadow-lg">
+                <h1 className="text-[2.2rem] md:text-4xl lg-screen:text-5xl xl-screen:text-6xl font-bold text-shadow-lg">
                   {titles[index]}
                 </h1>
-                <p className="text-base md:text-2xl mt-2 font-{50} text-shadow-sm">
+                <p className="text-xl md:text-2xl mt-2 font-{50} text-shadow-sm">
                   {subtexts[index]}
                 </p>
               </div>
@@ -94,7 +94,7 @@ const ImageCarousel = ({
       {/* navigation buttons */}
       <button
         onClick={handlePrevious}
-        className={`absolute w-fit left-4 md:left-auto md:right-20 lg-screen:left-auto lg-screen:right-24 top-[calc(50%-10rem)] md:top-[calc(90%-10rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
+        className={`absolute w-fit left-4 md:left-auto md:right-20 lg-screen:left-auto lg-screen:right-24 top-[calc(50%-9rem)] md:top-[calc(90%-10rem)] transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Previous slide"
       >
         <ChevronLeft className="size-6 md:size-7 lg-screen:size-8" />
@@ -102,7 +102,7 @@ const ImageCarousel = ({
 
       <button
         onClick={handleNext}
-        className={`absolute w-fit right-4 top-[calc(50%-10rem)] md:top-[calc(90%-10rem)] md:right-6 transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
+        className={`absolute w-fit right-4 top-[calc(50%-9rem)] md:top-[calc(90%-10rem)] md:right-6 transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 focus:none transition-colors`}
         aria-label="Next slide"
       >
         <ChevronRight className="size-6 md:size-7 lg-screen:size-8" />
