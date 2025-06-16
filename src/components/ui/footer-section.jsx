@@ -31,7 +31,7 @@ function Footerdemo() {
 
   return (
     <footer className="relative border-t bg-background transition-colors duration-300">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-8 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             {/* Logo */}
@@ -74,7 +74,7 @@ function Footerdemo() {
             </a>
           </div>
 
-          <div className="md:ml-8">
+          <div className="md:ml-8 md:mt-2">
             <h3 className="mb-4 text-lg font-semibold ">Quick Links</h3>
             <nav className="space-y-2 text-sm">
               <a
@@ -127,7 +127,7 @@ function Footerdemo() {
               </a>
             </nav>
           </div>
-          <div>
+          <div className="md:mt-2">
             <h3 className="mb-4 text-lg font-semibold">Find Us At</h3>
             <div className="flex flex-col gap-4">
               <address className="space-y-2 text-sm not-italic">
@@ -142,7 +142,7 @@ function Footerdemo() {
               </address>
             </div>
           </div>
-          <div className="md:ml-8 relative">
+          <div className="md:ml-8 relative md:mt-2">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
             <div className="mb-6 flex space-x-2">
               <TooltipProvider>
@@ -171,12 +171,15 @@ function Footerdemo() {
                       className="rounded-full"
                     >
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        className="size-5"
-                      >
-                        <path d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"></path>
-                      </svg>
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  className="size-5 text-black dark:text-white"
+>
+  <path
+    fill="currentColor"
+    d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"
+  ></path>
+</svg>
                       <span className="sr-only">Twitter</span>
                     </Button>
                   </TooltipTrigger>
