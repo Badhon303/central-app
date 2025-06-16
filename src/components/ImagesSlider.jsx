@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { CardHoverEffect } from "@/components/CardHoverEffect";
-import { AnimatedCard } from "./AnimatedCard";
 import ImageCarousel from "./ui/image-carousel";
 
 export default function ImagesSlider() {
@@ -47,7 +46,6 @@ export default function ImagesSlider() {
 
   return (
     <div className="relative">
-      {/* Image slider background */}
       <div className="absolute inset-0 z-0">
         <ImageCarousel
           images={desktopImages}
@@ -68,7 +66,6 @@ export default function ImagesSlider() {
         <section className="relative z-20">
           <div className="mx-auto">
             <CardHoverEffect />
-            <AnimatedCard />
           </div>
         </section>
       </div>
