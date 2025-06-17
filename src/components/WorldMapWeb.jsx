@@ -7,8 +7,8 @@ import { CustomerSection } from "./CustomerSection";
 
 const partnerLogos = {
   "UNITED PHARMA INDUSTRIES CO., LTD": "/logos/united-pharma.png",
-  "KINHOO PHARMACEUTICAL CO., LTD": "/logos/kinhoo-logo.png",
-  "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD": "/logos/sozhou.png",
+  "KINHOO PHARMACEUTICAL CO., LTD": "/logos/kinhoo-logo.jpg",
+  "SUZHOU CRH NEW MATERIAL TECHNOLOGY CO., LTD": "/logos/CRH.png",
   "GLOBE QUIMICA": "/logos/globe-cumica.png",
   "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/Manufacturer-Logos/zuhai.png",
   "ALPHA GROUP": "/logos/Manufacturer-Logos/alpha.png",
