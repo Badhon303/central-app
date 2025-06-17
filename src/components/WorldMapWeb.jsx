@@ -13,16 +13,16 @@ const partnerLogos = {
   "ZHUHAI UNITED LABORATORIES CO., LTD": "/logos/Manufacturer-Logos/zuhai.png",
   "ALPHA GROUP": "/logos/Manufacturer-Logos/alpha.png",
   KOEL: "/logos/koel.jpg",
-  "RC ENTERPRISE": "/logos/Manufacturer-Logos/rc.png",
-  "BOROSIL SCIENTIFIC LIMITED": "/logos/Manufacturer-Logos/borossil.png",
+  "RC ENTERPRISE": "/logos/Manufacturer-Logos/rc.jpg",
+  "BOROSIL SCIENTIFIC LIMITED": "/logos/Manufacturer-Logos/borossil.jpg",
   "SVAM TOYAL PACKAGING INDUSTRIES LTD": "/logos/Manufacturer-Logos/svam.png",
   "RAVI RAJ FOILS LTD": "/logos/Manufacturer-Logos/raviraj.jpg",
   "DR. MAISCH": "/logos/dr-maisch.jpeg",
   "KARL HECHT GMBH": "/logos/Manufacturer-Logos/assistent.png",
   "DORSAN FILTRATION": "/logos/Manufacturer-Logos/dorsan.jpg",
   "LIVEO RESEARCH": "/logos/liveo.jpeg",
-  "PT. ONEJECT": "/logos/Manufacturer-Logos/oneject.png",
-  "Acetar Bio-Tech Inc": "/logos/Manufacturer-Logos/acetar.png",
+  "PT. ONEJECT": "/logos/Manufacturer-Logos/oneject.jpg",
+  "Acetar Bio-Tech Inc": "/logos/Manufacturer-Logos/acetar.jpg",
 };
 
 const countryConnections = [
