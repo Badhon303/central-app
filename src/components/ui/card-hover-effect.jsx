@@ -161,7 +161,7 @@ export const HoverEffect = ({ items, className }) => {
 
   return (
     <div className={cn("w-full px-4", className)}>
-      <div className="grid grid-cols-5 gap-6 w-full">
+      <div className="grid grid-cols-5 gap-6 w-full max-w-7xl mx-auto">
         {items.map((item, idx) => (
           <div
             key={item?.link}

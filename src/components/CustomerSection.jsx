@@ -27,7 +27,7 @@ export function CustomerSection({ inHome = false }) {
         </div>
 
         {/* Customer logos grid */}
-        <div className={`${inHome ? "pt-6 w-full px-4" : "py-10"}`}>
+        <div className={`${inHome ? "pt-6 w-full px-4" : "py-10 max-w-7xl mx-auto"}`}>
           <div
             className={`grid ${
               inHome

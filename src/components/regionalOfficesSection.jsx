@@ -265,7 +265,7 @@ const RegionalOfficesSection = () => {
           </div>
 
           {/* Decorative bar */}
-          <div className="h-2 bg-gradient-to-r from-blue-500 via-primary to-blue-400"></div>
+          {/* <div className="h-2 bg-gradient-to-r from-blue-500 via-primary to-blue-400"></div> */}
         </motion.div>
 
         {/* Global Locations Map */}

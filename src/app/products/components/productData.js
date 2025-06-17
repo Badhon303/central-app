@@ -268,7 +268,7 @@ export const apiProducts = {
       },
       {
         manufacturer: "RC Enterprise ",
-        logo: "/logos/Manufacturer-Logos/rc.png",
+        logo: "/logos/Manufacturer-Logos/rc.jpg",
         products: [
           "Psyllium Husk",
         ],
@@ -295,7 +295,7 @@ export const apiProducts = {
       },
       {
         manufacturer: "Borosil Scentific",
-        logo: "/logos/Manufacturer-Logos/borossil.png",
+        logo: "/logos/Manufacturer-Logos/borossil.jpg",
         products: [
           "Glass Ampoules",
           "Glass Vials",
@@ -365,7 +365,7 @@ export const apiProducts = {
   export const medicalDevicesData = [
     {
         manufacturer: "PT Oneject Indonesia",
-        logo: "/logos/Manufacturer-Logos/oneject.png",
+        logo: "/logos/Manufacturer-Logos/oneject.jpg",
         products: [
           "ADS Syringe",
           "Safety Box",
