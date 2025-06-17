@@ -59,17 +59,16 @@ export default function HeroSection() {
             </div>
 
             <div className="lg:w-1/2 flex items-stretch">
-              <div className="w-full overflow-hidden bg-white flex items-center justify-center">
-                <video
-                  src="/logos/video/central.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  // playsInline
-                  className="w-full h-64 lg:h-96 object-cover"
-                />
-              </div>
-            </div>
+  <div className="w-full overflow-hidden bg-white flex items-center justify-center border-none shadow-none">
+    <video
+      src="/logos/video/central.mp4"
+      autoPlay
+      loop
+      muted
+      className="w-full h-64 lg:h-96 object-cover"
+    />
+  </div>
+</div>
           </div>
 
           <div className="flex md:flex-row flex-col justify-between py-6 mt-16 gap-4">
