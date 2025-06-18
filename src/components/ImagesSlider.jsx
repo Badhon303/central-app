@@ -53,7 +53,7 @@ export default function ImagesSlider() {
           titles={titles}
           subtexts={subtexts}
           autoplay={true}
-          delay={3000}
+          delay={5000}
           className="h-full"
         />
       </div>
