@@ -1,141 +1,28 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import getEvents from "../../actions/getEvents";
+import { EventItem } from "./EventItem";
 
-const EventItem = ({ event, index }) => {
-  // Format the date from ISO string
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    // Get month name and year
-    const options = { month: 'long', day: 'numeric', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-  };
-
-  return (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group"
-    >
-      <div className="overflow-hidden rounded-xl shadow-lg h-full bg-white dark:bg-gray-800">
-        <div className="relative h-48 md:h-60 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/50 to-purple-500/30 mix-blend-multiply z-10"></div>
-          {event.img && (
-            <img 
-            src={`https://central.codemonks.xyz${event.img.url}`} 
-            alt={event.img.alt || event.title} 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          )}
-          {!event.img && (
-            <div className="w-full h-full bg-gray-200 dark:bg-gray-700 group-hover:scale-105 transition-transform duration-500"></div>
-          )}
-        </div>
-        <div className="p-6">
-          <div className="mb-3">
-            <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
-              Event
-            </span>
-          </div>
-          <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300">
-            {event.title}
-          </h4>
-          <div className="mb-4">
-            <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm mb-1">
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                ></path>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                ></path>
-              </svg>
-              {event.location}
-            </div>
-            <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm">
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12z"
-                ></path>
-              </svg>
-              {formatDate(event.date)}
-            </div>
-          </div>
-          <p className="text-gray-600 dark:text-gray-300">{event.description}</p>
-          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <a
-              href="#"
-              className="inline-flex items-center text-sm font-medium group-hover:text-primary transition-colors duration-300"
-            >
-              Read more
-              <svg
-                className="ml-2 w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-export default function UpcomingEvents() {
+export default function UpcomingEvents({ inHome = false }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchEvents = async () => {
+    async function fetchEvents() {
       try {
-        const response = await fetch('https://central.codemonks.xyz/api/events');
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        setEvents(data.docs || []);
-        console.log("events :: ", data.docs)
+        setLoading(true);
+        const eventsData = await getEvents();
+        setEvents(eventsData);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching events:", err);
         setError("Failed to load events. Please try again later.");
         setLoading(false);
       }
-    };
+    }
 
     fetchEvents();
   }, []);
@@ -144,7 +31,9 @@ export default function UpcomingEvents() {
     return (
       <section className="mb-20">
         <div className="flex justify-center items-center py-20">
-          <p className="text-lg text-gray-600 dark:text-gray-300">Loading events...</p>
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            Loading events...
+          </p>
         </div>
       </section>
     );
@@ -167,17 +56,40 @@ export default function UpcomingEvents() {
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col md:flex-row-reverse items-center justify-between mb-8"
+        className={`flex ${
+          inHome
+            ? "flex-col items-center justify-center"
+            : "flex-col md:flex-row items-center justify-between"
+        } mb-8`}
       >
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 md:mb-0">
+        <h3
+          className={`font-bold text-gray-800 dark:text-white mb-6 ${
+            inHome
+              ? "text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2 text-center"
+              : "text-right md:mb-0 text-3xl md:text-4xl "
+          }`}
+        >
           Upcoming Events
         </h3>
-        <div className="h-1 w-24 bg-primary rounded-full md:hidden"></div>
+        <p
+          className={`text-gray-600 dark:text-gray-300 text-center max-w-5xl px-4 ${
+            inHome ? "block" : "hidden"
+          }`}
+        >
+          Stay updated with our latest events, workshops, and conferences where
+          innovation meets opportunity. Join us to explore groundbreaking ideas,
+          connect with industry leaders, and be part of the future of scientific
+          advancement.
+        </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${
+          inHome ? "px-8 sm:px-16 max-w-6xl mx-auto" : ""
+        }`}
+      >
         {events.map((event, index) => (
-          <EventItem key={event.id} event={event} index={index} />
+          <EventItem key={event.id || index} event={event} index={index} />
         ))}
       </div>
     </section>

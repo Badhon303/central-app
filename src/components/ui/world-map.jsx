@@ -1,38 +1,54 @@
-"use client"
-import { useRef } from "react"
+import React, { useRef, useState } from "react";
+import WorldMapTooltip from "./WorldMapTooltip";
+import DottedMap from "dotted-map";
+import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import DottedMap from "dotted-map"
-import Image from "next/image"
-import { useTheme } from "next-themes"
+import Image from "next/image";
 
 export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
-  const svgRef = useRef(null)
-  const map = new DottedMap({ height: 100, grid: "diagonal" })
+  const svgRef = useRef(null);
+  const map = new DottedMap({ height: 100, grid: "diagonal" });
 
-  const { theme, systemTheme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
+  const { theme, systemTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   const svgMap = map.getSVG({
     radius: 0.22,
-    color: currentTheme === "dark" ? "#FFFFFF40" : "#0a0a0a",
+    color: currentTheme === "dark" ? "#ffffff73" : "#180d86",
     shape: "circle",
     backgroundColor: currentTheme === "dark" ? "#030712" : "white",
-  })
+  });
 
   const projectPoint = (lat, lng) => {
-    const x = (lng + 180) * (800 / 360)
-    const y = (90 - lat) * (400 / 180)
-    return { x, y }
-  }
+    const x = (lng + 180) * (800 / 360);
+    const y = (90 - lat) * (400 / 180);
+    return { x, y };
+  };
 
   const createCurvedPath = (start, end) => {
-    const midX = (start.x + end.x) / 2
-    const midY = Math.min(start.y, end.y) - 50
-    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`
-  }
+    const midX = (start.x + end.x) / 2;
+    const midY = Math.min(start.y, end.y) - 50;
+    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
+  };
+
+  // unique locations from connections
+  const getUniqueLocations = () => {
+    const locations = new Map();
+
+    dots.forEach((connection) => {
+      if (!locations.has(connection.start.name)) {
+        locations.set(connection.start.name, connection.start);
+      }
+      if (!locations.has(connection.end.name)) {
+        locations.set(connection.end.name, connection.end);
+      }
+    });
+
+    return Array.from(locations.values());
+  };
 
   return (
-    <div className="w-full aspect-[2/1] dark:bg-background bg-white rounded-lg  relative font-sans">
+    <div className="w-full max-w-7xl mx-auto aspect-[2/1] dark:bg-background bg-white rounded-lg relative font-sans">
       <Image
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none"
@@ -40,15 +56,16 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
         height="495"
         width="856"
         draggable={false}
+        priority
       />
       <svg
         ref={svgRef}
         viewBox="0 0 800 400"
-        className="w-full h-full absolute inset-0 pointer-events-none select-none"
+        className="w-full h-full absolute inset-0"
       >
         {dots.map((dot, i) => {
-          const startPoint = projectPoint(dot.start.lat, dot.start.lng)
-          const endPoint = projectPoint(dot.end.lat, dot.end.lng)
+          const startPoint = projectPoint(dot.start.lat, dot.start.lng);
+          const endPoint = projectPoint(dot.end.lat, dot.end.lng);
           return (
             <g key={`path-group-${i}`}>
               <motion.path
@@ -70,7 +87,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
                 key={`start-upper-${i}`}
               ></motion.path>
             </g>
-          )
+          );
         })}
 
         <defs>
@@ -82,75 +99,21 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }) {
           </linearGradient>
         </defs>
 
-        {dots.map((dot, i) => (
-          <g key={`points-group-${i}`}>
-            <g key={`start-${i}`}>
-              <circle
-                cx={projectPoint(dot.start.lat, dot.start.lng).x}
-                cy={projectPoint(dot.start.lat, dot.start.lng).y}
-                r="2"
-                fill={lineColor}
-              />
-              <circle
-                cx={projectPoint(dot.start.lat, dot.start.lng).x}
-                cy={projectPoint(dot.start.lat, dot.start.lng).y}
-                r="2"
-                fill={lineColor}
-                opacity="0.5"
-              >
-                <animate
-                  attributeName="r"
-                  from="2"
-                  to="8"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  from="0.5"
-                  to="0"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-            </g>
-            <g key={`end-${i}`}>
-              <circle
-                cx={projectPoint(dot.end.lat, dot.end.lng).x}
-                cy={projectPoint(dot.end.lat, dot.end.lng).y}
-                r="2"
-                fill={lineColor}
-              />
-              <circle
-                cx={projectPoint(dot.end.lat, dot.end.lng).x}
-                cy={projectPoint(dot.end.lat, dot.end.lng).y}
-                r="2"
-                fill={lineColor}
-                opacity="0.5"
-              >
-                <animate
-                  attributeName="r"
-                  from="2"
-                  to="8"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  from="0.5"
-                  to="0"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-            </g>
-          </g>
-        ))}
+        {/* location points and tooltips */}
+        {getUniqueLocations().map((location, index) => {
+          const point = projectPoint(location.lat, location.lng);
+          return (
+            <WorldMapTooltip
+              key={`location-${location.name}-${index}`}
+              x={point.x}
+              y={point.y}
+              name={location.name}
+              flag={location.flag}
+              color={lineColor}
+            />
+          );
+        })}
       </svg>
     </div>
-  )
+  );
 }

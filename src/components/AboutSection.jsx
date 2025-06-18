@@ -1,32 +1,51 @@
+"use client";
 import React from "react";
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
+import Image from "next/image";
 
 export default function AboutSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="relative py-16 md:py-24" id="about">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
-      >
-        <div className="blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-blue-700"></div>
-        <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
-      </div>
-
       <Container>
         <div className="relative">
-          {/* Section heading */}
+          {/* heading */}
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
-              About{" "}
-              <span className="text-primary dark:text-white">The Company</span>
+              About <span className="text-primary dark:text-white">Us</span>
             </h2>
-            <div className="mx-auto mt-4 h-1 w-32  bg-primary rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-28 bg-secondary rounded-full"></div>
           </div>
 
-          {/* Who We Are - Directly under the title */}
-          <div className="mb-16 max-w-3xl mx-auto text-center">
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          {/* Who We Are */}
+          <div className="mb-16 max-w-5xl mx-auto text-center">
+            <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
               Central Scientific Company was incorporated in the year 1990,
               Central is a transparent trader, providing highly competitive,
               faster, efficient, and professional services. It facilitates a
@@ -41,100 +60,75 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* Enhanced Mission and Vision with more eye-catching design */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl group">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-purple-700/80 opacity-90 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
-
-              {/* Content */}
-              <div className="relative p-10 z-10 h-full flex flex-col">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0 p-4 bg-white/20 backdrop-blur-sm rounded-lg text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-8 w-8"
-                    >
-                      <path d="M12 2 2 7l10 5 10-5-10-5Z"></path>
-                      <path d="M2 17 12 22 22 17"></path>
-                      <path d="M2 12 12 17 22 12"></path>
-                    </svg>
-                  </div>
-                  <h3 className="ml-4 text-3xl font-bold text-white">
+          {/* Mission and Vision*/}
+          <motion.div
+            className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Left Side */}
+              <motion.div
+                className="p-4 md:p-6 flex flex-col justify-center order-2 lg:order-1"
+                variants={itemVariants}
+              >
+                <motion.div className="mb-10 space-y-3" variants={itemVariants}>
+                  <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Mission
                   </h3>
-                </div>
-                <div className="w-16 h-1 bg-white/60 rounded mb-6"></div>
-                <p className="text-white/90 leading-relaxed">
-                  Achieving customer outmost satisfaction as well as operational
-                  and organizational excellence without compromising from our
-                  values and business ethics. We aim to contribute to the
-                  advancement of healthcare by ensuring a secure and efficient
-                  supply chain, ultimately helping pharmaceutical industry to
-                  make easy access for people to essential medications to most
-                  advanced quality products. We thrive to be a innovational hub
-                  of pharmaceutical supplier, dedicated to providing our clients
-                  with a comprehensive range of pharmaceutical raw materials,
-                  ingredients, and products.
-                </p>
-                {/* Decorative element */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mb-16 blur-xl"></div>
-              </div>
-            </div>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Achieving customer outmost satisfaction as well as
+                    operational and organizational excellence without
+                    compromising from our values and business ethics. We aim to
+                    contribute to the advancement of healthcare by ensuring a
+                    secure and efficient supply chain, facilitating easy access
+                    to essential medications, and providing the pharmaceutical
+                    industry with advanced, high-quality products.
+                  </p>
+                </motion.div>
 
-            {/* Vision section - more eye-catching */}
-            <div className="relative overflow-hidden rounded-2xl shadow-xl group">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-700/80 to-purple-700/80 opacity-90 group-hover:opacity-100 transition-opacity duration-300 dark:from-slate-900 dark:to-slate-800"></div>
-
-              {/* Content */}
-              <div className="relative p-10 z-10 h-full flex flex-col">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0 p-4 bg-white/20 backdrop-blur-sm rounded-lg text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-8 w-8"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                      <path d="M2 12h20"></path>
-                    </svg>
-                  </div>
-                  <h3 className="ml-4 text-3xl font-bold text-white">
+                <motion.div className="space-y-3" variants={itemVariants}>
+                  <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
                     Our Vision
                   </h3>
-                </div>
-                <div className="w-16 h-1 bg-white/60 rounded mb-6"></div>
-                <p className="text-white/90 leading-relaxed">
-                  Together, with our team, partners, and the global networks, we
-                  aim to build a future where the supplier not only solves
-                  problems but also inspires hope and transparent trade
-                  environment. We aim to be at the forefront of positive change,
-                  setting the standard for technological excellence, and leaving
-                  a lasting legacy of progress.
-                </p>
-                {/* Decorative element */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mb-16 blur-xl"></div>
-              </div>
-            </div>
-          </div>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Together, with our team, partners, and the global networks,
+                    we aim to build a future where the supplier not only solves
+                    problems but also inspires hope and transparent trade
+                    environment. We aim to be at the forefront of positive
+                    change, setting the standard for technological excellence,
+                    and leaving a lasting legacy of progress.
+                  </p>
+                </motion.div>
+              </motion.div>
 
-          {/* Additional "About Us" content */}
-          <div className="mt-16 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm dark:border dark:border-gray-800 rounded-xl p-8">
+              {/* Right side */}
+              <motion.div
+                className="relative h-[400px] lg:h-auto overflow-hidden order-1 lg:order-2 p-4 md:p-6"
+                variants={itemVariants}
+              >
+                <motion.div
+                  className="relative h-full overflow-hidden rounded-lg"
+                  initial={{ scale: 1.05, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <Image
+                    src="/logos/About/about_top.jpeg"
+                    alt="CSCO Team"
+                    fill
+                    className="object-fit sm:object-cover"
+                  />
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Additional */}
+          <div className="mt-16 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm dark:border dark:border-gray-800 rounded-xl p-4 md:p-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div className="space-y-6">
                 <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
@@ -156,18 +150,16 @@ export default function AboutSection() {
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="#"
-                    className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                    className="mt-6 text-sm px-4 py-2 text-white font-semibold bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
                   >
-                    <span className="relative text-base font-semibold text-white">
-                      Learn more
-                    </span>
+                    Learn More
                   </a>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    10+
+                    <CountUp start={0} end={10} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Years of experience
@@ -175,7 +167,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    200+
+                    <CountUp start={0} end={200} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Projects completed
@@ -183,7 +175,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    50+
+                    <CountUp start={0} end={50} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Team members
@@ -191,7 +183,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    100%
+                    <CountUp start={0} end={100} duration={7} delay={1} />%
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Client satisfaction

@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -13,14 +12,13 @@ import {
 import {
   Facebook,
   Globe,
-  Instagram,
   Linkedin,
+  Mail,
   Moon,
-  Send,
   Sun,
   Twitter,
+  X,
 } from "lucide-react";
-import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
 function Footerdemo() {
@@ -31,40 +29,53 @@ function Footerdemo() {
     setTheme(val);
   };
 
-
   return (
-    <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-          <div className="relative lg:col-span-2">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">
-              Stay Connected
-            </h2>
-            <p className="mb-6 text-muted-foreground">
-              Contact us anytime if you have any question or interest
+    <footer className="relative border-t bg-background transition-colors duration-300">
+      <div className="container mx-auto px-4 py-8 md:px-6 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="relative">
+            {/* Logo */}
+            <div className="mb-6">
+              <img
+                src={
+                  currentTheme == "dark"
+                    ? "/logos/Central-Scientific-Logo-dark.png"
+                    : "/logos/Central-Scientific-Logo.png"
+                }
+                alt="Central Scientific Company Logo"
+                className="w-44"
+              />
+            </div>
+
+            {/* Punchy Description */}
+            <p className="mb-6 sm:text-base mr-20 sm:mr-0 sm:max-w-96">
+              Connecting world-class pharmaceuticals to the world, efficiently
+              and innovatively since 1990.
             </p>
-            <form className="relative">
-              <div className="flex items-center max-w-sm">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-grow pr-12 backdrop-blur-sm"
-                />
-                <Button
-                  type="submit"
-                  size="icon"
-                  className="ml-2 h-8 w-8 rounded-full bg-primary text-primary-foreground hover:bg-secondary transition-transform hover:scale-105"
-                >
-                  <Send className="h-4 w-4" />
-                  <span className="sr-only">Subscribe</span>
-                </Button>
-              </div>
-            </form>
-            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
+
+            <a
+              href="https://www.central-bd.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 sm:text-base cursor-pointer dark:text-gray-200 hover:text-primary transition-colors"
+            >
+              <Globe className="h-4 w-4" />
+              <p>www.central-bd.com</p>
+            </a>
+
+            <a
+              href="mailto:info@central-bd.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 sm:text-base cursor-pointer dark:text-gray-200 hover:text-primary transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+              <p>info@central-bd.com</p>
+            </a>
           </div>
 
-          <div className="">
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+          <div className="md:ml-8 md:mt-2">
+            <h3 className="mb-4 text-lg font-semibold ">Quick Links</h3>
             <nav className="space-y-2 text-sm">
               <a
                 href="/"
@@ -76,19 +87,31 @@ function Footerdemo() {
                 href="/about"
                 className="block transition-colors hover:text-primary"
               >
-                About Us
+                Who We Are
               </a>
-              <a
-                href="/customers"
-                className="block transition-colors hover:text-primary"
-              >
-                Customers
-              </a>
-              <a
+              {/* <a
                 href="/product"
                 className="block transition-colors hover:text-primary"
               >
                 Products
+              </a> */}
+              {/* <a
+                href="/customers"
+                className="block transition-colors hover:text-primary"
+              >
+                Customers
+              </a> */}
+              {/* <a
+                href="/globalPartners"
+                className="block transition-colors hover:text-primary"
+              >
+                Global Partners
+              </a> */}
+              <a
+                href="/careers"
+                className="block transition-colors hover:text-primary"
+              >
+                Careers
               </a>
               <a
                 href="newsAndEvents"
@@ -96,11 +119,17 @@ function Footerdemo() {
               >
                 News and Events
               </a>
+              <a
+                href="enquiry"
+                className="block transition-colors hover:text-primary"
+              >
+                Any Question?
+              </a>
             </nav>
           </div>
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-            <div className="flex flex-col gap-2">
+          <div className="md:mt-2">
+            <h3 className="mb-4 text-lg font-semibold">Find Us At</h3>
+            <div className="flex flex-col gap-4">
               <address className="space-y-2 text-sm not-italic">
                 <h4 className="font-semibold">Registered Address</h4>
                 <p>33/3 Shahid Nazrul Islam Road</p>
@@ -111,15 +140,11 @@ function Footerdemo() {
                 <p>539/A Baridhara DOHS</p>
                 <p>Dhaka - 1206, Bangladesh</p>
               </address>
-              <div className="flex items-center gap-2 cursor-pointer">
-                <Globe className="h-4 w-4" />
-                <p>www.central-bd.com</p>
-              </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="md:ml-8 relative md:mt-2">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
-            <div className="mb-6 flex space-x-1">
+            <div className="mb-6 flex space-x-2">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -128,11 +153,11 @@ function Footerdemo() {
                       size="icon"
                       className="rounded-full"
                     >
-                      <Facebook className="h-4 w-4" />
+                      <Facebook className="size-5" />
                       <span className="sr-only">Facebook</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Follow us on Facebook</p>
                   </TooltipContent>
                 </Tooltip>
@@ -145,11 +170,20 @@ function Footerdemo() {
                       size="icon"
                       className="rounded-full"
                     >
-                      <Twitter className="h-4 w-4" />
+                      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  className="size-5 text-black dark:text-white"
+>
+  <path
+    fill="currentColor"
+    d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"
+  ></path>
+</svg>
                       <span className="sr-only">Twitter</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Follow us on Twitter</p>
                   </TooltipContent>
                 </Tooltip>
@@ -162,52 +196,18 @@ function Footerdemo() {
                       size="icon"
                       className="rounded-full"
                     >
-                      <Instagram className="h-4 w-4" />
-                      <span className="sr-only">Instagram</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Instagram</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Linkedin className="h-4 w-4" />
+                      <Linkedin className="size-5" />
                       <span className="sr-only">LinkedIn</span>
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <p>Connect with us on LinkedIn</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <IconBrandWhatsapp className="h-4 w-4" />
-                      <span className="sr-only">WhatsApp</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Connect us on WhatsApp</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
             <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
+              <Sun className="size-5" />
               <Switch
                 id="dark-mode"
                 className="border-2"
@@ -216,14 +216,14 @@ function Footerdemo() {
                   handleThemeChange(currentTheme === "dark" ? "light" : "dark")
                 }
               />
-              <Moon className="h-4 w-4" />
+              <Moon className="size-5" />
               <Label htmlFor="dark-mode" className="sr-only">
                 Toggle dark mode
               </Label>
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
             © 2025 CSCO. All rights reserved.
           </p>
@@ -233,9 +233,6 @@ function Footerdemo() {
             </a>
             <a href="#" className="transition-colors hover:text-primary">
               Terms of Service
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
-              Cookie Settings
             </a>
           </nav>
         </div>

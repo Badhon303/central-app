@@ -3,22 +3,34 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/navbar-dropdown";
+import { Check, ChevronDown, Moon, Sun } from "lucide-react";
 
 const links = [
-  { to: "/about", label: "About" },
-  { to: "/product", label: "Product" },
-  { to: "/globalPartners", label: "Global Partners" },
-  { to: "/customers", label: "Customers" },
+  { to: "/about", label: "Who We Are" },
   { to: "/newsAndEvents", label: "News And Events" },
-  { to: "/regionalOffices", label: "Upcoming Regional Offices" },
   { to: "/careers", label: "Careers" },
-  { to: "/enquiry", label: "Enquiry" },
+  { to: "/enquiry", label: "Contact Us" },
+];
+
+const whatWeDoLinks = [
+  { to: "/products", label: "Our Products" },
+  { to: "/globalPartners", label: "Our Expertise" },
+  { to: "/customers", label: "Our Customers" },
+  { to: "/regionalOffices", label: "Our Commitment" },
 ];
 
 export default function Navbar() {
   const [isToggled, setIsToggled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   const { theme, systemTheme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
@@ -29,6 +41,17 @@ export default function Navbar() {
 
   const handleThemeChange = (val) => {
     setTheme(val);
+  };
+
+  const isActive = (path) => {
+    return pathname === path;
+  };
+
+  const isWhatWeDoActive = () => {
+    return (
+      whatWeDoLinks.some((link) => pathname === link.to) ||
+      pathname === "/what-we-do"
+    );
   };
 
   useEffect(() => {
@@ -48,6 +71,17 @@ export default function Navbar() {
     };
   }, [lastScrollY]);
 
+  // link text styling
+  const getLinkStyle = () => {
+    if (currentTheme === "dark") {
+      return "text-white text-[15px] dark:text-white dark:hover:text-primary";
+    } else {
+      return isScrolled
+        ? "text-gray-800 hover:text-primary"
+        : "text-white hover:text-primary";
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-30 transition-transform duration-300`}
@@ -57,14 +91,14 @@ export default function Navbar() {
         className={`group w-full transition-all duration-300 ${
           isScrolled
             ? currentTheme === "dark"
-              ? "bg-gray-950 border-gray-800"
-              : "bg-white border-gray-200"
+              ? "bg-gray-950"
+              : "bg-white"
             : "bg-transparent"
-        } ${isScrolled ? "border shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}`}
+        } ${isScrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : ""}`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
-            <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-fit">
+            <div className="relative z-20 flex items-center w-full justify-between md:px-0 lg:w-fit">
               <Link
                 href="/"
                 aria-label="logo"
@@ -72,8 +106,17 @@ export default function Navbar() {
               >
                 <div aria-hidden="true" className="flex space-x-1">
                   <img
-                    src="/logos/csco.jpg"
-                    className="w-28 bg-white/30 rounded-lg"
+                    src={
+                      theme === "dark"
+                        ? isScrolled
+                          ? "/logos/Central-Scientific-Logo-dark.png"
+                          : "/logos/Central-Scientific-Logo-white.png"
+                        : isScrolled
+                        ? "/logos/Central-Scientific-Logo.png"
+                        : "/logos/Central-Scientific-Logo-white.png"
+                    }
+                    className="w-40 sm:w-44 rounded-lg"
+                    alt="Central Scientific Logo"
                   />
                 </div>
               </Link>
@@ -92,6 +135,8 @@ export default function Navbar() {
                       : "bg-white"
                   } origin-top ${
                     isToggled ? "rotate-45 translate-y-1.5" : ""
+                  } ${
+                    isToggled && currentTheme !== "dark" ? "!bg-gray-800" : ""
                   }`}
                 ></div>
                 <div
@@ -103,6 +148,8 @@ export default function Navbar() {
                       : "bg-white"
                   } origin-bottom ${
                     isToggled ? "-rotate-45 -translate-y-1" : ""
+                  } ${
+                    isToggled && currentTheme !== "dark" ? "!bg-gray-800" : ""
                   }`}
                 ></div>
               </button>
@@ -113,7 +160,7 @@ export default function Navbar() {
               }`}
             ></div>
             <div
-              className={`absolute top-full left-0 w-full flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:relative lg:flex lg:w-fit lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:dark:bg-transparent ${
+              className={`absolute top-full left-0 w-full flex-col flex-wrap justify-end gap-6 rounded-3xl border-b border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 dark:border-b dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:relative lg:flex lg:w-fit lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:dark:bg-transparent ${
                 isToggled ? "opacity-100 z-20" : "hidden"
               }`}
             >
@@ -122,18 +169,146 @@ export default function Navbar() {
                   id="links-group"
                   className="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm"
                 >
-                  {links.map((link) => (
+                  {/* Who We Are link */}
+                  <Link
+                    href="/about"
+                    className={`block text-[15px] transition md:px-4
+                      ${
+                        isActive("/about")
+                          ? "font-bold scale-110 duration-75"
+                          : "font-normal"
+                      }
+                      lg:${getLinkStyle()}
+                      ${
+                        currentTheme === "dark"
+                          ? "lg:dark:text-white"
+                          : "lg:dark:text-gray-200"
+                      }
+                      ${
+                        currentTheme === "dark"
+                          ? "text-white dark:text-white"
+                          : "text-gray-800"
+                      } lg:text-inherit`}
+                    onClick={toggleNavLinks}
+                  >
+                    <span>Who We Are</span>
+                  </Link>
+
+                  {/* dropdown menu */}
+                  <div className="hidden lg:block">
+                    <DropdownMenu>
+                      <DropdownMenuTrigger
+                        asChild
+                        className="focus:outline-none focus-visible:no-ring"
+                      >
+                        <button
+                          className={`flex items-center transition md:px-4 text-[15px] 
+                            ${
+                              isWhatWeDoActive()
+                                ? "font-bold scale-110 duration-75"
+                                : "font-normal"
+                            }
+                            lg:${getLinkStyle()}
+                            ${
+                              currentTheme === "dark"
+                                ? "text-white dark:text-white"
+                                : isScrolled
+                                ? "text-gray-800"
+                                : "text-white"
+                            } hover:text-primary`}
+                        >
+                          <span>What We Do</span>
+                          <ChevronDown className="ml-1 size-4" />
+                        </button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent
+                        className="min-w-[180px] bg-white dark:bg-gray-800 rounded-md shadow-lg p-1 z-50"
+                        align="start"
+                      >
+                        {whatWeDoLinks.map((item, key) => (
+                          <DropdownMenuItem 
+                          key={item.label}
+                          active={isActive(item.to)} // Pass true/false based on active state
+                          className="px-3 py-2 rounded-md" // Additional styling if needed
+                          asChild
+                        >
+                          <Link href={item.to}>
+                            {item.label}
+                          </Link>
+                        </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+
+                  {/* What We Do dropdown */}
+                  <div className="lg:hidden">
+                    <button
+                      className={`block transition mb-2 text-[15px]
+                        ${
+                          isWhatWeDoActive()
+                            ? "font-bold scale-110 duration-75"
+                            : "font-normal"
+                        }
+                        lg:${getLinkStyle()}
+                        ${
+                          currentTheme === "dark"
+                            ? "text-white dark:text-white"
+                            : "text-gray-800"
+                        }`}
+                      onClick={() => {
+                        const submenu = document.getElementById(
+                          "mobile-what-we-do-submenu"
+                        );
+                        if (submenu) {
+                          submenu.classList.toggle("hidden");
+                        }
+                      }}
+                    >
+                      <div className="flex items-center">
+                        <span>What We Do</span>
+                        <ChevronDown className="ml-1 size-4" />
+                      </div>
+                    </button>
+                    <div
+                      id="mobile-what-we-do-submenu"
+                      className="hidden pl-4 mb-4"
+                    >
+                      {whatWeDoLinks.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.to}
+                          className={`block py-2 text-[15px]
+                            ${
+                              isActive(item.to)
+                                ? "font-medium text-primary"
+                                : "font-normal"
+                            }
+                            ${
+                              currentTheme === "dark"
+                                ? "text-white/80 dark:text-white/80"
+                                : "text-gray-600"
+                            }`}
+                          onClick={toggleNavLinks}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* remaining links */}
+                  {links.slice(1).map((link) => (
                     <Link
                       key={link.to}
                       href={link.to}
-                      className={`block transition md:px-4
-                        lg:${
-                          currentTheme === "dark"
-                            ? "text-white hover:text-primary"
-                            : isScrolled
-                            ? "text-gray-800 hover:text-primary"
-                            : "text-white hover:text-primary"
+                      className={`block transition md:px-4 text-[15px]
+                        ${
+                          isActive(link.to)
+                            ? "font-bold scale-110 duration-75"
+                            : "font-normal"
                         }
+                        lg:${getLinkStyle()}
                         ${
                           currentTheme === "dark"
                             ? "lg:dark:text-white"
@@ -160,25 +335,12 @@ export default function Navbar() {
                     ? "text-white lg:text-white"
                     : isScrolled
                     ? "text-gray-800"
-                    : "text-gray-800 lg:text-white"
+                    : "text-gray-800 lg:text-white lg:hover:text-gray-800"
                 }`}
                 onClick={() => handleThemeChange("dark")}
               >
                 <span className="group inline-flex shrink-0 justify-center items-center size-9">
-                  <svg
-                    className="shrink-0 size-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                  </svg>
+                  <Moon className="size-4" />
                 </span>
               </button>
               <button
@@ -189,28 +351,7 @@ export default function Navbar() {
                 onClick={() => handleThemeChange("light")}
               >
                 <span className="group inline-flex shrink-0 justify-center items-center size-9">
-                  <svg
-                    className="shrink-0 size-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <path d="M12 2v2"></path>
-                    <path d="M12 20v2"></path>
-                    <path d="m4.93 4.93 1.41 1.41"></path>
-                    <path d="m17.66 17.66 1.41 1.41"></path>
-                    <path d="M2 12h2"></path>
-                    <path d="M20 12h2"></path>
-                    <path d="m6.34 17.66-1.41 1.41"></path>
-                    <path d="m19.07 4.93-1.41 1.41"></path>
-                  </svg>
+                  <Sun className="size-4" />
                 </span>
               </button>
             </div>

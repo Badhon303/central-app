@@ -136,13 +136,13 @@ const RegionalOfficesSection = () => {
 
   return (
     <div className="relative py-16 md:py-24" id="regional-offices">
-      <div
+      {/* <div
         aria-hidden="true"
         className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
       >
         <div className="blur-[106px] h-56 bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-blue-700"></div>
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
-      </div>
+      </div> */}
 
       <Container>
         <div className="text-center mb-12">
@@ -152,7 +152,7 @@ const RegionalOfficesSection = () => {
               Global Presence
             </span>
           </h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-primary rounded-full"></div>
+          <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
         </div>
 
         {/* Regional Offices */}
@@ -265,11 +265,12 @@ const RegionalOfficesSection = () => {
           </div>
 
           {/* Decorative bar */}
-          <div className="h-2 bg-gradient-to-r from-blue-500 via-primary to-blue-400"></div>
+          {/* <div className="h-2 bg-gradient-to-r from-blue-500 via-primary to-blue-400"></div> */}
         </motion.div>
 
         {/* Global Locations Map */}
-        <motion.div
+        {/* 
+                <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -304,6 +305,7 @@ const RegionalOfficesSection = () => {
             </MapContainer>
           </div>
         </motion.div>
+         */}
       </Container>
     </div>
   );

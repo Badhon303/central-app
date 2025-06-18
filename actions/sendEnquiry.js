@@ -12,7 +12,7 @@ export const sendEnquiry = async (formData) => {
   const subject = formData.get("subject");
   const message = formData.get("message");
 
-  // Simple server-side validation
+  // server-side validation
   if (!validateString(name, 100)) {
     return {
       error: "Invalid name",
