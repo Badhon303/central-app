@@ -5,23 +5,23 @@ import ImageCarousel from "./ui/image-carousel"
 
 export default function ImagesSlider() {
   const desktopImages = [
-    "/logos/Home-Page-Pictures/coverimages/1.jpeg",
-    "/logos/Home-Page-Pictures/coverimages/2.jpeg",
-    "/logos/Home-Page-Pictures/coverimages/3.jpg",
-    "/logos/Home-Page-Pictures/coverimages/4.jpeg",
-    "/logos/Home-Page-Pictures/coverimages/5.jpeg",
-    "/logos/Home-Page-Pictures/coverimages/6.jpeg",
-    "/logos/Home-Page-Pictures/coverimages/7.jpeg",
+    "/logos/Home-Page-Pictures/coverimages/1.webp",
+    "/logos/Home-Page-Pictures/coverimages/2.webp",
+    "/logos/Home-Page-Pictures/coverimages/3.webp",
+    "/logos/Home-Page-Pictures/coverimages/4.webp",
+    "/logos/Home-Page-Pictures/coverimages/5.webp",
+    "/logos/Home-Page-Pictures/coverimages/6.webp",
+    "/logos/Home-Page-Pictures/coverimages/7.webp",
   ]
 
   const mobileImages = [
-    "/logos/Home-Page-Pictures/coverimages/1.jpeg",
-    "/logos/Home-Page-Pictures/coverimages/2.jpeg",
+    "/logos/Home-Page-Pictures/coverimages/1.webp",
+    "/logos/Home-Page-Pictures/coverimages/2.webp",
     "/logos/Home-Page-Pictures/coverimages/3.jpg",
-    "/logos/Home-Page-Pictures/coverimages/4.jpeg",
-    "/logos/Home-Page-Pictures/coverimages/5.jpeg",
+    "/logos/Home-Page-Pictures/coverimages/4.webp",
+    "/logos/Home-Page-Pictures/coverimages/5.webp",
     "/logos/Home-Page-Pictures/coverimages/mobile/6.jpg",
-    "/logos/Home-Page-Pictures/coverimages/7.jpeg",
+    "/logos/Home-Page-Pictures/coverimages/7.webp",
   ]
 
   const titles = [
