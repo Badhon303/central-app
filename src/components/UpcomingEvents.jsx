@@ -1,31 +1,31 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import getEvents from "../../actions/getEvents";
-import { EventItem } from "./EventItem";
+import React, { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import getEvents from "../../actions/getEvents"
+import { EventItem } from "./EventItem"
 
 export default function UpcomingEvents({ inHome = false }) {
-  const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [events, setEvents] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     async function fetchEvents() {
       try {
-        setLoading(true);
-        const eventsData = await getEvents();
-        setEvents(eventsData);
-        setLoading(false);
+        setLoading(true)
+        const eventsData = await getEvents()
+        setEvents(eventsData)
+        setLoading(false)
       } catch (err) {
-        console.error("Error fetching events:", err);
-        setError("Failed to load events. Please try again later.");
-        setLoading(false);
+        console.error("Error fetching events:", err)
+        setError("Failed to load events. Please try again later.")
+        setLoading(false)
       }
     }
 
-    fetchEvents();
-  }, []);
+    fetchEvents()
+  }, [])
 
   if (loading) {
     return (
@@ -36,7 +36,7 @@ export default function UpcomingEvents({ inHome = false }) {
           </p>
         </div>
       </section>
-    );
+    )
   }
 
   if (error) {
@@ -46,7 +46,7 @@ export default function UpcomingEvents({ inHome = false }) {
           <p className="text-lg text-red-500">{error}</p>
         </div>
       </section>
-    );
+    )
   }
 
   return (
@@ -76,10 +76,10 @@ export default function UpcomingEvents({ inHome = false }) {
             inHome ? "block" : "hidden"
           }`}
         >
-          Stay updated with our latest events, workshops, and conferences where
-          innovation meets opportunity. Join us to explore groundbreaking ideas,
-          connect with industry leaders, and be part of the future of scientific
-          advancement.
+          Stay informed about our latest events, workshops, and conferences—
+          where innovation drives progress in pharmaceuticals. Join us to
+          explore cutting-edge developments, connect with key industry leaders
+          and be part of shaping the future of global pharma solutions.
         </p>
       </motion.div>
 
@@ -93,5 +93,5 @@ export default function UpcomingEvents({ inHome = false }) {
         ))}
       </div>
     </section>
-  );
+  )
 }

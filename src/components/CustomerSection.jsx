@@ -1,6 +1,6 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
+"use client"
+import React from "react"
+import { motion } from "framer-motion"
 
 export function CustomerSection({ inHome = false }) {
   return (
@@ -18,16 +18,24 @@ export function CustomerSection({ inHome = false }) {
           </h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
           <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto">
-            Trusted by leading organizations for our expertise and reliability,
-            we strive to build lasting relationships with our valued customers.
-            Our comprehensive solutions are designed to address their unique
-            challenges, ensuring they achieve their goals efficiently and
+            Trusted by leading organizations whose contributions have had a
+            paramount impact on our country’s health and economy, we are proud
+            to prioritize these partners above all. These industry pioneers not
+            only drive national health betterment but also make significant
+            strides in global and regulatory markets. Our expertise and
+            reliability form the foundation of lasting relationships, while our
+            comprehensive solutions are tailored to address their unique
+            challenges ensuring they achieve their goals efficiently and
             effectively.
           </p>
         </div>
 
         {/* Customer logos grid */}
-        <div className={`${inHome ? "pt-6 w-full px-4" : "py-10 max-w-7xl mx-auto"}`}>
+        <div
+          className={`${
+            inHome ? "pt-6 w-full px-4" : "py-10 max-w-7xl mx-auto"
+          }`}
+        >
           <div
             className={`grid ${
               inHome
@@ -72,5 +80,5 @@ export function CustomerSection({ inHome = false }) {
         </div>
       </motion.div>
     </div>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import WorldMap from "@/components/ui/world-map";
-import { motion } from "framer-motion";
-import { InfiniteSlider } from "./ui/infinite-slider";
-import { CustomerSection } from "./CustomerSection";
+import WorldMap from "@/components/ui/world-map"
+import { motion } from "framer-motion"
+import { InfiniteSlider } from "./ui/infinite-slider"
+import { CustomerSection } from "./CustomerSection"
 
 const partnerLogos = {
   "UNITED PHARMA INDUSTRIES CO., LTD": "/logos/united-pharma.png",
@@ -23,12 +23,12 @@ const partnerLogos = {
   "LIVEO RESEARCH": "/logos/liveo.jpeg",
   "PT. ONEJECT": "/logos/Manufacturer-Logos/oneject.jpg",
   "Acetar Bio-Tech Inc": "/logos/Manufacturer-Logos/acetar.jpg",
-};
+}
 
 const countryConnections = [
   {
     start: {
-      lat: 23.685,
+      lat: 10.685,
       lng: 90.3563,
       name: "Bangladesh",
       flag: "https://flagcdn.com/bd.svg",
@@ -42,7 +42,7 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 23.685,
+      lat: 10.685,
       lng: 90.3563,
       name: "Bangladesh",
       flag: "https://flagcdn.com/bd.svg",
@@ -56,7 +56,7 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 23.685,
+      lat: 10.685,
       lng: 90.3563,
       name: "Bangladesh",
       flag: "https://flagcdn.com/bd.svg",
@@ -70,7 +70,7 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 23.685,
+      lat: 10.685,
       lng: 90.3563,
       name: "Bangladesh",
       flag: "https://flagcdn.com/bd.svg",
@@ -84,7 +84,7 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 23.685,
+      lat: 10.685,
       lng: 90.3563,
       name: "Bangladesh",
       flag: "https://flagcdn.com/bd.svg",
@@ -98,7 +98,7 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 23.685,
+      lat: 10.685,
       lng: 90.3563,
       name: "Bangladesh",
       flag: "https://flagcdn.com/bd.svg",
@@ -112,7 +112,7 @@ const countryConnections = [
   },
   {
     start: {
-      lat: 23.685,
+      lat: 10.685,
       lng: 90.3563,
       name: "Bangladesh",
       flag: "https://flagcdn.com/bd.svg",
@@ -124,13 +124,13 @@ const countryConnections = [
       flag: "https://flagcdn.com/sg.svg",
     },
   },
-];
+]
 
 export default function WorldMapWeb({ inHome = false }) {
   // Sorting connections by longitude
   const sortedConnections = [...countryConnections].sort(
     (a, b) => a.start.lng - b.start.lng
-  );
+  )
 
   return (
     <div className="dark:bg-gray-950 bg-white w-full">
@@ -152,10 +152,11 @@ export default function WorldMapWeb({ inHome = false }) {
           </span>
         </p>
         <p className="text-gray-600 dark:text-gray-300 text-center max-w-5xl mx-auto py-4 px-4">
-          With a global network of trusted manufacturers, we bring together
-          expertise from around the world. Our smart collaboration ensures
-          seamless integration, innovation, and quality across
-          borders—empowering us to deliver excellence, no matter where you are.
+          With a global network of trusted pharmaceutical manufacturers, we
+          unite expertise from around the world to deliver trusted
+          pharmaceutical solutions. At Central Scientific, our strategic global
+          partnerships enable seamless integration across markets, ensuring full
+          regulatory compliance and uncompromising quality at every stage.
         </p>
       </div>
       <WorldMap dots={sortedConnections} lineColor="#0ea5e9" />
@@ -194,5 +195,5 @@ export default function WorldMapWeb({ inHome = false }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,86 +1,86 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { useTheme } from "next-themes";
-import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { useTheme } from "next-themes"
+import { usePathname } from "next/navigation"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/navbar-dropdown";
-import { Check, ChevronDown, Moon, Sun } from "lucide-react";
+} from "@/components/ui/navbar-dropdown"
+import { Check, ChevronDown, Moon, Sun } from "lucide-react"
 
 const links = [
-  { to: "/about", label: "Who We Are" },
-  { to: "/newsAndEvents", label: "News And Events" },
+  { to: "/who-we-are", label: "Who We Are" },
+  { to: "/news-and-events", label: "News And Events" },
   { to: "/careers", label: "Careers" },
-  { to: "/enquiry", label: "Contact Us" },
-];
+  { to: "/contact-us", label: "Contact Us" },
+]
 
 const whatWeDoLinks = [
-  { to: "/products", label: "Our Products" },
-  { to: "/globalPartners", label: "Our Expertise" },
-  { to: "/customers", label: "Our Customers" },
-  { to: "/regionalOffices", label: "Our Commitment" },
-];
+  { to: "/our-products", label: "Our Products" },
+  { to: "/our-expertise", label: "Our Expertise" },
+  { to: "/our-clients", label: "Our Clients" },
+  { to: "/our-commitment", label: "Our Commitment" },
+]
 
 export default function Navbar() {
-  const [isToggled, setIsToggled] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
+  const [isToggled, setIsToggled] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
 
-  const { theme, systemTheme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  const { theme, systemTheme, setTheme } = useTheme()
+  const currentTheme = theme === "system" ? systemTheme : theme
 
   const toggleNavLinks = () => {
-    setIsToggled(!isToggled);
-  };
+    setIsToggled(!isToggled)
+  }
 
   const handleThemeChange = (val) => {
-    setTheme(val);
-  };
+    setTheme(val)
+  }
 
   const isActive = (path) => {
-    return pathname === path;
-  };
+    return pathname === path
+  }
 
   const isWhatWeDoActive = () => {
     return (
       whatWeDoLinks.some((link) => pathname === link.to) ||
       pathname === "/what-we-do"
-    );
-  };
+    )
+  }
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const currentScrollY = window.scrollY
       if (currentScrollY > 50) {
-        setIsScrolled(true);
+        setIsScrolled(true)
       } else {
-        setIsScrolled(false);
+        setIsScrolled(false)
       }
-      setLastScrollY(currentScrollY);
-    };
+      setLastScrollY(currentScrollY)
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [lastScrollY])
 
   // link text styling
   const getLinkStyle = () => {
     if (currentTheme === "dark") {
-      return "text-white text-[15px] dark:text-white dark:hover:text-primary";
+      return "text-white text-[15px] dark:text-white dark:hover:text-primary"
     } else {
       return isScrolled
         ? "text-gray-800 hover:text-primary"
-        : "text-white hover:text-primary";
+        : "text-white hover:text-primary"
     }
-  };
+  }
 
   return (
     <header
@@ -171,10 +171,10 @@ export default function Navbar() {
                 >
                   {/* Who We Are link */}
                   <Link
-                    href="/about"
+                    href="/who-we-are"
                     className={`block text-[15px] transition md:px-4
                       ${
-                        isActive("/about")
+                        isActive("/who-we-are")
                           ? "font-bold scale-110 duration-75"
                           : "font-normal"
                       }
@@ -226,16 +226,14 @@ export default function Navbar() {
                         align="start"
                       >
                         {whatWeDoLinks.map((item, key) => (
-                          <DropdownMenuItem 
-                          key={item.label}
-                          active={isActive(item.to)} // Pass true/false based on active state
-                          className="px-3 py-2 rounded-md" // Additional styling if needed
-                          asChild
-                        >
-                          <Link href={item.to}>
-                            {item.label}
-                          </Link>
-                        </DropdownMenuItem>
+                          <DropdownMenuItem
+                            key={item.label}
+                            active={isActive(item.to)} // Pass true/false based on active state
+                            className="px-3 py-2 rounded-md" // Additional styling if needed
+                            asChild
+                          >
+                            <Link href={item.to}>{item.label}</Link>
+                          </DropdownMenuItem>
                         ))}
                       </DropdownMenuContent>
                     </DropdownMenu>
@@ -259,9 +257,9 @@ export default function Navbar() {
                       onClick={() => {
                         const submenu = document.getElementById(
                           "mobile-what-we-do-submenu"
-                        );
+                        )
                         if (submenu) {
-                          submenu.classList.toggle("hidden");
+                          submenu.classList.toggle("hidden")
                         }
                       }}
                     >
@@ -359,5 +357,5 @@ export default function Navbar() {
         </div>
       </nav>
     </header>
-  );
+  )
 }

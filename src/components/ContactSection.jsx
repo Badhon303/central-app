@@ -67,16 +67,14 @@ export default function ContactSection() {
         <div className="relative h-full max-w-6xl mx-auto px-4 flex flex-col justify-center">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Partner with Central to access
+              PARTNER WITH CENTRAL
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            {/* <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
               cutting-edge scientific technology
-            </h3>
+            </h3> */}
             <p className="text-white/90 max-w-3xl mx-auto">
               We look forward to learning about your specific project needs,
-              requirements and feedback. Let's work together to advance
-              sustainability in the communities that you serve and on your
-              needs.
+              requirements and feedback. Let's work together!
             </p>
           </div>
         </div>

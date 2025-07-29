@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default function CategoryGrid({
   selectedCategory,
@@ -45,5 +45,5 @@ export default function CategoryGrid({
         </motion.div>
       ))}
     </div>
-  );
+  )
 }

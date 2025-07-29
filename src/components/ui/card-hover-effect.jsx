@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { AnimatePresence, motion } from "framer-motion"
+import Link from "next/link"
+import { useState, useEffect } from "react"
+import { cn } from "@/lib/utils"
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react"
 
 export const Card = ({ className, children, style }) => (
   <div
@@ -18,7 +18,7 @@ export const Card = ({ className, children, style }) => (
       <div className="flex-1">{children}</div>
     </div>
   </div>
-);
+)
 
 export const CardTitle = ({ className, children }) => (
   <h4
@@ -26,7 +26,7 @@ export const CardTitle = ({ className, children }) => (
   >
     {children}
   </h4>
-);
+)
 
 export const CardDescription = ({ className, children }) => (
   <p
@@ -42,36 +42,36 @@ export const CardDescription = ({ className, children }) => (
   >
     {children}
   </p>
-);
+)
 
 export const HoverEffect = ({ items, className }) => {
-  const [active, setActive] = useState(0);
-  const [fixedHeight, setFixedHeight] = useState(undefined);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [active, setActive] = useState(0)
+  const [fixedHeight, setFixedHeight] = useState(undefined)
+  const [hoveredIndex, setHoveredIndex] = useState(null)
 
-  const MOBILE_BREAKPOINT = 640;
-  const [screen, setScreen] = useState("desktop");
+  const MOBILE_BREAKPOINT = 640
+  const [screen, setScreen] = useState("desktop")
 
   useEffect(() => {
     const checkScreen = () => {
-      const w = window.innerWidth;
-      if (w < MOBILE_BREAKPOINT) setScreen("mobile");
-      else if (w < 1024) setScreen("medium");
-      else setScreen("desktop");
-    };
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+      const w = window.innerWidth
+      if (w < MOBILE_BREAKPOINT) setScreen("mobile")
+      else if (w < 1024) setScreen("medium")
+      else setScreen("desktop")
+    }
+    checkScreen()
+    window.addEventListener("resize", checkScreen)
+    return () => window.removeEventListener("resize", checkScreen)
+  }, [])
 
   // fixedHeight for desktop & medium
   useEffect(() => {
-    setFixedHeight(undefined);
-  }, [screen, items]);
+    setFixedHeight(undefined)
+  }, [screen, items])
 
   const handlePrev = () =>
-    setActive((prev) => (prev - 1 + items.length) % items.length);
-  const handleNext = () => setActive((prev) => (prev + 1) % items.length);
+    setActive((prev) => (prev - 1 + items.length) % items.length)
+  const handleNext = () => setActive((prev) => (prev + 1) % items.length)
 
   if (screen === "mobile") {
     return (
@@ -110,7 +110,7 @@ export const HoverEffect = ({ items, className }) => {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   if (screen === "medium") {
@@ -156,12 +156,12 @@ export const HoverEffect = ({ items, className }) => {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   return (
     <div className={cn("w-full px-4", className)}>
-      <div className="grid grid-cols-5 gap-6 w-full max-w-7xl mx-auto">
+      <div className="grid grid-cols-5 gap-6 w-full max-w-full mx-auto">
         {items.map((item, idx) => (
           <div
             key={item?.link}
@@ -196,5 +196,5 @@ export const HoverEffect = ({ items, className }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

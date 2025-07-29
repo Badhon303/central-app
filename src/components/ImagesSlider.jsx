@@ -35,11 +35,11 @@ export default function ImagesSlider() {
   ]
 
   const subtexts = [
-    "By choosing Central, you are partnering with a dynamic, transparent and energetic team of professionals who are passionately dedicated to excellence in the fields of pharmaceuticals and food",
+    "By choosing Central, you are partnering with a dynamic, transparent, and energetic team of professionals who are passionately dedicated to excellence in the pharmaceutical and food industries.",
     "Explore. Build. Thrive. Together",
-    "Applying High-Purity APIs and Advanced Packaging Solutions to Safeguard Pharmaceuticals Excellence",
+    "Supplying High-Purity APIs and Advanced Packaging Solutions to Safeguard Pharmaceutical Excellence",
     "Advanced Laboratory Consumables for Peak Performance",
-    "Hornessing Nature's Strength",
+    "Harnessing Nature's Strength",
     "Your Source for Quality Nutraceuticals",
     "Built to Serve, Grown to Last",
   ]

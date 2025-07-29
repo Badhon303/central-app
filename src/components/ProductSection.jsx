@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import {
   FlaskRound as Flask,
   Package,
   Stethoscope,
   FlaskConical,
   TestTube,
-} from "lucide-react";
+} from "lucide-react"
 import {
   apiProducts,
   excipientsData,
@@ -18,64 +18,60 @@ import {
   categoryDescriptions,
   categoryImages,
   categoryTitles,
-} from "../app/products/components/productData";
-import CategoryGrid from "../app/products/components/categoryGrid";
+} from "../app/our-products/components/productData"
+import CategoryGrid from "../app/our-products/components/categoryGrid"
 
 export default function ProductSection() {
-  const [selectedCategory, setSelectedCategory] = useState("api");
-  const [selectedLetter, setSelectedLetter] = useState("A");
+  const [selectedCategory, setSelectedCategory] = useState("api")
+  const [selectedLetter, setSelectedLetter] = useState("A")
 
   const categoryIcons = {
     api: <FlaskConical className="w-8 md:w-12 h-8 md:h-12 text-white" />,
     excipients: <Flask className="w-8 md:w-12 h-8 md:h-12 text-white" />,
-    primaryPackaging: (
-      <Package className="w-8 md:w-12 h-8 md:h-12 text-white" />
-    ),
-    qcConsumables: <TestTube className="w-8 md:w-12 h-8 md:h-12 text-white" />,
-    medicalDevices: (
-      <Stethoscope className="w-8 md:w-12 h-8 md:h-12 text-white" />
-    ),
-  };
+    packaging: <Package className="w-8 md:w-12 h-8 md:h-12 text-white" />,
+    consumables: <TestTube className="w-8 md:w-12 h-8 md:h-12 text-white" />,
+    devices: <Stethoscope className="w-8 md:w-12 h-8 md:h-12 text-white" />,
+  }
 
   useEffect(() => {
     // hash navigation when component mounts
     const handleHashChange = () => {
-      const hash = window.location.hash.substring(1);
+      const hash = window.location.hash.substring(1)
       const validCategories = [
         "api",
         "excipients",
-        "primaryPackaging",
-        "qcConsumables",
-        "medicalDevices",
-      ];
+        "packaging",
+        "consumables",
+        "devices",
+      ]
 
       if (hash && validCategories.includes(hash)) {
-        setSelectedCategory(hash);
+        setSelectedCategory(hash)
         setTimeout(() => {
-          const element = document.getElementById(hash);
+          const element = document.getElementById(hash)
           if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            element.scrollIntoView({ behavior: "smooth" })
           }
-        }, 0);
+        }, 0)
       }
-    };
+    }
 
-    handleHashChange();
+    handleHashChange()
 
     // listening for hash changes
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
+  }, [])
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
+    setSelectedCategory(category)
     // updating URL hash without triggering a full page reload
-    window.history.pushState(null, null, `#${category}`);
-  };
+    window.history.pushState(null, null, `#${category}`)
+  }
 
   const handleLetterClick = (letter) => {
-    setSelectedLetter(letter);
-  };
+    setSelectedLetter(letter)
+  }
 
   const renderTable = (data) => (
     <div className="overflow-x-auto rounded-lg">
@@ -134,7 +130,7 @@ export default function ProductSection() {
         </tbody>
       </table>
     </div>
-  );
+  )
 
   const renderContent = () => {
     switch (selectedCategory) {
@@ -198,19 +194,19 @@ export default function ProductSection() {
                 )
             )}
           </>
-        );
+        )
       case "excipients":
-        return renderTable(excipientsData);
-      case "primaryPackaging":
-        return renderTable(primaryPackagingData);
-      case "qcConsumables":
-        return renderTable(qcConsumablesData);
-      case "medicalDevices":
-        return renderTable(medicalDevicesData);
+        return renderTable(excipientsData)
+      case "packaging":
+        return renderTable(primaryPackagingData)
+      case "consumables":
+        return renderTable(qcConsumablesData)
+      case "devices":
+        return renderTable(medicalDevicesData)
       default:
-        return null;
+        return null
     }
-  };
+  }
 
   return (
     <div className="relative py-16 md:py-24">
@@ -222,14 +218,14 @@ export default function ProductSection() {
           </h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
           <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl mx-auto">
-            We take great pride in representing the world's foremost
-            manufacturers in the pharmaceutical industry. Our partnership with
-            these industry leaders demonstrates our unwavering commitment to
-            quality, safety, and innovation. By aligning with these top-tier
-            manufacturers, we ensure that our clients have access to the most
-            cutting-edge and reliable pharmaceutical products available, meeting
-            the highest industry standards and fulfilling our mission to enhance
-            healthcare worldwide.
+            We take immense pride in representing the world’s leading
+            manufacturers in the pharmaceutical industry. Our partnerships with
+            these industry pioneers reflect our steadfast commitment to quality,
+            safety, and innovation. By collaborating with top-tier
+            manufacturers, we ensure our clients have access to the most
+            advanced and reliable pharmaceutical products meeting the highest
+            industry standards and supporting our mission to advance healthcare
+            globally.
           </p>
         </div>
 
@@ -281,10 +277,10 @@ export default function ProductSection() {
           </div>
 
           <div
-            id="primaryPackaging"
-            className={selectedCategory === "primaryPackaging" ? "" : "hidden"}
+            id="packaging"
+            className={selectedCategory === "packaging" ? "" : "hidden"}
           >
-            {selectedCategory === "primaryPackaging" && (
+            {selectedCategory === "packaging" && (
               <>
                 <div className="text-center mb-12 max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
@@ -300,10 +296,10 @@ export default function ProductSection() {
           </div>
 
           <div
-            id="qcConsumables"
-            className={selectedCategory === "qcConsumables" ? "" : "hidden"}
+            id="consumables"
+            className={selectedCategory === "consumables" ? "" : "hidden"}
           >
-            {selectedCategory === "qcConsumables" && (
+            {selectedCategory === "consumables" && (
               <>
                 <div className="text-center mb-12 max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
@@ -319,10 +315,10 @@ export default function ProductSection() {
           </div>
 
           <div
-            id="medicalDevices"
-            className={selectedCategory === "medicalDevices" ? "" : "hidden"}
+            id="devices"
+            className={selectedCategory === "devices" ? "" : "hidden"}
           >
-            {selectedCategory === "medicalDevices" && (
+            {selectedCategory === "devices" && (
               <>
                 <div className="text-center mb-12 max-w-5xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
@@ -339,5 +335,5 @@ export default function ProductSection() {
         </div>
       </motion.div>
     </div>
-  );
+  )
 }

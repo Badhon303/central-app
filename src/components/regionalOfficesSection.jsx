@@ -1,11 +1,11 @@
-"use client";
-import React from "react";
-import Container from "@/components/Container";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+"use client"
+import React from "react"
+import Container from "@/components/Container"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import "leaflet/dist/leaflet.css"
+import L from "leaflet"
 
 const customMarker = new L.Icon({
   iconUrl:
@@ -16,7 +16,7 @@ const customMarker = new L.Icon({
   shadowUrl:
     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
   shadowSize: [41, 41],
-});
+})
 
 // Real images from freepik
 const officeImages = [
@@ -24,7 +24,7 @@ const officeImages = [
   "https://img.freepik.com/free-photo/treatment-study-genetically-engineered-strawberries-laboratory-by-group-scientist-test-tubes-with-green-solutions_482257-34487.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Munich - Office
   "https://img.freepik.com/free-photo/building-lake_1127-3460.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Boston - Office
   "https://img.freepik.com/free-photo/modern-office-space-interior_158595-5206.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Mumbai
-];
+]
 
 // Sustainable features images
 const sustainableFeatureImages = [
@@ -32,74 +32,74 @@ const sustainableFeatureImages = [
   "https://img.freepik.com/free-vector/wind-turbine-trees-landscape_1048-962.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Green Design
   "https://img.freepik.com/free-vector/hand-drawn-flat-design-circular-economy-infographic_23-2149208724.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Circular Economy
   "https://img.freepik.com/free-photo/rearview-diverse-people-hugging-each-other_53876-105340.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Community Impact
-];
+]
 const RegionalOfficesSection = () => {
   const officeData = [
     {
       id: 1,
-      name: "Singapore Biotech Hub",
-      location: "Singapore",
+      name: "Commitment to Service",
+      // location: "Singapore",
       image: officeImages[0],
       history:
-        "Established in 2022, our Singapore office serves as a strategic gateway to the Asia-Pacific pharmaceutical market, focusing on innovative drug distribution and research collaboration.",
-      objective:
-        "To accelerate pharmaceutical supply chain efficiency and support emerging medical technologies in the APAC region.",
-      sustainableFeatures: [
-        "Green building certification",
-        "Solar panel integration",
-        "Rainwater harvesting system",
-      ],
-      coordinates: [1.3521, 103.8198],
+        " the core of our business commitment to service excellence is unwavering. We believe that trust is earned through the quality of the products we deliver, along with consistency, responsiveness, and integrity. Proactive communication is maintained with both our customers and principals on a day-to-day basis. Responding quickly to inquiries, resolving challenges, and providing technical support are always ensured through our service. Lastly, we are long-term partners invested in the growth and success of our clients and principals.",
+      // objective:
+      //   "To accelerate pharmaceutical supply chain efficiency and support emerging medical technologies in the APAC region.",
+      // sustainableFeatures: [
+      //   "Green building certification",
+      //   "Solar panel integration",
+      //   "Rainwater harvesting system",
+      // ],
+      // coordinates: [1.3521, 103.8198],
     },
     {
       id: 2,
-      name: "Munich Pharmaceutical Research Center",
-      location: "Germany",
+      name: "Commitment to Quality",
+      // location: "Germany",
       image: officeImages[1],
       history:
-        "Our Munich facility, launched in 2023, represents our commitment to European pharmaceutical innovation and precision medicine.",
-      objective:
-        "Developing cutting-edge pharmaceutical solutions with a focus on personalized healthcare and advanced research methodologies.",
-      sustainableFeatures: [
-        "Energy-efficient lab design",
-        "Circular economy principles",
-        "Carbon-neutral operations",
-      ],
-      coordinates: [48.1351, 11.582],
+        "Central Scientific Company not only ensures its service quality, but it also ensures that the products they offer to their customers are sourced from a world-class manufacturer. We trust that quality is not just a standard, it is a responsibility we uphold in every product we supply and every process we manage. Customer feedback is essential for our continuous improvement, which ensures the best quality product is provided. Quality isn’t a checkbox; it’s a core value that defines how we serve, support, and grow with our partners.",
+      // objective:
+      //   "Developing cutting-edge pharmaceutical solutions with a focus on personalized healthcare and advanced research methodologies.",
+      // sustainableFeatures: [
+      //   "Energy-efficient lab design",
+      //   "Circular economy principles",
+      //   "Carbon-neutral operations",
+      // ],
+      // coordinates: [48.1351, 11.582],
     },
     {
       id: 3,
-      name: "Boston Innovative Pharma Campus",
-      location: "United States",
+      name: "Commitment to Reliability",
+      // location: "United States",
       image: officeImages[2],
       history:
-        "Opened in late 2023, our Boston campus is strategically positioned in the heart of the pharmaceutical innovation ecosystem.",
-      objective:
-        "Fostering collaborative research, supporting startup incubation, and driving breakthrough pharmaceutical technologies.",
-      sustainableFeatures: [
-        "LEED Platinum certification",
-        "Regenerative design",
-        "Zero-waste research facilities",
-      ],
-      coordinates: [42.3601, -71.0589],
+        "In this industry, reliability is non-negotiable. That is why we have built our operations around delivering consistency, speed, and dependability at every touch point. From meeting tight schedule deliveries, understanding requirements, or even responding to urgent inquiries, we are committed to being the dependable partner our clients can count on.",
+      // objective:
+      //   "Fostering collaborative research, supporting startup incubation, and driving breakthrough pharmaceutical technologies.",
+      // sustainableFeatures: [
+      //   "LEED Platinum certification",
+      //   "Regenerative design",
+      //   "Zero-waste research facilities",
+      // ],
+      // coordinates: [42.3601, -71.0589],
     },
-    {
-      id: 4,
-      name: "Mumbai Pharmaceutical Distribution Center",
-      location: "India",
-      image: officeImages[3],
-      history:
-        "Established to enhance pharmaceutical accessibility in the rapidly growing Indian healthcare market.",
-      objective:
-        "Streamlining medication distribution, supporting local healthcare infrastructure, and ensuring affordable access to essential medicines.",
-      sustainableFeatures: [
-        "Renewable energy powered",
-        "Smart logistics infrastructure",
-        "Community health initiatives",
-      ],
-      coordinates: [19.076, 72.8777],
-    },
-  ];
+    // {
+    //   id: 4,
+    //   name: "Mumbai Pharmaceutical Distribution Center",
+    //   location: "India",
+    //   image: officeImages[3],
+    //   history:
+    //     "Established to enhance pharmaceutical accessibility in the rapidly growing Indian healthcare market.",
+    //   objective:
+    //     "Streamlining medication distribution, supporting local healthcare infrastructure, and ensuring affordable access to essential medicines.",
+    //   sustainableFeatures: [
+    //     "Renewable energy powered",
+    //     "Smart logistics infrastructure",
+    //     "Community health initiatives",
+    //   ],
+    //   coordinates: [19.076, 72.8777],
+    // },
+  ]
 
   const sustainableFeatures = [
     {
@@ -126,13 +126,13 @@ const RegionalOfficesSection = () => {
         "Each facility supports local initiatives, from educational programs to healthcare accessibility projects.",
       image: sustainableFeatureImages[3],
     },
-  ];
+  ]
 
   const additionalLocations = [
     { name: "China", coordinates: [35.8617, 104.1954] },
     { name: "Japan", coordinates: [36.2048, 138.2529] },
     { name: "Switzerland", coordinates: [46.8182, 8.2275] },
-  ];
+  ]
 
   return (
     <div className="relative py-16 md:py-24" id="regional-offices">
@@ -145,7 +145,7 @@ const RegionalOfficesSection = () => {
       </div> */}
 
       <Container>
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
             Our{" "}
             <span className="text-primary dark:text-white">
@@ -153,7 +153,7 @@ const RegionalOfficesSection = () => {
             </span>
           </h2>
           <div className="mx-auto mt-4 h-1 w-32 md:w-48 bg-secondary rounded-full"></div>
-        </div>
+        </div> */}
 
         {/* Regional Offices */}
         <div className="space-y-20">
@@ -182,9 +182,9 @@ const RegionalOfficesSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
 
                     {/* Location badge */}
-                    <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 px-4 py-2 rounded-full text-sm font-medium text-gray-800 dark:text-white">
+                    {/* <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 px-4 py-2 rounded-full text-sm font-medium text-gray-800 dark:text-white">
                       {office.location}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 dark:bg-primary/10 rounded-full blur-xl"></div>
                   <div className="absolute -top-4 -left-4 w-16 h-16 bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-xl"></div>
@@ -201,21 +201,21 @@ const RegionalOfficesSection = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
                   {office.history}
                 </p>
-                <div className="bg-white/10 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg backdrop-blur-sm">
+                {/* <div className="bg-white/10 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg backdrop-blur-sm">
                   <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">
                     Regional Objective
                   </h4>
                   <p className="text-gray-600 dark:text-gray-300">
                     {office.objective}
                   </p>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Sustainability Highlight */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -262,11 +262,11 @@ const RegionalOfficesSection = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
+          </div> */}
 
-          {/* Decorative bar */}
-          {/* <div className="h-2 bg-gradient-to-r from-blue-500 via-primary to-blue-400"></div> */}
-        </motion.div>
+        {/* Decorative bar */}
+        {/* <div className="h-2 bg-gradient-to-r from-blue-500 via-primary to-blue-400"></div> */}
+        {/* </motion.div> */}
 
         {/* Global Locations Map */}
         {/* 
@@ -308,7 +308,7 @@ const RegionalOfficesSection = () => {
          */}
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default RegionalOfficesSection;
+export default RegionalOfficesSection

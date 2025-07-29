@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useEffect, useCallback } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const ImageCarousel = ({
   images,
@@ -10,45 +10,45 @@ const ImageCarousel = ({
   delay = 3000,
   className,
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isHovering, setIsHovering] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+      setIsMobile(window.innerWidth < 768)
+    }
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+    handleResize()
+    window.addEventListener("resize", handleResize)
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   // images array based on device
-  const displayImages = isMobile && mobileImages ? mobileImages : images;
+  const displayImages = isMobile && mobileImages ? mobileImages : images
 
   const handleNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % displayImages.length);
-  }, [displayImages.length]);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % displayImages.length)
+  }, [displayImages.length])
 
   const handlePrevious = () => {
     setCurrentIndex(
       (prevIndex) =>
         (prevIndex - 1 + displayImages.length) % displayImages.length
-    );
-  };
+    )
+  }
 
   useEffect(() => {
-    let interval;
+    let interval
     if (autoplay && !isHovering) {
-      interval = setInterval(handleNext, delay);
+      interval = setInterval(handleNext, delay)
     }
     return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [autoplay, delay, isHovering, handleNext]);
+      if (interval) clearInterval(interval)
+    }
+  }, [autoplay, delay, isHovering, handleNext])
 
   return (
     <div
@@ -79,10 +79,10 @@ const ImageCarousel = ({
                 className="text-white text-center px-4 sm:px-6 py-4 rounded-sm sm:rounded-3xl max-w-lg md:max-w-3xl lg-screen:max-w-5xl xl-screen:max-w-6xl"
               >
                 {" "}
-                <h1 className="text-[2.2rem] md:text-4xl lg-screen:text-5xl xl-screen:text-6xl font-bold text-shadow-lg">
+                <h1 className="text-[2rem] md:text-4xl lg-screen:text-4xl xl-screen:text-5xl font-bold text-shadow-lg">
                   {titles[index]}
                 </h1>
-                <p className="text-xl md:text-2xl mt-2 font-{50} text-shadow-sm">
+                <p className="text-xl md:text-xl mt-2 text-shadow-sm">
                   {subtexts[index]}
                 </p>
               </div>
@@ -108,7 +108,7 @@ const ImageCarousel = ({
         <ChevronRight className="size-6 md:size-7 lg-screen:size-8" />
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default ImageCarousel;
+export default ImageCarousel

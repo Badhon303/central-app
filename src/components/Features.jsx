@@ -1,17 +1,18 @@
-import Container from "@/components/Container";
+import Container from "@/components/Container"
 
 export default function Features() {
   return (
     <Container>
       <div className="md:w-2/3 lg:w-3/4 mx-auto">
         <h2 className="my-4 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl px-2 text-center">
-          A technology-first approach to scientific innovation
+          Empowering Critical Industries with Integrity, Precision, and Care
         </h2>
         <p className="text-gray-600 dark:text-gray-300 text-center">
-          At Central Scientific CO, we combine cutting-edge technology with
-          groundbreaking research to deliver solutions that drive progress in
-          science and industry. Our features are designed to empower
-          researchers, streamline processes, and accelerate discovery.
+          Central Scientific partners closely with industry leaders to meet the
+          evolving demands of these vital sectors. Our commitment goes beyond
+          supply; we deliver precision, transparency, and reliability that fuel
+          innovation and safeguard quality. By aligning with the highest
+          standards, we help shape industries that impact lives every day.
         </p>
       </div>
       <div className="mt-16 grid divide-x divide-y divide-gray-100 dark:divide-gray-700 overflow-hidden rounded-3xl border border-gray-100 text-gray-600 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4">
@@ -52,9 +53,10 @@ export default function Features() {
                 Food
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
-                Advanced solutions for food safety, quality control, and
-                nutritional analysis, ensuring compliance with global standards
-                and enhancing consumer trust.
+                Providing advanced solutions with high-quality ingredients for
+                food safety, rigorous quality control, and nutritional analysis;
+                ensuring full compliance with global standards and strengthening
+                consumer confidence.
               </p>
             </div>
           </div>
@@ -76,9 +78,10 @@ export default function Features() {
                 Laboratory
               </h5>
               <p className="text-gray-600 dark:text-gray-300">
-                Cutting-edge laboratory equipment, consumables, and research
-                tools to support scientific discovery and innovation across
-                various disciplines.
+                Original OEM laboratory instruments and consumables, engineered
+                for unmatched reliability and accuracy delivering the highest
+                precision needed to drive scientific discovery and innovation
+                across diverse fields.
               </p>
             </div>
           </div>
@@ -108,5 +111,5 @@ export default function Features() {
         </div>
       </div>
     </Container>
-  );
+  )
 }

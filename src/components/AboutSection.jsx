@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import Container from "@/components/Container";
-import { motion } from "framer-motion";
-import CountUp from "react-countup";
-import Image from "next/image";
+"use client"
+import React from "react"
+import Container from "@/components/Container"
+import { motion } from "framer-motion"
+import CountUp from "react-countup"
+import Image from "next/image"
 
 export default function AboutSection() {
   const containerVariants = {
@@ -14,7 +14,7 @@ export default function AboutSection() {
         staggerChildren: 0.3,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: {
@@ -29,7 +29,7 @@ export default function AboutSection() {
         ease: "easeOut",
       },
     },
-  };
+  }
 
   return (
     <div className="relative py-16 md:py-24" id="about">
@@ -46,17 +46,16 @@ export default function AboutSection() {
           {/* Who We Are */}
           <div className="mb-16 max-w-5xl mx-auto text-center">
             <p className="text-gray-600 dark:text-gray-300 text-center sm:px-8 mt-8 max-w-5xl leading-relaxed">
-              Central Scientific Company was incorporated in the year 1990,
-              Central is a transparent trader, providing highly competitive,
-              faster, efficient, and professional services. It facilitates a
-              smooth flow of goods and services from the world-class
-              manufacturers to the customers, giving value to all. We meet
-              business challenges innovatively and pride in our ears on the
-              ground thus responding proactively to our customers' problems in
-              current volatile markets. Our passion is to provide top class
-              solutions, second to none by collaborating with our foreign
-              principals and partners in helping our customers to meet their
-              requirements.
+              Established in 1990, Central Scientific Company has built a
+              reputation as a transparent and reliable trading partner,
+              delivering highly competitive, fast, and professional services. We
+              streamline the flow of goods from world-class manufacturers to our
+              customers, ensuring value at every step. With a deep understanding
+              of market dynamics, we respond proactively to evolving challenges;
+              guided by real-time insight and close customer engagement. Our
+              passion lies in delivering exceptional solutions through strong
+              collaborations with our international principals and partners,
+              helping clients meet their goals with precision and confidence.
             </p>
           </div>
 
@@ -79,13 +78,14 @@ export default function AboutSection() {
                     Our Mission
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Achieving customer outmost satisfaction as well as
-                    operational and organizational excellence without
-                    compromising from our values and business ethics. We aim to
-                    contribute to the advancement of healthcare by ensuring a
-                    secure and efficient supply chain, facilitating easy access
-                    to essential medications, and providing the pharmaceutical
-                    industry with advanced, high-quality products.
+                    At Central Scientific, our mission is to achieve the highest
+                    level of customer satisfaction while pursuing operational
+                    and organizational excellence. We remain steadfast in
+                    upholding our core values of transparency, integrity, and
+                    ethical conduct. Through a secure, efficient supply chain
+                    and access to high-quality, advanced solutions, we aim to
+                    contribute meaningfully to the progress of healthcare,
+                    science, and industry — today and into the future.
                   </p>
                 </motion.div>
 
@@ -94,12 +94,14 @@ export default function AboutSection() {
                     Our Vision
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Together, with our team, partners, and the global networks,
-                    we aim to build a future where the supplier not only solves
-                    problems but also inspires hope and transparent trade
-                    environment. We aim to be at the forefront of positive
-                    change, setting the standard for technological excellence,
-                    and leaving a lasting legacy of progress.
+                    At Central Scientific, our vision is to build a future where
+                    suppliers do more than deliver — they lead with integrity,
+                    inspire confidence, and cultivate a transparent,
+                    collaborative trade environment. Together with our team,
+                    partners, and global networks, we strive to be at the
+                    forefront of meaningful progress, setting benchmarks for
+                    technological excellence and leaving a lasting legacy of
+                    trust, impact, and innovation.
                   </p>
                 </motion.div>
               </motion.div>
@@ -132,24 +134,27 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div className="space-y-6">
                 <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
-                  Shaping the future through innovation
+                  Driving Progress Through Trusted Connections
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Our team of experts is committed to pushing the boundaries of
-                  what's possible. We believe in the power of technology to
-                  transform businesses and create meaningful experiences for
-                  users around the world.
+                  We believe that lasting success is built on selecting the
+                  right partners, adopting the right approach, and continuously
+                  strengthening our teams. Our expert team is committed to push
+                  boundaries and unlock new possibilities guided by clarity,
+                  trust, and collaboration. We value transparent connections
+                  that turn business relationships into long-term partnerships.
                 </p>
                 <p className="text-gray-600 dark:text-gray-300">
-                  With a focus on quality, creativity, and cutting-edge
+                  By combining deep industry insight with cutting-edge
                   solutions, we help our clients stay ahead in a rapidly
-                  evolving digital landscape. Our collaborative approach ensures
-                  that we understand your unique challenges and deliver tailored
-                  solutions that drive real results.
+                  evolving landscape. Our focus on quality, creativity, and
+                  integrity ensures that every solution is tailored to real
+                  challenges driving results, fostering growth, and building
+                  stronger bonds between all parties involved.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="#"
+                    href="/our-products"
                     className="mt-6 text-sm px-4 py-2 text-white font-semibold bg-primary rounded-full hover:scale-110 transition-all duration-200 inline-block"
                   >
                     Learn More
@@ -159,7 +164,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    <CountUp start={0} end={10} duration={7} delay={1} />+
+                    <CountUp start={0} end={30} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Years of experience
@@ -167,7 +172,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    <CountUp start={0} end={200} duration={7} delay={1} />+
+                    <CountUp start={0} end={100} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
                     Projects completed
@@ -175,10 +180,10 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
                   <div className="text-4xl font-bold text-primary mb-2">
-                    <CountUp start={0} end={50} duration={7} delay={1} />+
+                    <CountUp start={0} end={30} duration={7} delay={1} />+
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Team members
+                    Ongoing Development
                   </p>
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
@@ -186,7 +191,7 @@ export default function AboutSection() {
                     <CountUp start={0} end={100} duration={7} delay={1} />%
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Client satisfaction
+                    Transparency
                   </p>
                 </div>
               </div>
@@ -195,5 +200,5 @@ export default function AboutSection() {
         </div>
       </Container>
     </div>
-  );
+  )
 }

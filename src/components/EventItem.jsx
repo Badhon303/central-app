@@ -1,13 +1,13 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+"use client"
+import React, { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 
 export const EventItem = ({ event, index }) => {
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const options = { month: 'long', day: 'numeric', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-  };
+    const date = new Date(dateString)
+    const options = { month: "long", day: "numeric", year: "numeric" }
+    return date.toLocaleDateString("en-US", options)
+  }
 
   return (
     <motion.div
@@ -22,9 +22,9 @@ export const EventItem = ({ event, index }) => {
         <div className="relative h-48 md:h-60 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/50 to-purple-500/30 mix-blend-multiply z-10"></div>
           {event.img && (
-            <img 
-              src={`${process.env.NEXT_PUBLIC_API_DOMAIN}${event.img.url}`} 
-              alt={event.img.alt || event.title} 
+            <img
+              src={`${process.env.NEXT_PUBLIC_API_DOMAIN}${event.img.url}`}
+              alt={event.img.alt || event.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           )}
@@ -83,8 +83,10 @@ export const EventItem = ({ event, index }) => {
               {formatDate(event.date)}
             </div>
           </div>
-          <p className="text-gray-600 dark:text-gray-300">{event.description}</p>
-          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <p className="text-gray-600 dark:text-gray-300">
+            {event.description}
+          </p>
+          {/* <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
             <a
               href="#"
               className="inline-flex items-center text-sm font-medium group-hover:text-primary transition-colors duration-300"
@@ -105,9 +107,9 @@ export const EventItem = ({ event, index }) => {
                 ></path>
               </svg>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
