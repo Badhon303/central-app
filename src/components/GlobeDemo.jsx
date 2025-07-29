@@ -165,7 +165,7 @@ export function GlobeDemo() {
         </div>
 
         {/* Globe component */}
-        <div className="relative w-full h-96 bg-transparent rounded-lg overflow-hidden mb-16">
+        <div className="relative w-full h-96 bg-transparent rounded-lg overflow-hidden mb-36">
           <Globe />
         </div>
 

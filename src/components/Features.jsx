@@ -30,7 +30,7 @@ export default function Features() {
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Pharmaceuticals
               </h5>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 text-justify">
                 Specialized solutions for drug discovery, formulation, and
                 development, enhancing pharmaceutical research and innovation.
               </p>
@@ -52,7 +52,7 @@ export default function Features() {
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Food
               </h5>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 text-justify">
                 Providing advanced solutions with high-quality ingredients for
                 food safety, rigorous quality control, and nutritional analysis;
                 ensuring full compliance with global standards and strengthening
@@ -77,7 +77,7 @@ export default function Features() {
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Laboratory
               </h5>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 text-justify">
                 Original OEM laboratory instruments and consumables, engineered
                 for unmatched reliability and accuracy delivering the highest
                 precision needed to drive scientific discovery and innovation
@@ -101,7 +101,7 @@ export default function Features() {
               <h5 className="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
                 Healthcare
               </h5>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 text-justify">
                 Comprehensive healthcare solutions, including diagnostic tools,
                 medical devices, and patient care technologies, to improve
                 outcomes and streamline operations.

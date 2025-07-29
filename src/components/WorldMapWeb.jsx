@@ -180,7 +180,7 @@ export default function WorldMapWeb({ inHome = false }) {
                   <img
                     src={logo}
                     alt={name}
-                    className="w-20 h-14 sm:w-24 sm:h-16 md:w-32 md:h-20 border border-black/80 dark:border-gray-400 object-fit rounded-sm"
+                    className="w-20 h-14 sm:w-24 sm:h-16 md:w-32 md:h-20 dark:border-gray-400 object-fit rounded-sm"
                   />
                 </div>
               ))}
