@@ -36,7 +36,7 @@ export default function HeroSection() {
         <div className="flex flex-col justify-center items-center">
           {/* Hero section */}
           {/* <div className="flex flex-col lg:flex-row items-stretch"> */}
-          <div className="lg:w-1/2 text-center lg:text-left p-4 bg-primary flex flex-col justify-center">
+          <div className="text-center rounded-md lg:text-left px-4 py-10 bg-primary flex flex-col justify-center">
             <h1 className="text-balance text-white font-bold text-2xl md:text-3xl xl:text-4xl text-center">
               The Journey Evolves...
             </h1>

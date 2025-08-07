@@ -19,20 +19,26 @@ const customMarker = new L.Icon({
 })
 
 // Real images from freepik
+// const officeImages = [
+//   "https://img.freepik.com/free-photo/medical-lab-worker-analyzing-blood-serum-conducting-virus-test-modern-equipped-lab-late-night-team-specialists-examining-vaccine-evolution-using-high-tech-treatment-against-covid19_482257-13621.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Singapore - Office
+//   "https://img.freepik.com/free-photo/treatment-study-genetically-engineered-strawberries-laboratory-by-group-scientist-test-tubes-with-green-solutions_482257-34487.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Munich - Office
+//   "https://img.freepik.com/free-photo/building-lake_1127-3460.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Boston - Office
+//   "https://img.freepik.com/free-photo/modern-office-space-interior_158595-5206.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Mumbai
+// ]
+
 const officeImages = [
-  "https://img.freepik.com/free-photo/medical-lab-worker-analyzing-blood-serum-conducting-virus-test-modern-equipped-lab-late-night-team-specialists-examining-vaccine-evolution-using-high-tech-treatment-against-covid19_482257-13621.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Singapore - Office
-  "https://img.freepik.com/free-photo/treatment-study-genetically-engineered-strawberries-laboratory-by-group-scientist-test-tubes-with-green-solutions_482257-34487.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Munich - Office
-  "https://img.freepik.com/free-photo/building-lake_1127-3460.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Boston - Office
-  "https://img.freepik.com/free-photo/modern-office-space-interior_158595-5206.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Mumbai
+  "/Commitment/CommitmenttoService.jpg",
+  "/Commitment/Commitmenttoquality.jpg",
+  "/Commitment/Commitmenttoreliability.jpg",
 ]
 
 // Sustainable features images
-const sustainableFeatureImages = [
-  "https://img.freepik.com/free-photo/sustainable-energy-campaign-hand-holding-tree-light-bulb-media-remix_53876-104824.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Energy Efficiency
-  "https://img.freepik.com/free-vector/wind-turbine-trees-landscape_1048-962.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Green Design
-  "https://img.freepik.com/free-vector/hand-drawn-flat-design-circular-economy-infographic_23-2149208724.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Circular Economy
-  "https://img.freepik.com/free-photo/rearview-diverse-people-hugging-each-other_53876-105340.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Community Impact
-]
+// const sustainableFeatureImages = [
+//   "https://img.freepik.com/free-photo/sustainable-energy-campaign-hand-holding-tree-light-bulb-media-remix_53876-104824.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Energy Efficiency
+//   "https://img.freepik.com/free-vector/wind-turbine-trees-landscape_1048-962.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Green Design
+//   "https://img.freepik.com/free-vector/hand-drawn-flat-design-circular-economy-infographic_23-2149208724.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Circular Economy
+//   "https://img.freepik.com/free-photo/rearview-diverse-people-hugging-each-other_53876-105340.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Community Impact
+// ]
 const RegionalOfficesSection = () => {
   const officeData = [
     {
@@ -41,7 +47,7 @@ const RegionalOfficesSection = () => {
       // location: "Singapore",
       image: officeImages[0],
       history:
-        " the core of our business commitment to service excellence is unwavering. We believe that trust is earned through the quality of the products we deliver, along with consistency, responsiveness, and integrity. Proactive communication is maintained with both our customers and principals on a day-to-day basis. Responding quickly to inquiries, resolving challenges, and providing technical support are always ensured through our service. Lastly, we are long-term partners invested in the growth and success of our clients and principals.",
+        "At the core of our business commitment to service excellence is unwavering. We believe that trust is earned through the quality of the products we deliver, along with consistency, responsiveness, and integrity. Proactive communication is maintained with both our customers and principals on a day-to-day basis. Responding quickly to inquiries, resolving challenges, and providing technical support are always ensured through our service. Lastly, we are long-term partners invested in the growth and success of our clients and principals.",
       // objective:
       //   "To accelerate pharmaceutical supply chain efficiency and support emerging medical technologies in the APAC region.",
       // sustainableFeatures: [
@@ -101,38 +107,38 @@ const RegionalOfficesSection = () => {
     // },
   ]
 
-  const sustainableFeatures = [
-    {
-      title: "Energy Efficiency",
-      description:
-        "Our buildings utilize advanced energy management systems, reducing consumption by up to 40% compared to conventional facilities.",
-      image: sustainableFeatureImages[0],
-    },
-    {
-      title: "Green Design",
-      description:
-        "Biophilic design principles integrate natural elements, improving air quality and employee wellbeing.",
-      image: sustainableFeatureImages[1],
-    },
-    {
-      title: "Circular Economy",
-      description:
-        "We recycle up to 98% of construction waste and implement zero-waste policies in daily operations.",
-      image: sustainableFeatureImages[2],
-    },
-    {
-      title: "Community Impact",
-      description:
-        "Each facility supports local initiatives, from educational programs to healthcare accessibility projects.",
-      image: sustainableFeatureImages[3],
-    },
-  ]
+  // const sustainableFeatures = [
+  //   {
+  //     title: "Energy Efficiency",
+  //     description:
+  //       "Our buildings utilize advanced energy management systems, reducing consumption by up to 40% compared to conventional facilities.",
+  //     image: sustainableFeatureImages[0],
+  //   },
+  //   {
+  //     title: "Green Design",
+  //     description:
+  //       "Biophilic design principles integrate natural elements, improving air quality and employee wellbeing.",
+  //     image: sustainableFeatureImages[1],
+  //   },
+  //   {
+  //     title: "Circular Economy",
+  //     description:
+  //       "We recycle up to 98% of construction waste and implement zero-waste policies in daily operations.",
+  //     image: sustainableFeatureImages[2],
+  //   },
+  //   {
+  //     title: "Community Impact",
+  //     description:
+  //       "Each facility supports local initiatives, from educational programs to healthcare accessibility projects.",
+  //     image: sustainableFeatureImages[3],
+  //   },
+  // ]
 
-  const additionalLocations = [
-    { name: "China", coordinates: [35.8617, 104.1954] },
-    { name: "Japan", coordinates: [36.2048, 138.2529] },
-    { name: "Switzerland", coordinates: [46.8182, 8.2275] },
-  ]
+  // const additionalLocations = [
+  //   { name: "China", coordinates: [35.8617, 104.1954] },
+  //   { name: "Japan", coordinates: [36.2048, 138.2529] },
+  //   { name: "Switzerland", coordinates: [46.8182, 8.2275] },
+  // ]
 
   return (
     <div className="relative py-16 md:py-24" id="regional-offices">

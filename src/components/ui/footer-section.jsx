@@ -20,6 +20,7 @@ import {
   X,
 } from "lucide-react"
 import { useTheme } from "next-themes"
+import Link from "next/link"
 
 function Footerdemo() {
   const { theme, systemTheme, setTheme } = useTheme()
@@ -148,21 +149,28 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
+                    <Link
+                      href={
+                        "https://www.facebook.com/share/191LvYqr9h/?mibextid=wwXIfr"
+                      }
+                      target="blank"
                     >
-                      <Facebook className="size-5" />
-                      <span className="sr-only">Facebook</span>
-                    </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                      >
+                        <Facebook className="size-5" />
+                        <span className="sr-only">Facebook</span>
+                      </Button>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent className="bg-white">
                     <p>Follow us on Facebook</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-              <TooltipProvider>
+              {/* <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
@@ -187,18 +195,23 @@ function Footerdemo() {
                     <p>Follow us on Twitter</p>
                   </TooltipContent>
                 </Tooltip>
-              </TooltipProvider>
+              </TooltipProvider> */}
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
+                    <Link
+                      href={"https://www.linkedin.com/company/centralsc/"}
+                      target="blank"
                     >
-                      <Linkedin className="size-5" />
-                      <span className="sr-only">LinkedIn</span>
-                    </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                      >
+                        <Linkedin className="size-5" />
+                        <span className="sr-only">LinkedIn</span>
+                      </Button>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent className="bg-white">
                     <p>Connect with us on LinkedIn</p>

@@ -7,11 +7,17 @@ import Image from "next/image"
 
 export function GlobeDemo() {
   // Real images from freepik
+  // const officeImages = [
+  //   "https://img.freepik.com/free-photo/medical-lab-worker-analyzing-blood-serum-conducting-virus-test-modern-equipped-lab-late-night-team-specialists-examining-vaccine-evolution-using-high-tech-treatment-against-covid19_482257-13621.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Singapore - Office
+  //   "https://img.freepik.com/free-photo/treatment-study-genetically-engineered-strawberries-laboratory-by-group-scientist-test-tubes-with-green-solutions_482257-34487.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Munich - Office
+  //   "https://img.freepik.com/free-photo/building-lake_1127-3460.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Boston - Office
+  //   "https://img.freepik.com/free-photo/modern-office-space-interior_158595-5206.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Mumbai
+  // ]
+
   const officeImages = [
-    "https://img.freepik.com/free-photo/medical-lab-worker-analyzing-blood-serum-conducting-virus-test-modern-equipped-lab-late-night-team-specialists-examining-vaccine-evolution-using-high-tech-treatment-against-covid19_482257-13621.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Singapore - Office
-    "https://img.freepik.com/free-photo/treatment-study-genetically-engineered-strawberries-laboratory-by-group-scientist-test-tubes-with-green-solutions_482257-34487.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Munich - Office
-    "https://img.freepik.com/free-photo/building-lake_1127-3460.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Boston - Office
-    "https://img.freepik.com/free-photo/modern-office-space-interior_158595-5206.jpg?uid=R118361244&ga=GA1.1.936594189.1730622765&semt=ais_hybrid", // Mumbai
+    "/expertise/SourcingandProcurement.jpg",
+    "/expertise/MarketandProductKnowledge.jpg",
+    "/expertise/RelationshipandPartnershipManagement.jpg",
   ]
 
   const officeData = [
