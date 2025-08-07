@@ -229,7 +229,7 @@ export default function Navbar() {
                           <DropdownMenuItem
                             key={item.label}
                             active={isActive(item.to)} // Pass true/false based on active state
-                            className="px-3 py-2 rounded-md" // Additional styling if needed
+                            className="px-3 py-2 rounded-md cursor-pointer" // Additional styling if needed
                             asChild
                           >
                             <Link href={item.to}>{item.label}</Link>
