@@ -1,35 +1,35 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { MapPin, ArrowRight, Briefcase } from "lucide-react";
-import getJobs from "../../actions/getJobs";
+"use client"
+import React, { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { MapPin, ArrowRight, Briefcase } from "lucide-react"
+import getJobs from "../../actions/getJobs"
 
 // Helper function to format date
 const formatDate = (dateString) => {
-  if (!dateString) return "Just Now";
+  if (!dateString) return "Just Now"
 
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return "Just Now";
+  const date = new Date(dateString)
+  if (isNaN(date.getTime())) return "Just Now"
 
-  const now = new Date();
-  const diffInDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+  const now = new Date()
+  const diffInDays = Math.floor((now - date) / (1000 * 60 * 60 * 24))
 
-  if (diffInDays === 0) return "Today";
-  if (diffInDays === 1) return "Yesterday";
-  if (diffInDays < 7) return `${diffInDays} days ago`;
+  if (diffInDays === 0) return "Today"
+  if (diffInDays === 1) return "Yesterday"
+  if (diffInDays < 7) return `${diffInDays} days ago`
 
   return date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
-  });
-};
+  })
+}
 
 // Lexical JSON parser
 const renderLexicalContent = (lexicalData) => {
-  if (!lexicalData?.root?.children) return null;
+  if (!lexicalData?.root?.children) return null
 
   return lexicalData.root.children.map((node, index) => {
     if (node.type === "paragraph") {
@@ -39,7 +39,7 @@ const renderLexicalContent = (lexicalData) => {
             <span key={i}>{child.text}</span>
           ))}
         </p>
-      );
+      )
     } else if (node.type === "heading") {
       return (
         <h3
@@ -50,7 +50,7 @@ const renderLexicalContent = (lexicalData) => {
             <span key={i}>{child.text}</span>
           ))}
         </h3>
-      );
+      )
     } else if (node.type === "list") {
       return (
         <ul
@@ -65,48 +65,48 @@ const renderLexicalContent = (lexicalData) => {
             </li>
           ))}
         </ul>
-      );
+      )
     }
-    return null;
-  });
-};
+    return null
+  })
+}
 
 export default function JobListingsSection() {
-  const [activeTab, setActiveTab] = useState("all");
-  const [expandedJob, setExpandedJob] = useState(null);
-  const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState("all")
+  const [expandedJob, setExpandedJob] = useState(null)
+  const [jobs, setJobs] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     async function fetchJobs() {
       try {
-        setLoading(true);
-        const jobsData = await getJobs();
-        setJobs(jobsData);
-        setLoading(false);
+        setLoading(true)
+        const jobsData = await getJobs()
+        setJobs(jobsData)
+        setLoading(false)
       } catch (err) {
-        console.error("Error fetching jobs:", err);
-        setError("Failed to load jobs. Please try again later.");
-        setLoading(false);
+        console.error("Error fetching jobs:", err)
+        setError("Failed to load jobs. Please try again later.")
+        setLoading(false)
       }
     }
 
-    fetchJobs();
-  }, []);
+    fetchJobs()
+  }, [])
 
   const toggleJobExpand = (id) => {
     if (expandedJob === id) {
-      setExpandedJob(null);
+      setExpandedJob(null)
     } else {
-      setExpandedJob(id);
+      setExpandedJob(id)
     }
-  };
+  }
 
   const filteredJobs =
     activeTab === "all"
       ? jobs
-      : jobs.filter((job) => job.department?.toLowerCase() === activeTab);
+      : jobs.filter((job) => job.jobPosition?.toLowerCase() === activeTab)
 
   if (loading) {
     return (
@@ -124,7 +124,7 @@ export default function JobListingsSection() {
           </p>
         </div>
       </div>
-    );
+    )
   }
 
   if (error) {
@@ -141,7 +141,7 @@ export default function JobListingsSection() {
           <p className="text-lg text-red-500">{error}</p>
         </div>
       </div>
-    );
+    )
   }
 
   return (
@@ -163,14 +163,14 @@ export default function JobListingsSection() {
             All
           </button>
           <button
-            onClick={() => setActiveTab("engineering")}
+            onClick={() => setActiveTab("business")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              activeTab === "engineering"
+              activeTab === "business"
                 ? "bg-primary text-white"
                 : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             }`}
           >
-            Engineering
+            Business Development
           </button>
           <button
             onClick={() => setActiveTab("marketing")}
@@ -183,6 +183,16 @@ export default function JobListingsSection() {
             Marketing
           </button>
           <button
+            onClick={() => setActiveTab("qc")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              activeTab === "qc"
+                ? "bg-primary text-white"
+                : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            }`}
+          >
+            QC Analysis
+          </button>
+          <button
             onClick={() => setActiveTab("finance")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === "finance"
@@ -191,6 +201,16 @@ export default function JobListingsSection() {
             }`}
           >
             Finance
+          </button>
+          <button
+            onClick={() => setActiveTab("support")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              activeTab === "support"
+                ? "bg-primary text-white"
+                : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            }`}
+          >
+            Team Support Specialist
           </button>
         </div>
       </div>
@@ -337,5 +357,5 @@ export default function JobListingsSection() {
         </div>
       )}
     </div>
-  );
+  )
 }

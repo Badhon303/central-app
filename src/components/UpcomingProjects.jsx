@@ -1,7 +1,7 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import getProjects from "../../actions/getProjects";
+"use client"
+import React, { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import getProjects from "../../actions/getProjects"
 
 const ProjectItem = ({ project, index }) => (
   <motion.div
@@ -14,7 +14,7 @@ const ProjectItem = ({ project, index }) => (
   >
     {/* Image */}
     <div className="relative h-48 md:h-60 overflow-hidden rounded-t-xl">
-      <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/50 to-purple-500/30 mix-blend-multiply z-10"></div>
+      <div className="absolute inset-0 z-10 border-b-2"></div>
       {project.img && (
         <img
           src={`${process.env.NEXT_PUBLIC_API_DOMAIN}${project.img.url}`}
@@ -49,29 +49,29 @@ const ProjectItem = ({ project, index }) => (
       </div>
     </div>
   </motion.div>
-);
+)
 
 export default function UpcomingProjects() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     async function fetchProjects() {
       try {
-        setLoading(true);
-        const projectsData = await getProjects();
-        setProjects(projectsData);
-        setLoading(false);
+        setLoading(true)
+        const projectsData = await getProjects()
+        setProjects(projectsData)
+        setLoading(false)
       } catch (err) {
-        console.error("Error fetching projects:", err);
-        setError("Failed to load projects. Please try again later.");
-        setLoading(false);
+        console.error("Error fetching projects:", err)
+        setError("Failed to load projects. Please try again later.")
+        setLoading(false)
       }
     }
 
-    fetchProjects();
-  }, []);
+    fetchProjects()
+  }, [])
 
   if (loading) {
     return (
@@ -82,7 +82,7 @@ export default function UpcomingProjects() {
           </p>
         </div>
       </section>
-    );
+    )
   }
 
   if (error) {
@@ -92,7 +92,7 @@ export default function UpcomingProjects() {
           <p className="text-lg text-red-500">{error}</p>
         </div>
       </section>
-    );
+    )
   }
 
   return (
@@ -115,5 +115,5 @@ export default function UpcomingProjects() {
         ))}
       </div>
     </section>
-  );
+  )
 }
