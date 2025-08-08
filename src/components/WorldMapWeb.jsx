@@ -160,6 +160,7 @@ export default function WorldMapWeb({ inHome = false }) {
         </p>
       </div>
       <WorldMap dots={sortedConnections} lineColor="#0ea5e9" />
+
       <div className="flex flex-col gap-6 sm:gap-8 items-center justify-center">
         <div>
           <h2 className="text-center text-2xl md:text-3xl font-bold dark:text-white text-black mt-8">
