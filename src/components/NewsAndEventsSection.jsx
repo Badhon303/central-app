@@ -2,8 +2,8 @@
 import React from "react";
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
-import AreaOfFocus from "./AreaOfFocus";
-import UpcomingProjects from "./UpcomingProjects";
+// import AreaOfFocus from "./AreaOfFocus";
+// import UpcomingProjects from "./UpcomingProjects";
 import UpcomingEvents from "./UpcomingEvents";
 import WhatsNew from "./WhatsNew";
 import Blog from "@/components/Blog";
