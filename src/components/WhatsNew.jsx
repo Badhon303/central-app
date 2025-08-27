@@ -1,11 +1,37 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { getWhatsNew } from "../../actions/getWhatsNew";
 
 export default function WhatsNew() {
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getWhatsNew();
+      setNews(data);
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="mb-20">
+        <div className="flex justify-center items-center py-20">
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            Loading whats new...
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="mb-16">
@@ -23,80 +49,30 @@ export default function WhatsNew() {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          {
-            title: "Central Scientific Company Expands European Presence",
-            date: "February 28, 2025",
-            description:
-              "Our new branch office in Berlin strengthens our commitment to serving European healthcare markets.",
-            tag: "Company Growth",
-            color: "#4361EE",
-          },
-          {
-            title: "New Partnership with Leading Research Institution",
-            date: "January 15, 2025",
-            description:
-              "Strategic collaboration aims to accelerate pharmaceutical innovation and improve patient outcomes.",
-            tag: "Partnership",
-            color: "#F72585",
-          },
-          {
-            title: "Sustainability Milestone: 50% Carbon Reduction Achieved",
-            date: "December 5, 2024",
-            description:
-              "Our commitment to environmental stewardship reaches important milestone ahead of schedule.",
-            tag: "Sustainability",
-            color: "#4CC9F0",
-          },
-        ].map((newsItem, index) => (
+        {news.map((newsItem, index) => (
           <motion.div
-            key={index}
+            key={newsItem.id || index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4"
-            style={{ borderColor: newsItem.color }}
+            style={{ borderColor: "#4361EE" }}
           >
             <div className="p-6">
-              {/* <div className="mb-3">
-                <span
-                  className="inline-block px-3 py-1 rounded-full text-xs font-medium text-white"
-                  style={{ backgroundColor: newsItem.color }}
-                >
-                  {newsItem.tag}
-                </span>
-              </div> */}
               <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2 hover:text-primary transition-colors duration-300">
                 {newsItem.title}
               </h4>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                {newsItem.date}
+                {new Date(newsItem.date).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {newsItem.description}
+                {newsItem.details}
               </p>
-              {/* <a
-                href="#"
-                className="inline-flex items-center transition-colors duration-300"
-                style={{ color: newsItem.color }}
-              >
-                <span className="mr-1">Read More</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a> */}
             </div>
           </motion.div>
         ))}
