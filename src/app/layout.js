@@ -16,7 +16,24 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "CSCO",
-  description: "CSCO",
+  description:
+    "Central Scientific Company (est. 1990) is a trusted trader delivering competitive, efficient, and professional solutions by connecting world-class manufacturers with customers worldwide.",
+  keywords: [
+    "Central Scientific Company",
+    "CSCO",
+    "pharmaceuticals",
+    "laboratory supplies",
+    "scientific solutions",
+    "pharmaceutical solutions",
+  ],
+  openGraph: {
+    title: "Central Scientific Company (CSCO)",
+    description:
+      "Trusted since 1990, CSCO provides efficient and professional trading solutions in scientific and industrial sectors.",
+    url: "https://central-bd.com",
+    siteName: "CSCO",
+    type: "website",
+  },
 }
 
 export default function RootLayout({ children }) {
