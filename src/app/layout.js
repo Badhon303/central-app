@@ -26,6 +26,9 @@ export const metadata = {
     "scientific solutions",
     "pharmaceutical solutions",
   ],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Central Scientific Company (CSCO)",
     description:
